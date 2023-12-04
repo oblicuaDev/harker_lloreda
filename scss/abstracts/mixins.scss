@@ -1,0 +1,68 @@
+// Use font-face
+/**
+    div {
+        @include font-face("My Font", my-font, );
+    }
+*/
+@mixin font-face($name, $file, $weight, $style) {
+  @font-face {
+    font-family: "#{$name}";
+    font-style: "#{$style}";
+    font-weight: "#{$weight}";
+    src: url("../fonts/#{$file}.eot");
+    src: url("../fonts/#{$file}.eot?#iefix") format("embedded-opentype"),
+      url("../fonts/#{$file}.woff") format("woff"),
+      url("../fonts/#{$file}.ttf") format("truetype"),
+      url("../fonts/#{$file}.svg?#webfont") format("svg"),
+      url("../fonts/#{$file}.otf") format("opentype");
+    font-display: swap;
+  }
+}
+/*
+.outer-box {
+   @include aspect-ratio(4, 3);
+}
+*/
+@mixin aspect-ratio($width, $height) {
+  position: relative;
+  &:before {
+    display: block;
+    content: "";
+    width: 100%;
+    padding-top: ($height / $width) * 100%;
+  }
+  > .inner-box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+}
+/*
+@include breakpoint(large) {
+   div {
+      font-size: 2rem;
+      line-height: 1.4;
+   }
+}
+*/
+@mixin breakpoint($point) {
+  @if $point == large {
+    @media only screen and (min-width: 1366px) {
+      @content;
+    }
+  } @else if $point == desktop {
+    @media only screen and (min-width: 1024px) {
+      @content;
+    }
+  } @else if $point == tablet {
+    @media only screen and (min-width: 600px) {
+      @content;
+    }
+  } @else if $point == mobile {
+    @media only screen and (min-width: 425px) {
+      @content;
+    }
+  }
+}

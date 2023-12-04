@@ -1,0 +1,319 @@
+* {
+  vertical-align: baseline;
+  font-weight: inherit;
+  font-family: inherit;
+  font-style: inherit;
+  font-size: 100%;
+  border: 0;
+  outline: 0;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="url"],
+input[type="search"] {
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  border-radius: 0;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+}
+
+[hidden] {
+  display: none;
+}
+input,
+textarea {
+  background-color: transparent;
+  border: 0;
+}
+
+input[type="button"],
+input[type="checkbox"],
+input[type="color"],
+input[type="date"],
+input[type="datetime"],
+input[type="email"],
+input[type="file"],
+input[type="hidden"],
+input[type="image"],
+input[type="month"],
+input[type="number"],
+input[type="password"],
+input[type="radio"],
+input[type="range"],
+input[type="reset"],
+input[type="search"],
+input[type="submit"],
+input[type="tel"],
+input[type="text"],
+input[type="time"],
+input[type="url"],
+input[type="week"] {
+  -moz-appearance: none;
+  appearance: none;
+}
+
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+  display: block;
+}
+
+a {
+  text-decoration: none;
+}
+
+address,
+caption,
+cite,
+code,
+dfn,
+em,
+th,
+var,
+optgroup {
+  font-style: inherit;
+  font-weight: inherit;
+}
+
+a:focus,
+input[type="text"] {
+  outline: 0px;
+}
+
+audio,
+canvas,
+video {
+  display: inline-block;
+}
+
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+abbr,
+acronym {
+  border: 0 none;
+  font-variant: normal;
+}
+
+b,
+strong {
+  font-weight: 700;
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 100%;
+}
+
+button,
+input {
+  line-height: normal;
+}
+
+button,
+select {
+  text-transform: none;
+}
+
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+
+button[disabled],
+html input[disabled] {
+  cursor: default;
+}
+
+caption,
+th {
+  text-align: left;
+}
+
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, serif;
+  font-size: 1em;
+}
+
+del,
+ins {
+  text-decoration: none;
+}
+
+em {
+  font-style: italic;
+}
+
+fieldset,
+img,
+button {
+  border: 0 none;
+}
+.call {
+  margin-right: 56px;
+  margin-bottom: 124px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 100%;
+  font-weight: normal;
+}
+
+hr {
+  border: 0 none;
+  border-top: 1px solid #000000;
+  height: 1px;
+  margin: 0;
+  text-align: left;
+  width: 100%;
+}
+
+input,
+button,
+textarea,
+select,
+optgroup,
+option {
+  font-family: inherit;
+  font-size: inherit;
+  font-style: inherit;
+  font-weight: inherit;
+}
+
+input[type="button"],
+input[type="submit"] {
+  cursor: hand;
+  cursor: pointer;
+}
+
+input[type="search"] {
+  -webkit-appearance: textfield;
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
+legend {
+  border: 0;
+}
+
+mark {
+  background: #ff0;
+  color: #000;
+}
+
+ol {
+  list-style: decimal;
+}
+
+ol li {
+  list-style: decimal outside;
+}
+
+pre {
+  white-space: pre-wrap;
+}
+
+q {
+  quotes: "\201C""\201D""\2018""\2019";
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sup {
+  font-size: 65%;
+  vertical-align: text-top;
+  top: -0.5em;
+}
+
+sub {
+  vertical-align: text-bottom;
+  bottom: -0.25em;
+}
+
+svg:not(:root) {
+  overflow: hidden;
+}
+
+textarea {
+  overflow: auto;
+  /* 1 */
+  resize: none;
+  vertical-align: top;
+  /* 2 */
+}
+
+textarea {
+  box-shadow: 0;
+}
+
+button {
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+a {
+  cursor: pointer;
+}
+
+.fancybox__content {
+  background: transparent !important;
+  padding: 16px;
+}
+.fancybox__backdrop {
+  background: var(--fancybox-bg, rgba(0, 0, 0, 0.92));
+}
+button,
+a {
+  outline: none !important;
+}

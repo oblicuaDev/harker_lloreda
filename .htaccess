@@ -1,0 +1,11 @@
+RewriteEngine On
+RewriteBase /
+
+# Check if the requested file or directory exists
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+
+# Spanish URL rewriting
+RewriteRule ^s/([^/]+)/?$ set/$1.php?lang=es [L,QSA]
+RewriteRule ^g/([^/]+)/?$ get/$1.php?lang=es [L,QSA]
+RewriteRule ^b/([^/]+)/?$ boxes/$1.php?lang=es [L,QSA]

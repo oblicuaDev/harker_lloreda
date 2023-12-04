@@ -1,0 +1,158 @@
+/*the container must be positioned relative:*/
+.custom-select {
+  position: relative;
+  font-size: 14px;
+  margin-bottom: 30px;
+  font-family: var(--font-primary);
+  @media only screen and (max-width: 768px) {
+    margin: 0 auto 30px;
+  }
+}
+
+.custom-select select {
+  display: none; /*hide original SELECT element:*/
+}
+
+.select-selected {
+  background-color: #fff;
+}
+
+/*style the items (options), including the selected item:*/
+.select-items div,
+.select-selected {
+  border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+  border: 1px solid transparent;
+  color: #fb883f;
+  cursor: pointer;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: normal;
+  letter-spacing: -0.02em;
+  line-height: 25px;
+  padding: 8px 16px;
+  text-align: center;
+  user-select: none;
+}
+.select-items div {
+  border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+  border: 1px solid transparent;
+  color: #fb883f;
+  background-color: #fff;
+  cursor: pointer;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: normal;
+  letter-spacing: -0.02em;
+  line-height: 25px;
+  padding: 8px 16px;
+  text-align: center;
+  user-select: none;
+  border-radius: 0;
+}
+
+/*style items (options):*/
+.select-items {
+  border: 1px solid #e5e4eb;
+  max-height: 300px;
+  left: 0;
+  overflow: auto;
+  position: absolute;
+  right: 0;
+  top: 100%;
+  z-index: 99;
+}
+
+/*hide the items when the select box is closed:*/
+.select-hide {
+  display: none;
+}
+
+.select-items div:hover {
+  background-color: #ff9900;
+  color: #fff;
+}
+.select-items div.same-as-selected {
+  background-color: #ff9900;
+  color: #fff;
+}
+
+.c-select {
+  position: relative;
+  select {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: #fff;
+    border: 0;
+    color: #666666;
+    display: flex;
+    font-size: 14px;
+    letter-spacing: -0.02em;
+    outline: none;
+    padding: 12px 35px 12px 12px;
+    width: 100%;
+    option {
+      background-color: #fff;
+      color: #666666;
+      cursor: pointer;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: normal;
+      letter-spacing: -0.02em;
+      line-height: 25px;
+    }
+  }
+  .c-arrow {
+    position: absolute;
+    top: 50%;
+    right: 8px;
+    display: block;
+    transform: translateY(-50%) rotate(134deg);
+    width: 13px;
+    height: 13px;
+    border-right: 5px solid #ff9900;
+    border-top: 5px solid #ff9900;
+  }
+  &.orange {
+    select {
+      -moz-appearance: none;
+      -webkit-appearance: none;
+      appearance: none;
+      background-color: transparent;
+      border: 0;
+      color: #ff9900;
+      border: 1px solid #ff9900;
+      display: flex;
+      font-size: 14px;
+      letter-spacing: -0.02em;
+      outline: none;
+      padding: 12px 35px 12px 12px;
+      width: 100%;
+      option {
+        background-color: transparent;
+        color: #ff9900;
+        cursor: pointer;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: normal;
+        letter-spacing: -0.02em;
+        line-height: 25px;
+      }
+    }
+    .c-arrow {
+      position: absolute;
+      top: 50%;
+      right: 8px;
+      display: block;
+      transform: translateY(-50%) rotate(134deg);
+      width: 13px;
+      height: 13px;
+      border-right: 5px solid #ff9900;
+      border-top: 5px solid #ff9900;
+    }
+  }
+}
+
+.custom-select select {
+  display: none; /*hide original SELECT element:*/
+}
