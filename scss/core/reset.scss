@@ -317,3 +317,14 @@ button,
 a {
   outline: none !important;
 }
+
+.splide__arrow {
+  background: transparent;
+  height: 60px;
+  width: 60px;
+  svg {
+    fill: transparent;
+    height: 60px;
+    width: 60px;
+  }
+}

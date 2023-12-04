@@ -1,20 +1,32 @@
-.bnt {
+.btn {
   align-items: center;
   border-radius: 20px;
   display: inline-flex;
-  font-size: 18px;
+  font-size: 15px;
   font-style: normal;
   font-weight: 600;
   justify-content: center;
   line-height: 20px;
-  padding: 8px 30px;
+  padding: 8px 25px;
+  gap: 10px;
+  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  border: 2px solid transparent;
   &.primary {
     color: #fff;
     background: #335c82;
+    &:hover {
+      background: #fff;
+      color: #335c82;
+      border: 2px solid #335c82;
+    }
   }
   &.secondary {
     color: #335c82;
     background: #fff;
     border: 2px solid #335c82;
+    &:hover {
+      background: #335c82;
+      color: #fff;
+    }
   }
 }

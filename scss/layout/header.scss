@@ -1,15 +1,16 @@
 .top-bar {
   background-color: #335c82;
-  padding: 16px 20px;
   .container {
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    margin: 0 0 0 auto;
+    max-width: 1550px;
+
     .links {
       align-items: center;
       justify-content: space-between;
       display: flex;
-      gap: 120px;
+      gap: 80px;
       a {
         color: #fff;
         text-align: center;
@@ -17,23 +18,61 @@
         font-style: normal;
         font-weight: 400;
         line-height: normal;
+        margin: 0;
       }
     }
     .right {
       display: flex;
-      flex: 1;
+      height: 100%;
       align-items: center;
       justify-content: flex-end;
       ul {
+        width: 320px;
         li {
           color: #fff;
           text-align: center;
           font-size: 12px;
           font-style: normal;
           font-weight: 400;
+          margin: 0;
           line-height: normal;
+          padding: 16px 0;
           ul {
+            z-index: 2;
+            box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+            border-radius: 0 0 8px 8px;
+            overflow: hidden;
             li {
+              padding: 0;
+              a,
+              button {
+                width: 100%;
+                height: 100%;
+                display: block;
+                padding: 15px 0;
+                margin: 0;
+                position: relative;
+                transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+                &::after {
+                  content: "";
+                  width: 90%;
+                  height: 1px;
+                  background-color: #335c82;
+                  position: absolute;
+                  bottom: 0;
+                  left: 50%;
+                  transform: translateX(-50%);
+                }
+                &:last-of-type {
+                  &::after {
+                    content: none;
+                  }
+                }
+                &:hover {
+                  background-color: #335c82;
+                  color: #fff;
+                }
+              }
               button {
                 background-color: #fff;
                 color: #335c82;
@@ -49,23 +88,42 @@
         }
       }
       ul.lang-selector {
+        width: 70px;
         li {
           span {
+            justify-content: center;
             color: #fff;
             font-size: 12px;
             font-style: normal;
             font-weight: 400;
             line-height: normal;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+          }
+          ul {
+            width: 70px;
           }
         }
       }
     }
+  }
+}
+ul {
+  & > li {
+    position: relative;
+    height: 100%;
+
     ul {
-      li {
-        position: relative;
-        ul {
-          position: absolute;
-        }
+      position: absolute;
+      top: 100%;
+      display: none;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    &:hover {
+      ul {
+        display: block;
       }
     }
   }
@@ -81,8 +139,12 @@ header {
       display: block;
     }
     nav {
-      ul {
-        li {
+      & > ul {
+        display: flex;
+        gap: 100px;
+        & > li {
+          padding: 10px 0;
+
           a {
             color: #263e48;
             text-align: center;
@@ -90,6 +152,55 @@ header {
             font-style: normal;
             font-weight: 500;
             line-height: normal;
+          }
+          ul {
+            z-index: 2;
+            box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+            border-radius: 0 0 8px 8px;
+            overflow: hidden;
+            width: max-content;
+            li {
+              margin: 0;
+              a,
+              button {
+                width: 100%;
+                height: 100%;
+                display: block;
+                padding: 15px;
+                margin: 0;
+                position: relative;
+                transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+                &::after {
+                  content: "";
+                  width: 90%;
+                  height: 1px;
+                  background-color: #335c82;
+                  position: absolute;
+                  bottom: 0;
+                  left: 50%;
+                  transform: translateX(-50%);
+                }
+                &:last-of-type {
+                  &::after {
+                    content: none;
+                  }
+                }
+                &:hover {
+                  background-color: #335c82;
+                  color: #fff;
+                }
+              }
+              button {
+                background-color: #fff;
+                color: #335c82;
+                padding: 20px 0;
+                text-align: center;
+                font-size: 12px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+              }
+            }
           }
         }
       }
