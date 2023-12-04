@@ -1,5 +1,5 @@
 @use "../abstracts" as *;
-@import url("https://fonts.googleapis.com/css2?family=Changa:wght@400;700&family=Montserrat:wght@200;400;700&display=swap");
+
 body {
   font-size: 10px;
   font-family: var(--font-primary);
@@ -8,80 +8,49 @@ body {
 
 h1 {
   font-family: var(--font-secondary);
-  font-style: normal;
-  font-weight: bold;
-  font-size: 32px;
-  line-height: 70px;
 }
 
 h2 {
   font-family: var(--font-secondary);
-  font-size: 24px;
+  color: #1e1e1e;
+  font-size: 85px;
   font-style: normal;
-  font-weight: bold;
-  line-height: 30px;
+  font-weight: 400;
+  line-height: normal;
 }
 
 h3 {
   font-family: var(--font-primary);
-  font-size: 18px;
+  color: #1e1e1e;
+  font-size: 40px;
   font-style: normal;
-  font-weight: normal;
-  letter-spacing: -0.02em;
-  line-height: 30px;
+  font-weight: 500;
+  line-height: normal;
 }
 
 h4 {
   font-family: var(--font-primary);
-  font-size: 16px;
+  color: #2b3c4c;
+  font-size: 32px;
   font-style: normal;
-  font-weight: normal;
-  letter-spacing: -0.02em;
-  line-height: 30px;
+  font-weight: 500;
+  line-height: normal;
 }
 h5 {
   font-family: var(--font-primary);
-  font-size: 13px;
-  font-style: normal;
-  font-weight: normal;
-  letter-spacing: -0.02em;
-  line-height: 30px;
 }
 h6 {
   font-family: var(--font-primary);
-  font-size: 10px;
-  font-style: normal;
-  font-weight: normal;
-  letter-spacing: -0.02em;
-  line-height: 30px;
 }
 
 p,
-li {
+li,
+a {
   color: var(--textos);
   font-family: var(--font-primary);
-  font-size: 14px;
-  font-style: normal;
-  font-weight: normal;
-  letter-spacing: 0.02em;
-  line-height: 22px;
-}
-a {
-  color: var(--orangeText);
-  font-family: var(--font-primary);
-  font-size: 11px;
-  font-style: normal;
-  font-weight: normal;
-  line-height: 18px;
 }
 
 small {
-  color: var(--textos);
-  font-family: var(--font-primary);
-  font-style: normal;
-  font-weight: bold;
-  font-size: 12px;
-  line-height: 14px;
 }
 
 .thin {

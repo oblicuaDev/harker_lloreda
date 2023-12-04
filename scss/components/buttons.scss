@@ -1,0 +1,20 @@
+.bnt {
+  align-items: center;
+  border-radius: 20px;
+  display: inline-flex;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  justify-content: center;
+  line-height: 20px;
+  padding: 8px 30px;
+  &.primary {
+    color: #fff;
+    background: #335c82;
+  }
+  &.secondary {
+    color: #335c82;
+    background: #fff;
+    border: 2px solid #335c82;
+  }
+}
