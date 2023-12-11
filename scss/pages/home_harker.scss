@@ -1,14 +1,67 @@
-.banner-container {
-  svg {
-    .banner {
-      img {
-        bottom: auto;
-        left: 0;
-      }
+.doctor {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 25px;
+}
+
+.video-info {
+  background-image: url(../../img/Rectangle\ 25.jpg);
+  background-position: bottom;
+  background-repeat: no-repeat;
+  .video-position {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    h3 {
+      margin: 50px 0 20px 0;
+      color: #2b3c4c;
+    }
+    p {
+      margin: 30px 0 120px 0;
     }
   }
 }
 
-.doctors{
-    display: flex;
+.cards {
+  h3 {
+    color: #2b3c4c;
+    margin-bottom: 30px;
+  }
+  .card-grid {
+    padding-bottom: 40px;
+  }
+}
+
+.info-extra {
+  display: flex;
+  align-items: center;
+  margin: 80px 0;
+  justify-content: space-between;
+  img {
+    max-width: 625px;
+  }
+  .txt {
+    max-width: 40%;
+    &__2 {
+      text-align: right;
+    }
+  }
+}
+
+.logos {
+  max-height: 126px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0 130px 50px 130px;
+  :nth-child(1) {
+    max-height: 55px;
+  }
+  :nth-child(3) {
+    max-height: 106px;
+  }
+  :nth-child(4) {
+    max-height: 87px;
+  }
 }

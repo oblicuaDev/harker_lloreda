@@ -1,0 +1,183 @@
+.para_ellas {
+  .favoritos {
+    background-image: url(/img/fondoParaEllas1.jpg);
+    &__1 {
+      text-align: center;
+      max-width: 1089px;
+      margin: 0 auto;
+      p {
+        margin-bottom: 20px;
+      }
+      .btn.primary {
+        margin-bottom: 20px;
+        background-color: #209ba1;
+      }
+    }
+    &__2 {
+      h3 {
+        color: #209ba1;
+      }
+      .procedimiento-card {
+        img {
+          width: 380px;
+          height: 450px;
+        }
+        small {
+          margin-bottom: 30px;
+        }
+      }
+    }
+  }
+
+  .procedimiento {
+    margin: 50px auto;
+    .bold {
+      padding-left: 50px;
+      color: #209ba1;
+      margin-bottom: 30px;
+    }
+    .procedimientos {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px 50px;
+      &__opc {
+        max-width: 617px;
+        max-height: 206px;
+        background-color: #5ebbc0;
+        border-radius: 15px;
+        h4 {
+          color: #fff;
+          margin-top: 30px;
+          padding-left: 20px;
+        }
+        p {
+          color: #fff;
+          margin-bottom: 30px;
+          padding-left: 20px;
+        }
+      }
+    }
+  }
+
+  .agendate {
+    background-image: url(/img/fondoParaEllas2.jpg);
+    text-align: center;
+    background-position: center;
+    min-height: 800px;
+    display: flex;
+    align-items: center;
+    h4 {
+      color: #209ba1;
+      margin: 40px 0 30px 0;
+    }
+    .iconos {
+      display: flex;
+      justify-content: space-around;
+      color: #209ba1;
+      .icono {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        &__img {
+          background-color: #fff;
+          border-radius: 50%;
+          height: 124px;
+          width: 124px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          box-shadow: 4px 4px 4px 0px rgba(51, 92, 130, 0.25);
+          img {
+            position: relative;
+            top: -15px;
+          }
+        }
+        h5 {
+          margin: 15px 0 25px 0;
+        }
+      }
+      .bold {
+        font-size: 17px;
+      }
+      span {
+        display: flex;
+        color: #209ba1;
+        align-items: center;
+        font-size: 20px;
+        font-weight: bold;
+      }
+    }
+    p {
+      margin-bottom: 20px;
+    }
+    .btn.secondary {
+      margin-bottom: 50px;
+      background: transparent;
+      border-color: #209ba1;
+      color: #209ba1;
+    }
+  }
+
+  .pacientes {
+    &__satisfechos {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      margin-bottom: 150px;
+      .pics {
+        width: 40%;
+            display: flex;
+            position: relative;
+        img {
+            max-width: 215px;
+                max-height: 215px;
+                border-radius: 50%;
+                position: absolute;
+                bottom: 0;
+                transform: translateY(50%);
+
+          &:nth-child(1) {
+            left: 0%;
+          }
+
+          &:nth-child(2) {
+            left: 20%;
+          }
+
+          &:nth-child(3) {
+            left: 40%;
+          }
+
+          &:nth-child(4) {
+            left: 60%;
+          }
+
+          &:nth-child(5) {
+            left: 80%;
+          }
+        }
+      }
+      .cifras {
+        display: flex;
+        gap: 50px;
+        text-align: center;
+        h3 {
+          color: #738592;
+        }
+      }
+    }
+    &__ayudados {
+        margin: 80px auto;
+      .testimonio {
+        margin-top: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .btn.primary{
+            background-color: #5EBBC0;
+            margin-top: 20px;
+        }
+      }
+    }
+  }
+}
