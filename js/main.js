@@ -211,3 +211,7 @@ function init(element) {
 }
 
 init(imageComparisonSlider);
+
+window.addEventListener('load', function() {
+  document.getElementById('preloader').style.display = 'none';
+});
