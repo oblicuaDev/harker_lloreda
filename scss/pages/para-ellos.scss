@@ -1,0 +1,92 @@
+.grid-container3 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 7px;
+
+    .grid-item3 {
+        font-size: 21px;
+        background-color: #32495e;
+        max-width: 617px;
+        height: 206px;
+        border: 3px solid #fff;
+        border-radius: 20px;        
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: left;
+            }
+      
+        h3 {
+          color: #fff;
+          text-align: left;
+        }
+      
+        p {
+          color: #fff;
+          text-align: left;
+        }
+    }
+
+    .el-mejor-equipo3 {
+        position: absolute;
+        top: 139px;
+        left: calc(50% - 87px);
+        color: #32495e;
+    }
+    .group-child3,
+    .group-inner3 {
+        position: absolute;
+        top: 0px;
+        left: 25px;
+        border-radius: 50%;
+        background-color: #fff;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        width: 124px;
+        height: 124px;
+    }
+    .group-item3 {
+        position: absolute;
+        top: 30px;
+        left: 52px;
+        width: 70px;
+        height: 70px;
+    }
+    .el-mejor-equipo-parent {
+        position: relative;
+        width: 174px;
+        height: 165px;
+        font-size: 21px;
+    } 
+    .b {
+        position: relative;
+    }
+    .un-servicio-especializado-parent {
+        position: relative;
+        width: 278px;
+        height: 165px;
+    }
+    .un-servicio-especializado3,
+    .sentirte-mejor-contigo3 {
+        position: absolute;
+        top: 139px;
+        left: calc(50% - 139px);
+        color: #32495e;
+    }
+    .group-inner3 {
+        left: 77px;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    }
+    .group-icon {
+        position: absolute;
+        top: 21px;
+        left: 100px;
+        width: 77px;
+        height: 83px;
+    }
+    .sentirte-mejor-contigo-parent {
+        position: relative;
+        width: 278px;
+        height: 165px;
+    }
