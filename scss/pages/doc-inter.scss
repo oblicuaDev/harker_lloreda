@@ -1,12 +1,23 @@
-.banner-container1 {
+.banner-container {
     position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     svg {
       position: absolute;
       top: 10px;
       left: 0;
       z-index: -1;
+
+      .foto {
+        flex: 1;
+        img {
+          width: 100%;
+          height: auto;
+        }
+      }
     }
-    .banner1 {
+    .banner.text-right {
       background-position: right;
       background-size: cover;
       filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
@@ -21,21 +32,46 @@
         bottom: 0;
         left: 0;
       }
-      .txt1 {
-        position: relative;
-        max-width: 550px;
-        z-index: 2;
-        p {
-          margin-bottom: 30px;
+      .banner {
+        flex: 1;
+        .container {      
+          .txt {
+            position: relative;
+            max-width: 550px;
+            z-index: 2;
+            h3 {
+              padding-right: 100px;
+            }
+            p {
+              padding-right: 100px;
+              margin-bottom: 30px;
+            }
+            a {
+              display: inline-block;
+              margin-bottom: 30px;
+            
+            }
+          }
         }
-      }
-      .container {
-        height: 100%;
-        display: flex;
-        align-items: center;
       }
     }
   }
+  .paciente {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 25px;
+      padding-bottom: 20px;
+
+      h3 {
+        padding-bottom: 25px;
+      }
+
+      p {
+        padding-top: 10px;
+        padding-bottom: 20px;
+      }
+    }
 
   .grid-container2 {
     width: 80%;
@@ -50,7 +86,7 @@
     width: 309px;
     height: 100px;
     background-color: rgba(255, 255, 255, 0.8);
-    padding: 20px;
+    padding-top: 20px;
     text-align: center;
     vertical-align: middle;
     display: flex;
@@ -65,4 +101,18 @@
       font-size: 20px;
       text-align: center;
     }
-  }// Path: scss/pages/doc-inter.scss
+  }
+.container.bela {
+  display: flex;
+  flex-direction: column;
+
+  a {
+    padding-left: 100px;
+    align-items: center;
+    text-align: left;
+    justify-content: space-evenly;
+    margin-bottom: 50px;
+    font-size: 25px;
+    font-weight: 400;
+  }
+}

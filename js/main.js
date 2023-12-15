@@ -210,8 +210,35 @@ function init(element) {
   sliderRange.addEventListener("change", (e) => moveSliderRange(e, element));
 }
 
-init(imageComparisonSlider);
 
-window.addEventListener('load', function() {
-  document.getElementById('preloader').style.display = 'none';
-});
+
+// preloader
+
+$(document).ready(function() {
+  setTimeout(function() {
+    $('#container').addClass('loaded');
+    // Once the container has finished, the scroll appears
+    if ($('#container').hasClass('loaded')) {
+      // It is so that once the container is gone, the entire preloader section is deleted
+      $('#preloader').delay(1500).queue(function() {
+        $(this).remove();
+      });}
+  }, 1500);});
+
+
+// tabs
+const tablinks = document.getElementsByClassName("tab-links");
+    const tabcontents = document.getElementsByClassName("tab-contents");
+
+    function opentab(tabname) {
+      for (tablink of tablinks) {
+        tablink.classList.remove("active-link");
+      }
+      for (tabcontent of tabcontents) {
+        tabcontent.classList.remove("active-tab");
+      }
+      event.currentTarget.classList.add("active-link");
+      document.getElementById(tabname).classList.add("active-tab");
+    }
+
+init(imageComparisonSlider);
