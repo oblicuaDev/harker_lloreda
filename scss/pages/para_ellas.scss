@@ -1,10 +1,10 @@
 .para_ellas {
   .favoritos {
-    background-image: url(/img/fondoParaEllas1.jpg);
     &__1 {
       text-align: center;
       max-width: 1089px;
       margin: 0 auto;
+      margin-bottom: 20px;
       p {
         margin-bottom: 20px;
       }
@@ -13,18 +13,31 @@
         background-color: #209ba1;
       }
     }
-    &__2 {
-      h3 {
-        color: #209ba1;
+  }
+  
+  .favoritos__2 {
+    background-image: url(/img/fondoParaEllas1.jpg);
+    background-position: center;
+    overflow: visible;
+    .splide__arrow {
+      top: 60%;
+      &--prev {
+        left: -10em;
       }
-      .procedimiento-card {
-        img {
-          width: 380px;
-          height: 450px;
-        }
-        small {
-          margin-bottom: 30px;
-        }
+      &--next {
+        right: -10em;
+      }
+    }
+    h3 {
+      color: #209ba1;
+    }
+    .procedimiento-card {
+      img {
+        width: 380px;
+        height: 450px;
+      }
+      small {
+        margin-bottom: 30px;
       }
     }
   }
@@ -32,7 +45,6 @@
   .procedimiento {
     margin: 50px auto;
     .bold {
-      padding-left: 50px;
       color: #209ba1;
       margin-bottom: 30px;
     }
@@ -47,13 +59,13 @@
         border-radius: 15px;
         h4 {
           color: #fff;
-          margin-top: 30px;
-          padding-left: 20px;
+          margin-top: 45px;
+          padding-left: 30px;
         }
         p {
           color: #fff;
-          margin-bottom: 30px;
-          padding-left: 20px;
+          margin-bottom: 45px;
+          padding-left: 30px;
         }
       }
     }
@@ -66,6 +78,7 @@
     min-height: 800px;
     display: flex;
     align-items: center;
+    max-width: 100%;
     h4 {
       color: #209ba1;
       margin: 40px 0 30px 0;
@@ -126,15 +139,15 @@
       margin-bottom: 150px;
       .pics {
         width: 40%;
-            display: flex;
-            position: relative;
+        display: flex;
+        position: relative;
         img {
-            max-width: 215px;
-                max-height: 215px;
-                border-radius: 50%;
-                position: absolute;
-                bottom: 0;
-                transform: translateY(50%);
+          max-width: 215px;
+          max-height: 215px;
+          border-radius: 50%;
+          position: absolute;
+          bottom: 0;
+          transform: translateY(50%);
 
           &:nth-child(1) {
             left: 0%;
@@ -167,15 +180,30 @@
       }
     }
     &__ayudados {
-        margin: 80px auto;
+      margin: 80px auto;
       .testimonio {
-        margin-top: 20px;
+        margin-top: 30px;
         display: flex;
         align-items: center;
         justify-content: space-between;
-        .btn.primary{
-            background-color: #5EBBC0;
-            margin-top: 20px;
+        .txt {
+          width: 40%;
+        }
+        .video-card {
+          width: 430px;
+          height: 620px;
+          svg {
+            left: -40px;
+            width: 80px;
+            top: 90px;
+          }
+          rect{
+            fill: #5ebbc0;
+          }
+        }
+        .btn.primary {
+          background-color: #5ebbc0;
+          margin-top: 20px;
         }
       }
     }
