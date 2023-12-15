@@ -48,77 +48,140 @@
   </div>
   <!-- Fin de top bar -->
 
-  <!-- Inicio header -->
-  <header>
-    <div class="container">
-      <img src="img/logo_gray.svg" alt="logo" />
-      <nav>
-        <ul>
-          <li>
-            <a href="procedimientos.html">Procedimientos</a>
-            <ul>
-              <li>
-                <a href="cara-cuello.html">Cara / Cuello</a>
-              </li>
-              <li>
-                <a href="">Cuerpo</a>
-              </li>
-              <li>
-                <a href="">Cuidado capilar</a>
-              </li>
-            </ul>
-          </li>
-          <li><a href="">Línea de prevención</a></li>
-          <li><a href="para-ellos.html">Para ellos</a></li>
-          <li><a href="">Pacientes fuera de Colombia</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-  <!-- Fin header -->
+    <!-- Inicio header -->
+    <header>
+      <div class="container">
+        <img src="img/logo_gray.svg" alt="logo" />
+        <nav>
+          <ul>
+            <li>
+              <a href="procedimientos.html">Procedimientos</a>
+              <ul>
+                <li>
+                  <a href="cara-cuello.html">Cara / Cuello</a>
+                </li>
+                <li>
+                  <a href="">Cuerpo</a>
+                </li>
+                <li>
+                  <a href="">Cuidado capilar</a>
+                </li>
+              </ul>
+            </li>
+            <li><a href="">Línea de prevención</a></li>
+            <li><a href="para-ellos.html">Para ellos</a></li>
+            <li><a href="">Pacientes fuera de Colombia</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <!-- Fin header -->
 
-  <!-- Inicio form -->
-  <div class="container-p">
-    <h1>Diligencia tus datos de pago</h1>
-    <p>
-      Si has solicitado una valoración, tienes una cita o deseas adquirir
-      algún producto cosmético, puedes usar este formulario para hacer tu pago
-      sin salir de casa. Diligencia tus datos y el valor que vayas a cancelar,
-      serás redirigido a nuestra plataforma segura de pagos
-    </p>
-    <form action="" id="data-form">
-      <span class="form-item">
-        <input type="text" name="vads_cust_first_name" id="vads_cust_first_name" autocomplete="off" required />
-        <label class="label-effect" for="vads_cust_first_name">Nombres</label>
-      </span>
-      <span class="form-item">
-        <input type="text" name="vads_cust_last_name" id="vads_cust_last_name" autocomplete="off" required />
-        <label class="label-effect" for="vads_cust_last_name">Apellidos</label>
-      </span>
-      <span class="form-item">
-        <input type="tel" name="vads_cust_id" id="vads_cust_id" autocomplete="off" required />
-        <label class="label-effect" for="vads_cust_id">Número de cédula o identificación</label>
-      </span>
-      <span class="form-item">
-        <input type="tel" name="vads_cust_cell_phone" id="vads_cust_cell_phone" autocomplete="off" value="" required />
-        <label class="label-effect" for="vads_cust_cell_phone">Teléfono</label>
-      </span>
-      <span class="form-item">
-        <input type="email" name="vads_cust_email" id="vads_cust_email" autocomplete="off" value="" required />
-        <label class="label-effect" for="vads_cust_email">Correo Electronico</label>
-      </span>
-      <span class="form-item">
-        <input type="text" name="vads_cust_address_number" id="vads_cust_address_number" autocomplete="off" required />
-        <label class="label-effect" for="vads_cust_address_number">Dirección para facturación</label>
-      </span>
-      <span class="form-item">
-        <input type="text" name="description" id="description" autocomplete="off" required />
-        <label class="label-effect" for="description">Concepto (ej. Pago de mi consulta)</label>
-      </span>
-      <span class="form-item">
-        <input type="tel" name="amount" id="amount" autocomplete="off" class="money" required />
-        <label class="label-effect" for="amount">Monto que pagarás</label>
-      </span>
+    <!-- Inicio form -->
+    <div class="container-p">
+      <h1>Diligencia tus datos de pago</h1>
+      <p>
+        Si has solicitado una valoración, tienes una cita o deseas adquirir
+        algún producto cosmético, puedes usar este formulario para hacer tu pago
+        sin salir de casa. Diligencia tus datos y el valor que vayas a cancelar,
+        serás redirigido a nuestra plataforma segura de pagos
+      </p>
+      <form action="" id="data-form">
+        <span class="form-item">
+          <input
+            type="text"
+            name="vads_cust_first_name"
+            id="vads_cust_first_name"
+            autocomplete="off"
+            required
+          />
+          <label class="label-effect" for="vads_cust_first_name">Nombres</label>
+        </span>
+        <span class="form-item">
+          <input
+            type="text"
+            name="vads_cust_last_name"
+            id="vads_cust_last_name"
+            autocomplete="off"
+            required
+          />
+          <label class="label-effect" for="vads_cust_last_name"
+            >Apellidos</label
+          >
+        </span>
+        <span class="form-item">
+          <input
+            type="tel"
+            name="vads_cust_id"
+            id="vads_cust_id"
+            autocomplete="off"
+            required
+          />
+          <label class="label-effect" for="vads_cust_id"
+            >Número de cédula o identificación</label
+          >
+        </span>
+        <span class="form-item">
+          <input
+            type="tel"
+            name="vads_cust_cell_phone"
+            id="vads_cust_cell_phone"
+            autocomplete="off"
+            value=""
+            required
+          />
+          <label class="label-effect" for="vads_cust_cell_phone"
+            >Teléfono</label
+          >
+        </span>
+        <span class="form-item">
+          <input
+            type="email"
+            name="vads_cust_email"
+            id="vads_cust_email"
+            autocomplete="off"
+            value=""
+            required
+          />
+          <label class="label-effect" for="vads_cust_email"
+            >Correo Electronico</label
+          >
+        </span>
+        <span class="form-item">
+          <input
+            type="text"
+            name="vads_cust_address_number"
+            id="vads_cust_address_number"
+            autocomplete="off"
+            required
+          />
+          <label class="label-effect" for="vads_cust_address_number"
+            >Dirección para facturación</label
+          >
+        </span>
+        <span class="form-item">
+          <input
+            type="text"
+            name="description"
+            id="description"
+            autocomplete="off"
+            required
+          />
+          <label class="label-effect" for="description"
+            >Concepto (ej. Pago de mi consulta)</label
+          >
+        </span>
+        <span class="form-item">
+          <input
+            type="tel"
+            name="amount"
+            id="amount"
+            autocomplete="off"
+            class="money"
+            required
+          />
+          <label class="label-effect" for="amount">Monto que pagarás</label>
+        </span>
 
       <label class="cyberpunk-checkbox-label">
         <input type="checkbox" class="cyberpunk-checkbox" />
@@ -129,25 +192,25 @@
         </small>
       </label>
 
-      <button type="button" id="open">Enviar</button>
-    </form>
-  </div>
-  <br><br><br>
-  <br><br><br>
-  <br><br><br>
-  <br><br><br>
-  <br><br><br>
-  <br><br><br>
-  <br><br><br>
-  <br><br><br>
-  <br><br><br>
-  <br><br><br>
-  <br><br><br>
-  <br><br><br>
-  <br><br><br>
-  <br><br><br>
-  <br><br><br>
-  <!-- Fin form -->
+        <button type="button" id="open">Enviar</button>
+      </form>
+    </div>
+    <br><br><br>
+    <br><br><br>
+    <br><br><br>
+    <br><br><br>
+    <br><br><br>
+    <br><br><br>
+    <br><br><br>
+    <br><br><br>
+    <br><br><br>
+    <br><br><br>
+    <br><br><br>
+    <br><br><br>
+    <br><br><br>
+    <br><br><br>
+    <br><br><br>
+    <!-- Fin form -->
 
   <!-- Inicio footer -->
   <footer>
