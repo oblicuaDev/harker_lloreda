@@ -1,0 +1,104 @@
+.fuera-col{
+  h3{
+    margin-bottom: 50px;
+  }
+  .doctor{
+    margin-bottom: 50px;
+  }
+}
+
+.bg-c {
+  p {
+    color: #fff;
+    max-width: 1000px;
+    margin: 50px auto 30px;
+    font-size: 21px;
+  }
+  .btn{
+    font-size: 17px;
+    padding: 10px 25px
+  }
+  .redes{
+    display: flex;
+    gap: 50px;
+    margin: 40px auto;
+    .red{
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      img{
+        width: 50px;
+        height: 50px;
+      }
+      p{
+        margin: unset;
+      }
+    }
+  }
+}
+
+.icons{
+  display: flex;
+  gap: 50px;
+  margin: 15px 0;
+  img{
+    width: 70px;
+    border-radius: 50%;
+  }
+}
+
+.proced-extr-pos{
+  margin-top: 50px;
+}
+
+.proced-extr {
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-around;
+  &__quirurgicos {
+    text-align: center;
+    h3{
+      color: #335C82;
+      margin-bottom: 25px;
+    }
+    h4 {
+      cursor: pointer;
+      transition: background-color 0.5s ease;
+      padding: 25px 0;
+      margin: 0;
+      color: #1e1e1e;
+      &:hover {
+        background-color: #335c82;
+        color: #fff;
+      }
+    }
+    hr {
+      background: #4d4d4d;
+      border: 0;
+      height: 1px;
+    }
+  }
+  &__no-quirurgicos {
+    text-align: center;
+    h3{
+      color: #335C82;
+      margin-bottom: 25px;
+    }
+    h4 {
+      cursor: pointer;
+      transition: background-color 0.5s ease;
+      padding: 25px 0;
+      margin: 0;
+      color: #1e1e1e;
+      &:hover {
+        background-color: #335c82;
+        color: #fff;
+      }
+    }
+    hr {
+      background: #4d4d4d;
+      border: 0;
+      height: 1px;
+    }
+  }
+}

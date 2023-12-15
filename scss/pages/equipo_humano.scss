@@ -1,0 +1,55 @@
+.banner {
+  .txt {
+    .btn.primary {
+      position: relative;
+      left: 40%;
+    }
+  }
+}
+
+.cita {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  margin: 0 auto;
+  max-width: 900px;
+  p{
+    margin-bottom: 15px;
+    font-size: 21px;
+  }
+}
+
+.video-info.equipo {
+  background-image: none;
+  background-position: unset;
+  background-repeat: unset;
+  .video-position {
+    p {
+      margin: 30px auto 120px;
+      max-width: 850px;
+      font-size: 21px;
+    }
+  }
+}
+
+.doctor{
+  .video-card {
+    width: 430px;
+    height: 620px;
+    svg{
+        left: -40px;
+        width: 80px;
+        top: 90px;
+    }
+  }
+}
+
+.left-doc{
+    justify-content: flex-start;
+    gap: 180px;
+    .video-card svg {
+        left: unset;
+        right: -40px;
+      }
+}
