@@ -66,6 +66,22 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
   }
+.container h3{
+  font-size: 35px;
+  margin: 20px 0;
+  padding: 20px 10px;
+}
+.container-p h4 {
+  font-size: 30px;
+  margin: 20px 0;
+  padding: 20px;
+}
+
+  .container-vector {
+    position: absolute;
+    width: 100%;
+    padding: auto;
+  }
   
   .grid-item {
     position: relative;
@@ -115,8 +131,13 @@
   
     .footer, .child-footer {
       background-color: #335c82;
-      color: #fff;
       padding: 20px 0;
+      border-top: 1px solid #fff;
+
+      small {
+        color: #fff;
+        font-size: 12px;
+      }
     
       .grid-container {
         display: grid;
