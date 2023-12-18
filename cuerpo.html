@@ -16,9 +16,9 @@
     <div class="top-bar">
         <div class="container">
             <div class="links">
-                <a href="">Equipo humano</a>
+                <a href="doc-inter.html">Equipo humano</a>
                 <a href="">Tienda en línea</a>
-                <a href="">Pago en línea</a>
+                <a href="pago.html">Pago en línea</a>
             </div>
             <div class="right">
                 <ul class="lang-selector">
@@ -34,7 +34,8 @@
                     </li>
                 </ul>
                 <ul>
-                    <li>Agenda tu cita
+                    <li>
+                        Agenda tu cita
                         <ul>
                             <li><a href="">Ya soy paciente</a></li>
                             <li><a href="">Soy paciente nuevo</a></li>
@@ -46,14 +47,14 @@
     </div>
     <header>
         <div class="container">
-            <img src="img/logo_gray.svg" alt="logo">
+            <img src="img/logo_gray.svg" alt="logo" />
             <nav>
                 <ul>
                     <li>
-                        <a href="">Procedimientos</a>
+                        <a href="procedimientos.html">Procedimientos</a>
                         <ul>
                             <li>
-                                <a href="">Cara / Cuello</a>
+                                <a href="cuerpo.html">Cara / Cuello</a>
                             </li>
                             <li>
                                 <a href="">Cuerpo</a>
@@ -64,7 +65,7 @@
                         </ul>
                     </li>
                     <li><a href="">Línea de prevención</a></li>
-                    <li><a href="">Para ellos</a></li>
+                    <li><a href="para-ellos.html">Para ellos</a></li>
                     <li><a href="">Pacientes fuera de Colombia</a></li>
                 </ul>
             </nav>
@@ -397,21 +398,6 @@
             </article>
         </div>
     </footer>
-    <script>
-        var tablinks = document.getElementsByClassName("title");
-        var tabcontents = document.getElementsByClassName("procedimientos");
-
-        function opentab(tabname) {
-            for (tablink of tablinks) {
-                tablink.classList.remove("active-title");
-            }
-            for (tabcontent of tabcontents) {
-                tabcontent.classList.remove("active-procedimientos");
-            }
-            event.currentTarget.classList.add("active-title");
-            document.getElementById(tabname).classList.add("active-procedimientos");
-        }
-    </script>
     <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
