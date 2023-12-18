@@ -1,23 +1,22 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Diligencia tus datos de pago</title>
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-  <link href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" rel="stylesheet" />
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Harker & Lloreda</title>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" />
-  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
-  <!-- Inicio top bar -->
   <div class="top-bar">
     <div class="container">
       <div class="links">
-        <a href="">Equipo humano</a>
+        <a href="doc-inter.html">Equipo humano</a>
         <a href="">Tienda en línea</a>
         <a href="pago.html">Pago en línea</a>
       </div>
@@ -33,7 +32,6 @@
             </ul>
           </li>
         </ul>
-
         <ul>
           <li>
             Agenda tu cita
@@ -46,38 +44,33 @@
       </div>
     </div>
   </div>
-  <!-- Fin de top bar -->
-
-    <!-- Inicio header -->
-    <header>
-      <div class="container">
-        <img src="img/logo_gray.svg" alt="logo" />
-        <nav>
-          <ul>
-            <li>
-              <a href="procedimientos.html">Procedimientos</a>
-              <ul>
-                <li>
-                  <a href="cara-cuello.html">Cara / Cuello</a>
-                </li>
-                <li>
-                  <a href="">Cuerpo</a>
-                </li>
-                <li>
-                  <a href="">Cuidado capilar</a>
-                </li>
-              </ul>
-            </li>
-            <li><a href="">Línea de prevención</a></li>
-            <li><a href="para-ellos.html">Para ellos</a></li>
-            <li><a href="">Pacientes fuera de Colombia</a></li>
-          </ul>
-        </nav>
-      </div>
-    </header>
-    <!-- Fin header -->
-
-    <!-- Inicio form -->
+  <header>
+    <div class="container">
+      <img src="img/logo_gray.svg" alt="logo" />
+      <nav>
+        <ul>
+          <li>
+            <a href="procedimientos.html">Procedimientos</a>
+            <ul>
+              <li>
+                <a href="cuerpo.html">Cara / Cuello</a>
+              </li>
+              <li>
+                <a href="">Cuerpo</a>
+              </li>
+              <li>
+                <a href="">Cuidado capilar</a>
+              </li>
+            </ul>
+          </li>
+          <li><a href="">Línea de prevención</a></li>
+          <li><a href="para-ellos.html">Para ellos</a></li>
+          <li><a href="">Pacientes fuera de Colombia</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main>
     <div class="container-p">
       <h1>Diligencia tus datos de pago</h1>
       <p>
@@ -88,135 +81,57 @@
       </p>
       <form action="" id="data-form">
         <span class="form-item">
-          <input
-            type="text"
-            name="vads_cust_first_name"
-            id="vads_cust_first_name"
-            autocomplete="off"
-            required
-          />
+          <input type="text" name="vads_cust_first_name" id="vads_cust_first_name" autocomplete="off" required />
           <label class="label-effect" for="vads_cust_first_name">Nombres</label>
         </span>
         <span class="form-item">
-          <input
-            type="text"
-            name="vads_cust_last_name"
-            id="vads_cust_last_name"
-            autocomplete="off"
-            required
-          />
-          <label class="label-effect" for="vads_cust_last_name"
-            >Apellidos</label
-          >
+          <input type="text" name="vads_cust_last_name" id="vads_cust_last_name" autocomplete="off" required />
+          <label class="label-effect" for="vads_cust_last_name">Apellidos</label>
         </span>
         <span class="form-item">
-          <input
-            type="tel"
-            name="vads_cust_id"
-            id="vads_cust_id"
-            autocomplete="off"
-            required
-          />
-          <label class="label-effect" for="vads_cust_id"
-            >Número de cédula o identificación</label
-          >
+          <input type="tel" name="vads_cust_id" id="vads_cust_id" autocomplete="off" required />
+          <label class="label-effect" for="vads_cust_id">Número de cédula o identificación</label>
         </span>
         <span class="form-item">
-          <input
-            type="tel"
-            name="vads_cust_cell_phone"
-            id="vads_cust_cell_phone"
-            autocomplete="off"
-            value=""
-            required
-          />
-          <label class="label-effect" for="vads_cust_cell_phone"
-            >Teléfono</label
-          >
+          <input type="tel" name="vads_cust_cell_phone" id="vads_cust_cell_phone" autocomplete="off" value=""
+            required />
+          <label class="label-effect" for="vads_cust_cell_phone">Teléfono</label>
         </span>
         <span class="form-item">
-          <input
-            type="email"
-            name="vads_cust_email"
-            id="vads_cust_email"
-            autocomplete="off"
-            value=""
-            required
-          />
-          <label class="label-effect" for="vads_cust_email"
-            >Correo Electronico</label
-          >
+          <input type="email" name="vads_cust_email" id="vads_cust_email" autocomplete="off" value="" required />
+          <label class="label-effect" for="vads_cust_email">Correo Electronico</label>
         </span>
         <span class="form-item">
-          <input
-            type="text"
-            name="vads_cust_address_number"
-            id="vads_cust_address_number"
-            autocomplete="off"
-            required
-          />
-          <label class="label-effect" for="vads_cust_address_number"
-            >Dirección para facturación</label
-          >
+          <input type="text" name="vads_cust_address_number" id="vads_cust_address_number" autocomplete="off"
+            required />
+          <label class="label-effect" for="vads_cust_address_number">Dirección para facturación</label>
         </span>
         <span class="form-item">
-          <input
-            type="text"
-            name="description"
-            id="description"
-            autocomplete="off"
-            required
-          />
-          <label class="label-effect" for="description"
-            >Concepto (ej. Pago de mi consulta)</label
-          >
+          <input type="text" name="description" id="description" autocomplete="off" required />
+          <label class="label-effect" for="description">Concepto (ej. Pago de mi consulta)</label>
         </span>
         <span class="form-item">
-          <input
-            type="tel"
-            name="amount"
-            id="amount"
-            autocomplete="off"
-            class="money"
-            required
-          />
+          <input type="tel" name="amount" id="amount" autocomplete="off" class="money" required />
           <label class="label-effect" for="amount">Monto que pagarás</label>
         </span>
 
-      <label class="cyberpunk-checkbox-label">
-        <input type="checkbox" class="cyberpunk-checkbox" />
-        <small>
-          He leido y acepto las <a href="">políticas del sitio web</a>,
-          autorizo el tratamiento de mis datos personales y el envío de
-          información de interés, publicidad y promociones.
-        </small>
-      </label>
+        <label class="cyberpunk-checkbox-label">
+          <input type="checkbox" class="cyberpunk-checkbox" />
+          <small>
+            He leido y acepto las <a href="">políticas del sitio web</a>,
+            autorizo el tratamiento de mis datos personales y el envío de
+            información de interés, publicidad y promociones.
+          </small>
+        </label>
 
         <button type="button" id="open">Enviar</button>
       </form>
     </div>
-    <br><br><br>
-    <br><br><br>
-    <br><br><br>
-    <br><br><br>
-    <br><br><br>
-    <br><br><br>
-    <br><br><br>
-    <br><br><br>
-    <br><br><br>
-    <br><br><br>
-    <br><br><br>
-    <br><br><br>
-    <br><br><br>
-    <br><br><br>
-    <br><br><br>
-    <!-- Fin form -->
-
-  <!-- Inicio footer -->
+  </main>
   <footer>
     <div class="container">
       <article>
-        <img src="img/logo_white.svg" alt="logo" />
+        <img src="img/logo_white.svg" alt="logo">
         <a href="">Nosotros</a>
         <a href="">Contáctanos</a>
         <a href="">Agenda tu cita</a>
@@ -233,11 +148,9 @@
         <a href="">Tour virtual</a>
       </article>
       <article>
-        <small>Calle 127 A No. 7-53 Edificio INO Ophthalmic and Plastic Surgery,
-          consultorio 2006</small>
-        <small>Teléfonos: <a href="">(+57 1) 6193008</a> -
-          <a href="">(+57) 316-623 4562</a> -
-          <a href="">(+57) 311-820 5527</a> -</small>
+        <small>Calle 127 A No. 7-53 Edificio INO Ophthalmic and Plastic Surgery, consultorio 2006</small>
+        <small>Teléfonos: <a href="">(+57 1) 6193008</a> - <a href="">(+57) 316-623 4562</a> - <a href="">(+57)
+            311-820 5527</a> -</small>
         <small>Whatsapp: <a href="">(+57) 316 435 1728</a></small>
         <small>Bogotá, Colombia</small>
         <div class="socials">
@@ -280,22 +193,6 @@
       </article>
     </div>
   </footer>
-  <!-- Fin footer -->
-
-  <footer class="child-footer">
-    <div class="grid-container">
-      <div class="grid-item">
-        <small>Estados financieros</small>
-      </div>
-      <div class="grid-item">
-        <small>2024</small>
-      </div>
-      <div class="grid-item">
-        <small>Políticas de tratamiento de datos</small>
-      </div>
-    </div>
-  </footer>
-
   <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
