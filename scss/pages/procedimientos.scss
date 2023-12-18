@@ -1,54 +1,3 @@
-// Preloader
-
-#preloader {
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 9999;
-  background-color: #fff;
-
-  .characters {
-    font-size: 16px;
-  }
-}
-.loader {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  width: 50px;
-  height: 50px;
-  background-color: #333;
-  border-radius: 50%;  
-  animation: spin 1s linear infinite;
-}
-
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
-// Scrollbar
-/* width */
-::-webkit-scrollbar {
-  width: 10px;
-}
-/* Track */
-::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 5px #ddd; 
-  border-radius: 15px;
-}
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: #32495E; 
-  border-radius: 15px;
-}
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: #335C82; 
-}
-
 .container-p {
   display: flex;
   flex-direction: column;
@@ -104,6 +53,31 @@
       margin-top: 20px;
     }
   }
+  .destacados {
+    margin-bottom: 70px;
+    &__1 {
+      text-align: center;
+      max-width: 1089px;
+      margin: 0 auto 35px;
+      p {
+        margin-bottom: 30px;
+      }
+    }
+    &__2 {
+      .splide__arrow {
+        top: 60%;
+        &--prev {
+          left: -10em;
+        }
+        &--next {
+          right: -10em;
+        }
+      }
+      h3 {
+        color: #335c82;
+      }
+    }
+  }
   .procedimiento-card img {
     width: 380px;
     height: 400px;
@@ -125,20 +99,17 @@
       position: relative;
       font-size: 40px;
       color: #fff;
+      padding-bottom: 15px;
       text-align: center;
     }
-  }
-  
-    .footer, .child-footer {
-      background-color: #335c82;
-      padding: 20px 0;
-      border-top: 1px solid #fff;
 
-      small {
-        color: #fff;
-        font-size: 12px;
-      }
-    
+    .btn.secondary {
+      width: 325px;
+      height: 53px;
+      font-size: 21px;
+    }
+  }
+     
       .grid-container {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
@@ -153,4 +124,13 @@
           color: #fff;
         }
       }
+      .footer, .child-footer {
+        background-color: #335c82;
+        padding: 20px;
+        border-top: 1px solid #fff;
+  
+        small {
+          color: #fff;
+          font-size: 12px;
+        }
     }
