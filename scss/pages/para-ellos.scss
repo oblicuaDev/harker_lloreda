@@ -1,3 +1,19 @@
+.favoritos__2 {
+  background-image: url(/img/Vector\ 45.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  overflow: visible;
+  .splide__arrow {
+    top: 60%;
+    &--prev {
+      left: -10em;
+    }
+    &--next {
+      right: -10em;
+    }
+  }
+}
+
 .grid-container3 {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -27,7 +43,35 @@
   }
 }
 
-.agendate1 {
+.procedimiento {
+  margin: 50px auto;
+  .bold {
+    color: #32495e;
+    margin-bottom: 30px;
+  }
+  .procedimientos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px 50px;
+    &__opc {
+      max-width: 617px;
+      max-height: 206px;
+      background-color: #32495e;
+      border-radius: 15px;
+      h4 {
+        color: #fff;
+        margin-top: 45px;
+        padding-left: 30px;
+      }
+      p {
+        color: #fff;
+        margin-bottom: 45px;
+        padding-left: 30px;
+      }
+    }
+  }
+}
+.agendate {
   background-image: url(/img/Vector\ 46.svg);
   padding: 50px 0 0 0;
   text-align: center;
@@ -36,15 +80,15 @@
     color: #213445;
     margin: 40px 0 30px 0;
   }
-  .iconos1 {
+  .iconos {
     display: flex;
     justify-content: space-around;
-    color: #335c82;
-    .icono1 {
+    color: #fff;
+    .icono {
       display: flex;
       flex-direction: column;
       align-items: center;
-      &__img1 {
+      &__img {
         background-color: #fff;
         border-radius: 50%;
         height: 124px;
@@ -74,34 +118,6 @@
   }
   .btn.secondary {
     margin-bottom: 50px;
-  }
-}
-
-.procedimiento {
-  margin: 50px auto;
-  .bold {
-    color: #32495e;
-    margin-bottom: 30px;
-  }
-  .procedimientos {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px 50px;
-    &__opc {
-      max-width: 617px;
-      max-height: 206px;
-      background-color: #32495e;
-      border-radius: 15px;
-      h4 {
-        color: #fff;
-        margin-top: 45px;
-        padding-left: 30px;
-      }
-      p {
-        color: #fff;
-        margin-bottom: 45px;
-        padding-left: 30px;
-      }
-    }
+    background-color: #A3A8AD;
   }
 }
