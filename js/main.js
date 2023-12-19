@@ -214,21 +214,21 @@ function init(element) {
 
 // preloader
 
-$(document).ready(function() {
-  setTimeout(function() {
-    $('#container').addClass('loaded');
-    // Once the container has finished, the scroll appears
-    if ($('#container').hasClass('loaded')) {
-      // It is so that once the container is gone, the entire preloader section is deleted
-      $('#preloader').delay(1500).queue(function() {
-        $(this).remove();
-      });}
-  }, 1500);});
+// $(document).ready(function() {
+//   setTimeout(function() {
+//     $('#container').addClass('loaded');
+//     // Once the container has finished, the scroll appears
+//     if ($('#container').hasClass('loaded')) {
+//       // It is so that once the container is gone, the entire preloader section is deleted
+//       $('#preloader').delay(1500).queue(function() {
+//         $(this).remove();
+//       });}
+//   }, 1500);});
 
 
 // tabs
-const tablinks = document.getElementsByClassName("tab-links");
-    const tabcontents = document.getElementsByClassName("tab-contents");
+var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
 
     function opentab(tabname) {
       for (tablink of tablinks) {
