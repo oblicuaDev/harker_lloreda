@@ -1,8 +1,12 @@
-.favoritos__2 {
+.favoritos__3 {
   background-image: url(/img/Vector\ 45.svg);
   background-repeat: no-repeat;
   background-position: center;
   overflow: visible;
+
+  h3 {
+    color: #32495E;
+  }
 
   h4 {
     background: #213445;
@@ -135,7 +139,8 @@
     border-color: #213445;
   }
 }
-.btn.primary {
+.btn.primary-1 {
   background-color: #213445;
+  color: #fff;
   margin-top: 20px;
 }

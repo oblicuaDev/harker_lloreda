@@ -241,4 +241,9 @@ var tablinks = document.getElementsByClassName("tab-links");
       document.getElementById(tabname).classList.add("active-tab");
     }
 
+  // form restriction for numbers only
+  function validarInputNumerico(input) {
+    input.value = input.value.replace(/[^0-9]/g, '');
+  }
+
 init(imageComparisonSlider);

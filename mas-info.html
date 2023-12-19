@@ -72,15 +72,16 @@
   </header>
   <main>
     <!-- Inicio form -->
-    <div class="container-p">
-      <h1>Obtén más información</h1>
+    <div class="container-f">
+      <h1>Obtén más<br>información</h1>
+        <p>Llena el formulario y nos contactaremos contigo en<br>el menor tiempo posible</p>
       <form action="" id="data-form">
         <span class="form-item">
           <input type="text" name="vads_cust_first_name" id="vads_cust_first_name" autocomplete="off" required>
           <label class="label-effect" for="vads_cust_first_name">Nombres</label>
         </span>
         <span class="form-item">
-          <input type="tel" name="vads_cust_cell_phone" id="vads_cust_cell_phone" autocomplete="off" value="" required>
+          <input type="tel" name="vads_cust_cell_phone" id="vads_cust_cell_phone" autocomplete="off" pattern="[0-9]+" required oninput="validarInputNumerico(this);"">
           <label class="label-effect" for="vads_cust_cell_phone">Teléfono</label>
         </span>
         <span class="form-item">
@@ -95,13 +96,13 @@
         <label class="cyberpunk-checkbox-label">
           <input type="checkbox" class="cyberpunk-checkbox">
           <small>
-            He leido y acepto las <a href="">políticas del sitio web</a>, autorizo el tratamiento de mis
+            He leído y acepto las <a href="">políticas del sitio web</a>, autorizo el tratamiento de mis
             datos
             personales y el envío de información de interés, publicidad y promociones.
           </small>
         </label>
         <!-- <a href="" class="btn primary">Siguiente</a> -->
-        <button type="submit" class="btn primary">Siguiente</button>
+        <button type="submit" class="btn primary-2">Siguiente</button>
       </form>
     </div>
     </div>
@@ -171,6 +172,20 @@
       </article>
     </div>
   </footer>
+  <footer class="child-footer">
+    <div class="grid-container">
+      <div class="grid-item">
+        <small>Estados financieros</small>
+      </div>
+      <div class="grid-item">
+        <small>2024</small>
+      </div>
+      <div class="grid-item">
+        <small>Políticas de tratamiento de datos</small>
+      </div>
+    </div>
+  </footer>
+  
   <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
