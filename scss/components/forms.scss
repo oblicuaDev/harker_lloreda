@@ -80,11 +80,11 @@ form {
       display: flex;
       align-items: center;
       small {
-        font-size: 12px;
+        font-size: 15px;
         color: #777;
         flex: 1;
         a {
-          font-size: 12px;
+          font-size: 15px;
           color: inherit;
         }
       }
@@ -97,11 +97,11 @@ form {
     text-align: center;
     align-items: center;
     justify-content: center;
-    padding: 10px;
-    font-size: 16px;
-    border-radius: 5px;
+    padding: 8px 30px;
+    font-size: 18px;
+    border-radius: 20px;
     border-color: transparent;
-    width: 100%;
+    width: 65%;
     margin: 10px auto;
     transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
     &:hover {
