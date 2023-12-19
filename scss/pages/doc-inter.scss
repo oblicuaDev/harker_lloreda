@@ -18,6 +18,21 @@
       }
     }
   }
+
+  .btn.primary-2 {
+    max-width: 350px;
+    font-size: 18px;
+
+    &.primary-2 {
+      color: #fff;
+      background: #335c82;
+      &:hover {
+        background: #fff;
+        color: #335c82;
+        border: 2px solid #335c82;
+      }
+    }
+  }
   .paciente {
       display: flex;
       align-items: center;
@@ -35,33 +50,9 @@
       }
     }
 
-    .grid-container-cx {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 7px;
-      column-gap: 56px;
-      padding-left: 20px;
-  
-      .grid-item-cx {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          width: 400px;
-          border-radius: 1px;
-          border-top: 1px solid #1E1E1E;        
-          position: relative;         
-          }
-        
-          a {
-            text-align: center;
-            color: #1E1E1E;
-            font-size: 30px;
-            padding-top: 50px;
-          }
-      }
-      .faq-container summary{
-        padding: 20px;
-      }
+  .faq-container summary{
+    padding: 20px;
+  }
 
 .container.bela {
   display: flex;
