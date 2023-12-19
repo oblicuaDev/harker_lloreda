@@ -1,15 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
+
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Procedimientos</title>
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css"
-      rel="stylesheet"
-    />
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -18,10 +10,6 @@
     <link
       href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css"
       rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css"
     />
     <link rel="stylesheet" href="css/styles.css" />
   </head>
@@ -83,7 +71,7 @@
                   <a href="cuerpo.html">Cara / Cuello</a>
                 </li>
                 <li>
-                  <a href="">Cuerpo</a>
+                  <a href="cara-cuello.html">Cuerpo</a>
                 </li>
                 <li>
                   <a href="">Cuidado capilar</a>
@@ -98,9 +86,9 @@
       </div>
     </header>
     <main>
-      <div class="preloader">
+      <!-- <div class="preloader">
         <div class="loader"></div>
-      </div>
+      </div> -->
       <section>
         <div class="banner-container">
           <div class="banner">
@@ -184,10 +172,8 @@
       </section>
       <!-- Fin sección párrafo -->
 
-      <!-- Inicio sección category -->
-
+      <!-- Inicio sección grid -->
       <div class="video-info">
-        <!-- Inicio sección grid -->
         <div class="container cards">
           <h3>¿Qué quieres mejorar hoy?</h3>
           <div class="card-grid">
@@ -209,28 +195,51 @@
       <!-- Fin sección grid -->
 
       <!-- Inicio sección category -->
-      <section>
+      <div class="destacados__2">
         <div class="container">
-          <h3 style="color: #335c82"><b>Procedimientos destacados</b></h3>
-        </div>
-        <div class="category-grid">
-          <a class="procedimiento-card">
-            <img src="img/procedimiento.jpeg" alt="pro" />
-            <span>Nombre del procedimiento</span>
-            <small>Nombre científico</small>
-          </a>
-          <a class="procedimiento-card">
-            <img src="img/derrier.png" alt="pro" />
-            <span>Nombre del procedimiento</span>
-            <small>Nombre científico</small>
-          </a>
-          <a class="procedimiento-card">
-            <img src="img/cuerpo.png" alt="pro" />
-            <span>Nombre del procedimiento</span>
-            <small>Nombre científico</small>
-          </a>
-        </div>
-      </section>
+          <h3 class="bold">Procedimientos Destacados</h3>
+            <div class="category-grid">
+              <div class="splide__arrows">
+                <button class="splide__arrow splide__arrow--prev">
+                    <svg width="84" height="84" viewBox="0 0 84 84" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <rect x="1" y="1" width="82" height="82" rx="41" stroke="#335C82"
+                            stroke-width="2" />
+                        <path
+                            d="M21 42C20.4477 42 20 42.4477 20 43C20 43.5523 20.4477 44 21 44V42ZM63.2071 43.7071C63.5976 43.3166 63.5976 42.6834 63.2071 42.2929L56.8431 35.9289C56.4526 35.5384 55.8195 35.5384 55.4289 35.9289C55.0384 36.3195 55.0384 36.9526 55.4289 37.3431L61.0858 43L55.4289 48.6569C55.0384 49.0474 55.0384 49.6805 55.4289 50.0711C55.8195 50.4616 56.4526 50.4616 56.8431 50.0711L63.2071 43.7071ZM21 44H62.5V42H21V44Z"
+                            fill="#335C82" />
+                    </svg>
+
+                </button>
+              <button class="splide__arrow splide__arrow--next">
+                  <svg width="84" height="84" viewBox="0 0 84 84" fill="none"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <rect x="1" y="1" width="82" height="82" rx="41" stroke="#335C82"
+                          stroke-width="2" />
+                      <path
+                          d="M21 42C20.4477 42 20 42.4477 20 43C20 43.5523 20.4477 44 21 44V42ZM63.2071 43.7071C63.5976 43.3166 63.5976 42.6834 63.2071 42.2929L56.8431 35.9289C56.4526 35.5384 55.8195 35.5384 55.4289 35.9289C55.0384 36.3195 55.0384 36.9526 55.4289 37.3431L61.0858 43L55.4289 48.6569C55.0384 49.0474 55.0384 49.6805 55.4289 50.0711C55.8195 50.4616 56.4526 50.4616 56.8431 50.0711L63.2071 43.7071ZM21 44H62.5V42H21V44Z"
+                          fill="#335C82" />
+                  </svg>
+              </button>
+            </div>
+                  <a class="procedimiento-card">
+                      <img src="img/procedimiento.jpeg" alt="pro">
+                      <span>Nombre del procedimiento</span>
+                      <small>Nombre científico</small>
+                  </a>
+                  <a class="procedimiento-card">
+                      <img src="img/procedimiento-gluteos.jpg" alt="pro">
+                      <span>Nombre del procedimiento</span>
+                      <small>Nombre científico</small>
+                  </a>
+                  <a class="procedimiento-card">
+                      <img src="img/revision-mama.jpg" alt="pro">
+                      <span>Nombre del procedimiento</span>
+                      <small>Nombre científico</small>
+                  </a>
+              </div>
+          </div>
+      </div>
       <!-- Fin sección category -->
 
       <!-- Inicio sección productos -->
@@ -337,7 +346,6 @@
           </div>
         </div>
       </section>
-
       <!-- Fin sección productos -->
 
       <!-- Inicio sección agenda cita-->
@@ -352,6 +360,7 @@
       </section>
       <!--Fin sección agenda cita  -->
     </main>
+
     <footer>
       <div class="container">
         <article>
@@ -449,6 +458,7 @@
         </article>
       </div>
     </footer>
+    
     <footer class="child-footer">
       <div class="grid-container">
         <div class="grid-item">
