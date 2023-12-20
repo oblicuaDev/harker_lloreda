@@ -1,24 +1,74 @@
-body {
-    margin: 0;
-    line-height: normal;
-    }
+.odeea__iconos,
+.fesancho__iconos {
+    display: flex;
+    justify-content: space-around;
+    padding: 0 0 0 74px;
 
-.txt-p {
-    font-size: 50px;
-    margin-bottom: 20px;
-    padding-left: 100px;
-    padding-right: 250px;
-    text-align: right;
-    max-width: 1089px;
-    margin: 0 auto;
+    .odeea__icono,
+    .fesancho__icono {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        &__img {
+            background-color: #fff;
+            border-radius: 50%;
+            height: 85px;
+            width: 85px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 4px 4px 4px 0px rgba(51, 92, 130, 0.25);
+            img {
+                position: relative;
+            }
+        }
+        h5 {
+            margin: 15px 0 25px 0;
+        }
     }
-.txt-q {
-    font-size: 50px;
-    margin-bottom: 20px;
-    padding-left: 150px;
-    padding-right: 100px;
-    text-align: right;
-    max-width: 1089px;
+}
+.faq-title {
     margin: 0 auto;
-    text-align: left;
+    max-width: 1089px;
+    padding: 0 0 0 53px;
+    span{
+        padding: 43px;
+    }
+}
+
+.proced-extr__quirurgico,
+.proced-extr__no-quirurgico {
+    text-align: center;
+}
+.proced-extr__quirurgico h3,
+.proced-extr__no-quirurgico h3 {
+    text-align: center;
+    font-size: 30px;
+    color: #335c82;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.5s ease;
+    padding: 25px 0;
+    margin: 20px 0;
+    text-decoration: underline;
+}
+.proced-extr__quirurgico h4 {
+    font-size: 25px;
+    font-weight: 500;
+    padding: 30px 0;
+    margin: 0;
+}
+.proced-extr__no-quirurgico h4 {
+    font-size: 25px;
+    font-weight: 500;
+    transition: background-color 0.5s ease;
+    padding: 35px 0;
+    margin: 0;
+    cursor: pointer;
+}
+.proced-extr__quirurgico h4:hover,
+.proced-extr__no-quirurgico h4:hover {
+    background-color: #335c82;
+    color: #fff;
 }
