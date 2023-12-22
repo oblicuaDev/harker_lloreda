@@ -246,4 +246,23 @@ var tablinks = document.getElementsByClassName("tab-links");
     input.value = input.value.replace(/[^0-9]/g, '');
   }
 
+  // transition on click
+  function opentab(tabId) {
+    // Oculta todos los contenidos y desactiva todas las pestañas
+    const tabContents = document.querySelectorAll('.tab-contents');
+    const tabLinks = document.querySelectorAll('.tab-links');
+  
+    tabContents.forEach((tabContent) => {
+      tabContent.classList.remove('active-tab');
+    });
+  
+    tabLinks.forEach((tabLink) => {
+      tabLink.classList.remove('active-link');
+    });
+  
+    // Muestra el contenido del tab seleccionado y activa la pestaña
+    document.getElementById(tabId).classList.add('active-tab');
+    event.currentTarget.classList.add('active-link');
+  }
+
 init(imageComparisonSlider);
