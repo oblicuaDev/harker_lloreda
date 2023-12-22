@@ -9,7 +9,7 @@
 
     h1 {
         margin-top: 10%;
-        font-size: 50px;
+        font-size: 45px;
     }
 
     p {
@@ -21,12 +21,19 @@
         margin: 50px;
         font-size: 18px;
     }
+    label {
+      text-align: left;
+      max-width: 1089px;
+      margin: 0 auto;
+      padding: 0 40px;
     small {
-        text-align: center;
+        text-align: left;
+        padding: 30px 0;
         a {
             text-decoration: underline;
         }
     }
+  }
 }
 .form-item-1 {
     position: relative;
@@ -38,9 +45,8 @@
         border-bottom-style: solid;
         border-bottom-color: rgb(204, 204, 204);
         transition: all 0.3s ease 0s;
-        font-size: 14px;
-        font-weight: 900;
-        color: #999;
+        font-size: 15px;
+        color: #1E1E1E;
         padding: 18px 15px;
         background: white url('/img/Vector\ 28.png <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 11 7" fill="#1E1E1E" width="11px" height="7px"><path d="M1 1L5.5 6L10 1"/></svg>') no-repeat right 10px center;
         transform: translateY(-20%);
