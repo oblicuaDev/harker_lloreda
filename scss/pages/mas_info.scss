@@ -17,24 +17,24 @@
         font-size: 18px;
         text-align: center;
     }
-
     label {
         text-align: left;
         max-width: 1089px;
         margin: 0 auto;
         padding: 0 40px;
+        align-items: flex-end;
 
-        small {
-            text-align: left;
+    small {
+        text-align: left;
             a {
-                text-decoration: underline;
-             }
+        text-decoration: underline;
+            }
         }
     }
+}
 
 .btn.primary-3 {
     margin: 40px;
     max-width: 350px;
     font-size: 18px;
     }
-}
