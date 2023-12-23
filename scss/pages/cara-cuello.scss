@@ -51,41 +51,24 @@
       display: list-item; 
       }
 
-      .grid-container-q {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px 50px;
-            column-gap: 56px;
-            margin: 25px auto 30px;
-            padding: 0 100px;
-        
-            .grid-item-q {
-                background-color: #335C82;
-                width: 570px;
-                height: 200px;
-                border-radius: 15px;
-                padding: 55px 25px;
-                transition: transform 0.3s;
-
-                &:hover {
-                  transform: scale(1.05);
-                }
-                a {
-                  color: #fff;
-                  padding-left: 30px;
-                  font-size: 30px;
-                  font-weight: 600;
-                }
-                p {
-                  color: #fff;
-                  margin-bottom: 45px;
-                  padding-top: 19px;
-                  padding-left: 30px;
-                  font-size: 21px;
-                       
-                  }
-               }
-            }
+      .procedimiento {
+        .procedimientos__opcc {
+          max-width: 617px;
+          max-height: 206px;
+          background-color: #335c82;
+          border-radius: 15px;
+          h4 {
+            color: #fff;
+            margin-top: 45px;
+            padding-left: 30px;
+          }
+          p {
+            color: #fff;
+            margin-bottom: 45px;
+            padding-left: 30px;
+          }
+        }
+      }
 
    .agendate__cara {
       text-align: center;

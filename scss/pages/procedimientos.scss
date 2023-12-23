@@ -67,6 +67,7 @@
     margin-bottom: 70px;
 
     &__2 {
+      // overflow: hidden;
       margin-left: 90px;
       .splide__arrow {
         top: 60%;
@@ -81,6 +82,7 @@
   }
   .procedimiento-card {
     margin: 50px 0;
+    transform-origin: center bottom;
   }
   .procedimiento-card img {
     width: 380px;
@@ -90,7 +92,7 @@
     transition: transform 0.3s;
   }
     .procedimiento-card:hover {
-      transform: scale(1.1);
+      transform: scaleY(1.05);
     }
 
   .rectangle-div {

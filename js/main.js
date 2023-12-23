@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }).mount();
   new Splide(".splide-comparison", {
     pagination: false,
+    drag: false,
     classes: {
       prev: "splide__arrow splide__arrow--prev",
       next: "splide__arrow splide__arrow--next",
