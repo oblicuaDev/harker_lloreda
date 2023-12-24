@@ -49,18 +49,12 @@
   }
 
   .pacientes {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     font-size: 18px;
-    padding-top: 30px;
-    padding-bottom: 30px;
-    background-color: transparent;
 
     h4 {
       position: relative;
       font-size: 40px;
-      color: #fff;
+      color: #1e1e1e;
       padding-bottom: 15px;
       text-align: center;
     }
@@ -83,6 +77,7 @@
     margin: 80px auto;
     .testimonio {
       margin-top: 30px;
+      padding-left: 50px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -154,10 +149,8 @@
   }
 
   .container__ex {
-    margin: 0 200px;
-    margin-left: 350px;
+    margin: 0 auto;
     max-width: 1200px;
-    width: 70%;
     padding: 0 20px;
     position: relative;
 
