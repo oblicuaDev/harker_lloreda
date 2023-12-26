@@ -241,6 +241,20 @@ var tablinks = document.getElementsByClassName("tab-links");
       document.getElementById(tabname).classList.add("active-tab");
     }
 
+    var tablists = document.getElementsByClassName("title");
+            var tabprocedimientos = document.getElementsByClassName("procedimientos");
+
+            function openlist(tabname) {
+                for (tablist of tablists) {
+                    tablist.classList.remove("active-title");
+                }
+                for (tabprocedimiento of tabprocedimientos) {
+                    tabprocedimiento.classList.remove("active-procedimientos");
+                }
+                event.currentTarget.classList.add("active-title");
+                document.getElementById(tabname).classList.add("active-procedimientos");
+            }
+
   // form restriction for numbers only
   function validarInputNumerico(input) {
     input.value = input.value.replace(/[^0-9]/g, '');

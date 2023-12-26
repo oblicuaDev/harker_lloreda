@@ -52,6 +52,10 @@
     }
   }
 
+  .procedimientos{
+    display: none;
+  }
+
   .procedimientos.active-procedimientos {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -62,6 +66,7 @@
       max-height: 206px;
       background-color: #335c82;
       border-radius: 15px;
+      transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
       h4 {
         color: #fff;
         margin-top: 45px;
@@ -72,6 +77,9 @@
         margin-bottom: 45px;
         padding-left: 30px;
       }
+    }
+    .procedimientos__opc:hover {
+      background-color: #13314ea8;
     }
   }
 }
