@@ -65,7 +65,7 @@
     margin-bottom: 70px;
 
     &__2 {
-      // overflow: hidden;
+      overflow: hidden;
       margin-left: 90px;
       .splide__arrow {
         top: 60%;
@@ -78,20 +78,39 @@
       }
     }
   }
+
+  .category-grid {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .splide__arrow {
+    cursor: pointer;
+    background: transparent;
+    border: none;
+  }
+
   .procedimiento-card {
     margin: 50px 0;
-    transform-origin: center bottom;
-  }
-  .procedimiento-card img {
-    width: 380px;
-    height: 400px;
-    object-fit: cover;
-    object-position: left;
-    transition: transform 0.3s;
-  }
-    .procedimiento-card:hover {
-      transform: scaleY(1.05);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.2s;
+    height: 100%;
+
+    &:hover {
+      transform: scaleY(1.008);
+      transform-origin: center bottom;
     }
+
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+      transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+      transition: transform 0.4s;
+    }    
+  }
 
   .rectangle-div {
     margin: 88px auto;

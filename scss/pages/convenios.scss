@@ -75,19 +75,6 @@
     }
 }
 
-.cointiner__faq {
-    margin: 0 200px;
-    margin-left: 350px;
-    max-width: 1200px;
-    width: 70%;
-    padding: 0 20px;
-    position: relative;
-
-    .faq-container summary{
-      padding: 20px;
-    }
-}
-
 .odeea__iconos,
 .fesancho__iconos {
     display: flex;
@@ -118,22 +105,6 @@
         }
     }
 }
-.faq-title {
-    margin: 0 auto;
-    max-width: 1089px;
-    padding: 0 0 0 53px;
-    span{
-        padding: 43px;
-    }
-}
-
-.tab-titles__conv {
-    gap: 10px;
-    padding-left: 50px;
-    display: flex;
-    color: rgba(43, 60, 76, 0.514);
-    position: relative;
-}
 
 .proced-extr__quirurgico,
 .proced-extr__no-quirurgico {
@@ -146,6 +117,7 @@
     transition: background-color 0.5s ease;
     padding: 25px 0;
     text-decoration: underline;
+    color: #335c82;
 }
 .proced-extr__quirurgico h4 {
     padding: 50px 0;
