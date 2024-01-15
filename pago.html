@@ -13,38 +13,38 @@
 </head>
 
 <body>
-  <div class="top-bar">
-    <div class="container">
-      <div class="links">
-        <a href="doc-inter.html">Equipo humano</a>
-        <a href="">Tienda en línea</a>
-        <a href="pago.html">Pago en línea</a>
-      </div>
-      <div class="right">
-        <ul class="lang-selector">
-          <li>
-            <span>ES<svg xmlns="http://www.w3.org/2000/svg" width="7" height="4" viewBox="0 0 7 4" fill="none">
-                <path d="M1 1L3.5 3.5L6 1" stroke="white" stroke-width="0.5" stroke-linecap="round" />
-              </svg></span>
-            <ul>
-              <li><button type="button">ES</button></li>
-              <li><button type="button">EN</button></li>
-            </ul>
-          </li>
-        </ul>
-        <ul>
-          <li>
-            Agenda tu cita
-            <ul>
-              <li><a href="">Ya soy paciente</a></li>
-              <li><a href="">Soy paciente nuevo</a></li>
-            </ul>
-          </li>
-        </ul>
+  <header>
+    <div class="top-bar">
+      <div class="container">
+        <div class="links">
+          <a href="doc-inter.html">Equipo humano</a>
+          <a href="">Tienda en línea</a>
+          <a href="pago.html">Pago en línea</a>
+        </div>
+        <div class="right">
+          <ul class="lang-selector">
+            <li>
+              <span>ES<svg xmlns="http://www.w3.org/2000/svg" width="7" height="4" viewBox="0 0 7 4" fill="none">
+                  <path d="M1 1L3.5 3.5L6 1" stroke="white" stroke-width="0.5" stroke-linecap="round" />
+                </svg></span>
+              <ul>
+                <li><button type="button">ES</button></li>
+                <li><button type="button">EN</button></li>
+              </ul>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              Agenda tu cita
+              <ul>
+                <li><a href="">Ya soy paciente</a></li>
+                <li><a href="">Soy paciente nuevo</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
-  </div>
-  <header>
     <div class="container">
       <img src="img/logo_gray.svg" alt="logo" />
       <nav>
@@ -78,17 +78,17 @@
           <div class="spinner"></div>
           <div class="txt-loading">
             <span preloader-text="H" class="characters">H</span>
-            
+
             <span preloader-text="A" class="characters">A</span>
-            
+
             <span preloader-text="R" class="characters">R</span>
-            
+
             <span preloader-text="K" class="characters">K</span>
-            
+
             <span preloader-text="E" class="characters">E</span>
-            
+
             <span preloader-text="R" class="characters">R</span>
-            
+
             <span preloader-text="&" class="characters">&</span>
 
             <span preloader-text="L" class="characters">L</span>
@@ -105,7 +105,7 @@
 
             <span preloader-text="A" class="characters">A</span>
           </div>
-        </div>	
+        </div>
         <div class="loader-section section-left"></div>
         <div class="loader-section section-right"></div>
       </div>
@@ -125,11 +125,13 @@
           <label class="label-effect" for="vads_cust_first_name">Nombre</label>
         </span>
         <span class="form-item">
-          <input type="tel" name="vads_cust_cell_phone" id="vads_cust_cell_phone" autocomplete="off" pattern="[0-9]+" required oninput="validarInputNumerico(this);">
+          <input type="tel" name="vads_cust_cell_phone" id="vads_cust_cell_phone" autocomplete="off" pattern="[0-9]+"
+            required oninput="validarInputNumerico(this);">
           <label class="label-effect" for="vads_cust_id">Número de cédula o identificación</label>
         </span>
         <span class="form-item">
-          <input type="tel" name="vads_cust_cell_phone" id="vads_cust_cell_phone" autocomplete="off" pattern="[0-9]+" required oninput="validarInputNumerico(this);">
+          <input type="tel" name="vads_cust_cell_phone" id="vads_cust_cell_phone" autocomplete="off" pattern="[0-9]+"
+            required oninput="validarInputNumerico(this);">
           <label class="label-effect" for="vads_cust_cell_phone">Teléfono</label>
         </span>
         <span class="form-item">
@@ -143,15 +145,16 @@
         </span>
         <span class="form-item-1">
           <select id="select" name="select" id="description" autocomplete="off" required />
-            <option value="" disabled selected>Concepto de pago</option>
-            <option value="opcion1">Pago de mi consulta</option>
-            <option value="opcion2">Opción 2</option>
-            <option value="opcion3">Opción 3</option>          
-            <label class="label-effect" for="description">Concepto</label> 
-          </select>                
+          <option value="" disabled selected>Concepto de pago</option>
+          <option value="opcion1">Pago de mi consulta</option>
+          <option value="opcion2">Opción 2</option>
+          <option value="opcion3">Opción 3</option>
+          <label class="label-effect" for="description">Concepto</label>
+          </select>
         </span>
         <span class="form-item">
-          <input type="tel" name="vads_cust_cell_phone" id="vads_cust_cell_phone" autocomplete="off" pattern="[0-9]+" required oninput="validarInputNumerico(this);">
+          <input type="tel" name="vads_cust_cell_phone" id="vads_cust_cell_phone" autocomplete="off" pattern="[0-9]+"
+            required oninput="validarInputNumerico(this);">
           <label class="label-effect" for="amount">Monto que pagarás</label>
         </span>
 
@@ -246,7 +249,7 @@
       </div>
     </div>
   </footer>
-  
+
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
   <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>

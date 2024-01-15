@@ -38,7 +38,8 @@
       .txt {
         margin-left: auto;
 
-        h2, p {
+        h2,
+        p {
           text-align: right;
         }
         a {
@@ -47,6 +48,11 @@
           margin-left: auto;
         }
       }
+    }
+  }
+  &.half {
+    .banner {
+      height: 80vh;
     }
   }
 }

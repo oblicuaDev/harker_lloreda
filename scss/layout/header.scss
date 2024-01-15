@@ -5,6 +5,7 @@
     justify-content: space-between;
     margin: 0 0 0 auto;
     max-width: 1550px;
+    padding: 0;
 
     .links {
       align-items: center;
@@ -130,6 +131,11 @@ ul {
   }
 }
 header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
   .container {
     display: flex;
     align-items: center;
