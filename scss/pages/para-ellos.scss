@@ -1,11 +1,12 @@
 .favoritos__3 {
   background-image: url(/img/Vector\ 45.svg);
+  background-size: 98%;
   background-repeat: no-repeat;
-  background-position: center;
+  background-position-y: 76%;
   overflow: visible;
 
   h3 {
-    color: #32495E;
+    color: #32495e;
   }
 
   h4 {
@@ -22,39 +23,10 @@
   }
 }
 
-.grid-container3 {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 7px;
-
-  .grid-item3 {
-    background-color: #213445;
-    max-width: 517px;
-    height: 206px;
-    border: 3px solid #fff;
-    border-radius: 20px;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: left;
-  }
-
-  h3 {
-    color: #fff;
-    font-size: 21px;
-  }
-
-  p {
-    color: #fff;
-  }
-}
-
 .procedimiento {
   margin: 50px auto;
   .bold {
-    color: #213445;
+    color: #32495e;
     margin-bottom: 30px;
   }
   .procedimientos {
@@ -64,8 +36,14 @@
     &__opc {
       max-width: 617px;
       max-height: 206px;
-      background-color: #213445;
+      background-color: #32495e;
       border-radius: 15px;
+
+      &:hover {
+        background: #213445;
+        color: #fff;
+        transition: all 0.5s;
+      }
       h4 {
         color: #fff;
         margin-top: 45px;
@@ -81,6 +59,7 @@
 }
 .agendate-e {
   background-image: url(/img/Vector\ 46.svg);
+  background-size: 100%;
   background-repeat: no-repeat;
   text-align: center;
   background-position: center;
@@ -97,6 +76,7 @@
     display: flex;
     justify-content: space-around;
     color: #213445;
+    margin-bottom: 15px;
     .icono {
       display: flex;
       flex-direction: column;
@@ -130,17 +110,40 @@
     }
   }
   p {
-    margin-bottom: 20px;
-  }
-  .btn.secondary {
-    margin-bottom: 50px;
-    background: transparent;
-    color: #213445;
-    border-color: #213445;
+    text-align: center;
+    margin-bottom: 30px;
   }
 }
+
 .btn.primary-1 {
-  background-color: #213445;
   color: #fff;
-  margin-top: 20px;
+  background: #32495e;
+  padding: 15px 30px 15px 30px;
+  &:hover {
+    background: #213445;
+    color: #fff;
+    border: 2px solid #213445;
+  }
+}
+.btn.primary-bann {
+  position: relative;
+  left: 40%;
+  color: #fff;
+  background: #32495e;
+  padding: 15px 30px 15px 30px;
+  &:hover {
+    background: #213445;
+    color: #fff;
+    border: 2px solid #213445;
+  }
+}
+.btn.secondary-serv {
+  background: transparent;
+  color: #213445;
+  border-color: #32495e;
+  &:hover {
+    background: #213445;
+    color: #fff;
+    border: 2px solid #213445;
+  }
 }

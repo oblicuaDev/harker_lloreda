@@ -2,50 +2,50 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Harker & Lloreda</title>
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" />
-    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/styles.css" />
 </head>
 
 <body>
-    <div class="top-bar">
-        <div class="container">
-            <div class="links">
-                <a href="doc-inter.html">Equipo humano</a>
-                <a href="">Tienda en línea</a>
-                <a href="pago.html">Pago en línea</a>
-            </div>
-            <div class="right">
-                <ul class="lang-selector">
-                    <li>
-                        <span>ES<svg xmlns="http://www.w3.org/2000/svg" width="7" height="4" viewBox="0 0 7 4"
-                                fill="none">
-                                <path d="M1 1L3.5 3.5L6 1" stroke="white" stroke-width="0.5" stroke-linecap="round" />
-                            </svg></span>
-                        <ul>
-                            <li><button type="button">ES</button></li>
-                            <li><button type="button">EN</button></li>
-                        </ul>
-                    </li>
-                </ul>
-                <ul>
-                    <li>
-                        Agenda tu cita
-                        <ul>
-                            <li><a href="">Ya soy paciente</a></li>
-                            <li><a href="">Soy paciente nuevo</a></li>
-                        </ul>
-                    </li>
-                </ul>
+    <header>
+        <div class="top-bar">
+            <div class="container">
+                <div class="links">
+                    <a href="doc-inter.html">Equipo humano</a>
+                    <a href="">Tienda en línea</a>
+                    <a href="pago.html">Pago en línea</a>
+                </div>
+                <div class="right">
+                    <ul class="lang-selector">
+                        <li>
+                            <span>ES<svg xmlns="http://www.w3.org/2000/svg" width="7" height="4" viewBox="0 0 7 4"
+                                    fill="none">
+                                    <path d="M1 1L3.5 3.5L6 1" stroke="white" stroke-width="0.5"
+                                        stroke-linecap="round" />
+                                </svg></span>
+                            <ul>
+                                <li><button type="button">ES</button></li>
+                                <li><button type="button">EN</button></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li>
+                            Agenda tu cita
+                            <ul>
+                                <li><a href="">Ya soy paciente</a></li>
+                                <li><a href="">Soy paciente nuevo</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
-    </div>
-    <header>
         <div class="container">
             <img src="img/logo_gray.svg" alt="logo" />
             <nav>
@@ -57,7 +57,7 @@
                                 <a href="cuerpo.html">Cara / Cuello</a>
                             </li>
                             <li>
-                                <a href="">Cuerpo</a>
+                                <a href="cara-cuello.html">Cuerpo</a>
                             </li>
                             <li>
                                 <a href="">Cuidado capilar</a>
@@ -174,131 +174,67 @@
         <section class="procedimiento container">
             <ul>
                 <li>
-                    <h4 class="title active-title" onclick="opentab('quirurgicos')">Quirúrgicos</h4>
+                    <h4 class="title active-title" onclick="openlist('quirurgicos')">Quirúrgicos</h4>
                 </li>
                 <li>
-                    <h4 class="title" onclick="opentab('no-quirurgicos')">No Quirúrgicos</h4>
+                    <h4 class="title" onclick="openlist('no-quirurgicos')">No Quirúrgicos</h4>
                 </li>
             </ul>
             <div class="active-procedimientos procedimientos" id="quirurgicos">
-                <div class="procedimientos__opc">
-                    <a href="">
-                        <h4>PB Serum</h4>
-                        <p>Enzimas recombinantes</p>
-                    </a>
-                </div>
-                <div class="procedimientos__opc">
-                    <a href="">
-                        <h4>Aumento de senos</h4>
-                        <p>Mamoplastia de aumento</p>
-                    </a>
-                </div>
-                <div class="procedimientos__opc">
-                    <h4>Bodytite</h4>
-                    <p>Remodelación corporal subcutánea</p>
-                </div>
-                <div class="procedimientos__opc">
-                    <a href="">
-                        <h4>Elevación de senos</h4>
-                        <p>Mamopexia</p>
-                    </a>
-                </div>
-                <div class="procedimientos__opc">
-                    <a href="">
-                        <h4>Morpheus 8</h4>
-                        <p>Radiofrecuencia fraccionada para renovación de la piel corporal</p>
-                    </a>
-                </div>
-                <div class="procedimientos__opc">
-                    <a href="">
-                        <h4>Reducción de senos</h4>
-                        <p>Mamoplastia de reducción</p>
-                    </a>
-                </div>
-                <div class="procedimientos__opc">
-                    <a href="">
-                        <h4>Abdominoplastia</h4>
-                        <p>Dermolipectomía o lipectomía abdominal</p>
-                    </a>
-                </div>
-                <div class="procedimientos__opc">
-                    <a href="">
-                        <h4>Liposucción con láser</h4>
-                        <p>Lipólisis láser</p>
-                    </a>
-                </div>
-                <div class="procedimientos__opc">
-                    <a href="">
-                        <h4>Aumento de cola</h4>
-                        <p>Gluteoplastia</p>
-                    </a>
-                </div>
-                <div class="procedimientos__opc">
-                    <a href="">
-                        <h4>Lipoinyección abdominal</h4>
-                        <p>Lipoescultura</p>
-                    </a>
-                </div>
+                <a href="" class="procedimientos__opc">
+                    <h4>PB Serum</h4>
+                    <p>Enzimas recombinantes</p>
+                </a>
+                <a href="" class="procedimientos__opc">
+                    <h4>PB Serum</h4>
+                    <p>Enzimas recombinantes</p>
+                </a>
+                <a href="" class="procedimientos__opc">
+                    <h4>PB Serum</h4>
+                    <p>Enzimas recombinantes</p>
+                </a>
             </div>
             <div class="procedimientos" id="no-quirurgicos">
-                <div class="procedimientos__opc">
-                    <a href="">
-                        <h4>PB Serum</h4>
-                        <p>Enzimas recombinantes</p>
-                    </a>
-                </div>
-                <div class="procedimientos__opc">
-                    <a href="">
-                        <h4>Aumento de senos</h4>
-                        <p>Mamoplastia de aumento</p>
-                    </a>
-                </div>
-                <div class="procedimientos__opc">
+                <a href="" class="procedimientos__opc">
+                    <h4>Lorem</h4>
+                    <p>Enzimas recombinantes</p>
+                </a>
+                <a href="" class="procedimientos__opc">
+                    <h4>Aumento de senos</h4>
+                    <p>Mamoplastia de aumento</p>
+                </a>
+                <a href="" class="procedimientos__opc">
                     <h4>Bodytite</h4>
                     <p>Remodelación corporal subcutánea</p>
-                </div>
-                <div class="procedimientos__opc">
-                    <a href="">
-                        <h4>Elevación de senos</h4>
-                        <p>Mamopexia</p>
-                    </a>
-                </div>
-                <div class="procedimientos__opc">
-                    <a href="">
-                        <h4>Morpheus 8</h4>
-                        <p>Radiofrecuencia fraccionada para renovación de la piel corporal</p>
-                    </a>
-                </div>
-                <div class="procedimientos__opc">
-                    <a href="">
-                        <h4>Reducción de senos</h4>
-                        <p>Mamoplastia de reducción</p>
-                    </a>
-                </div>
-                <div class="procedimientos__opc">
-                    <a href="">
-                        <h4>Abdominoplastia</h4>
-                        <p>Dermolipectomía o lipectomía abdominal</p>
-                    </a>
-                </div>
-                <div class="procedimientos__opc">
-                    <a href="">
-                        <h4>Liposucción con láser</h4>
-                        <p>Lipólisis láser</p>
-                    </a>
-                </div>
-                <div class="procedimientos__opc">
-                    <a href="">
-                        <h4>Aumento de cola</h4>
-                        <p>Gluteoplastia</p>
-                    </a>
-                </div>
-                <div class="procedimientos__opc">
-                    <a href="">
-                        <h4>Lipoinyección abdominal</h4>
-                        <p>Lipoescultura</p>
-                    </a>
-                </div>
+                </a>
+                <a href="" class="procedimientos__opc">
+                    <h4>Elevación de senos</h4>
+                    <p>Mamopexia</p>
+                </a>
+                <a href="" class="procedimientos__opc">
+                    <h4>Morpheus 8</h4>
+                    <p>Radiofrecuencia fraccionada para renovación de la piel corporal</p>
+                </a>
+                <a href="" class="procedimientos__opc">
+                    <h4>Reducción de senos</h4>
+                    <p>Mamoplastia de reducción</p>
+                </a>
+                <a href="" class="procedimientos__opc">
+                    <h4>Abdominoplastia</h4>
+                    <p>Dermolipectomía o lipectomía abdominal</p>
+                </a>
+                <a href="" class="procedimientos__opc">
+                    <h4>Liposucción con láser</h4>
+                    <p>Lipólisis láser</p>
+                </a>
+                <a href="" class="procedimientos__opc">
+                    <h4>Aumento de cola</h4>
+                    <p>Gluteoplastia</p>
+                </a>
+                <a href="" class="procedimientos__opc">
+                    <h4>Lipoinyección abdominal</h4>
+                    <p>Lipoescultura</p>
+                </a>
             </div>
         </section>
         <section class="agendate container">
@@ -328,12 +264,12 @@
             <p>Con Harker Lloreda lograrás los mejores resultados, para sentirte mejor contigo misma</p>
             <a href="" class="btn secondary">Agenda tu cita</a>
         </section>
-
     </main>
+
     <footer>
         <div class="container">
             <article>
-                <img src="img/logo_white.svg" alt="logo">
+                <img src="img/logo_white.svg" alt="logo" />
                 <a href="">Nosotros</a>
                 <a href="">Contáctanos</a>
                 <a href="">Agenda tu cita</a>
@@ -350,9 +286,11 @@
                 <a href="">Tour virtual</a>
             </article>
             <article>
-                <small>Calle 127 A No. 7-53 Edificio INO Ophthalmic and Plastic Surgery, consultorio 2006</small>
-                <small>Teléfonos: <a href="">(+57 1) 6193008</a> - <a href="">(+57) 316-623 4562</a> - <a href="">(+57)
-                        311-820 5527</a> -</small>
+                <small>Calle 127 A No. 7-53 Edificio INO Ophthalmic and Plastic Surgery,
+                    consultorio 2006</small>
+                <small>Teléfonos: <a href="">(+57 1) 6193008</a> -
+                    <a href="">(+57) 316-623 4562</a> -
+                    <a href="">(+57) 311-820 5527</a> -</small>
                 <small>Whatsapp: <a href="">(+57) 316 435 1728</a></small>
                 <small>Bogotá, Colombia</small>
                 <div class="socials">
@@ -398,6 +336,21 @@
             </article>
         </div>
     </footer>
+
+    <footer class="child-footer">
+        <div class="grid-container">
+            <div class="grid-item">
+                <small>Estados financieros</small>
+            </div>
+            <div class="grid-item">
+                <small>2024</small>
+            </div>
+            <div class="grid-item">
+                <small>Políticas de tratamiento de datos</small>
+            </div>
+        </div>
+    </footer>
+
     <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>

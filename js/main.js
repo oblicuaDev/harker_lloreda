@@ -2,20 +2,26 @@ document.addEventListener("DOMContentLoaded", () => {
   console.log("READY!");
   Fancybox.bind("[data-fancybox]", {});
   AOS.init();
-  new Splide(".splide", {
-    pagination: false,
-    classes: {
-      prev: "splide__arrow splide__arrow--prev",
-      next: "splide__arrow splide__arrow--next",
-    },
-  }).mount();
-  new Splide(".splide-comparison", {
-    pagination: false,
-    classes: {
-      prev: "splide__arrow splide__arrow--prev",
-      next: "splide__arrow splide__arrow--next",
-    },
-  }).mount();
+  if (document.querySelector(".splide-home")) {
+    new Splide(".splide-home", {
+      pagination: false,
+      type: "slide",
+      classes: {
+        prev: "splide__arrow splide__arrow--prev",
+        next: "splide__arrow splide__arrow--next",
+      },
+    }).mount();
+  }
+  if (document.querySelector(".splide-comparison")) {
+    new Splide(".splide-comparison", {
+      pagination: false,
+      drag: false,
+      classes: {
+        prev: "splide__arrow splide__arrow--prev",
+        next: "splide__arrow splide__arrow--next",
+      },
+    }).mount();
+  }
 });
 
 function toggleIcon(expandIconPlus, expandIconMinus, isOpen) {
@@ -210,7 +216,42 @@ function init(element) {
   sliderRange.addEventListener("change", (e) => moveSliderRange(e, element));
 }
 
+// tabs
+var tablinks = document.getElementsByClassName("tab-links");
+var tabcontents = document.getElementsByClassName("tab-contents");
 
+function opentab(tabname) {
+  for (tablink of tablinks) {
+    tablink.classList.remove("active-link");
+  }
+  for (tabcontent of tabcontents) {
+    tabcontent.classList.remove("active-tab");
+  }
+  event.currentTarget.classList.add("active-link");
+  document.getElementById(tabname).classList.add("active-tab");
+}
+
+var tablists = document.getElementsByClassName("title");
+var tabprocedimientos = document.getElementsByClassName("procedimientos");
+
+function openlist(tabname) {
+  for (tablist of tablists) {
+    tablist.classList.remove("active-title");
+  }
+  for (tabprocedimiento of tabprocedimientos) {
+    tabprocedimiento.classList.remove("active-procedimientos");
+  }
+  event.currentTarget.classList.add("active-title");
+  document.getElementById(tabname).classList.add("active-procedimientos");
+}
+// form restriction for numbers only
+function validarInputNumerico(input) {
+  input.value = input.value.replace(/[^0-9]/g, "");
+}
+
+if (imageComparisonSlider) {
+  init(imageComparisonSlider);
+}
 
 // preloader
 
@@ -224,26 +265,3 @@ function init(element) {
 //         $(this).remove();
 //       });}
 //   }, 1500);});
-
-
-// tabs
-var tablinks = document.getElementsByClassName("tab-links");
-    var tabcontents = document.getElementsByClassName("tab-contents");
-
-    function opentab(tabname) {
-      for (tablink of tablinks) {
-        tablink.classList.remove("active-link");
-      }
-      for (tabcontent of tabcontents) {
-        tabcontent.classList.remove("active-tab");
-      }
-      event.currentTarget.classList.add("active-link");
-      document.getElementById(tabname).classList.add("active-tab");
-    }
-
-  // form restriction for numbers only
-  function validarInputNumerico(input) {
-    input.value = input.value.replace(/[^0-9]/g, '');
-  }
-
-init(imageComparisonSlider);

@@ -3,17 +3,39 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    svg {
-      position: absolute;
-      top: 10px;
-      left: 0;
-      z-index: -1;
+}
+
+    .container__dr {
+      display: flex;
+      align-items: center;
+      padding: 360px 290px;
+      img{
+        max-width: 890px;
+        max-height: 559px;
     }
+    .txt{
+      text-align: right;
+      max-width: 644px;
+      margin-left: 50px;
+      h3{
+          padding-left: 30px;
+      }
+      p{
+          margin-bottom: 20px;
+          padding-left: 40px;
+          font-size: 21px;
+      }
   }
+}
+.container__left p {
+  text-align: right;
+}
 
   .btn.primary-2 {
     max-width: 350px;
     font-size: 18px;
+    padding: 15px;
+    width: 180px;
 
     &.primary-2 {
       color: #fff;
@@ -25,25 +47,116 @@
       }
     }
   }
-  .paciente {
+
+  .pacientes {
+    font-size: 18px;
+
+    h4 {
+      position: relative;
+      font-size: 40px;
+      color: #1e1e1e;
+      padding-bottom: 15px;
+      text-align: center;
+    }
+    p {
+      font-size: 21px;
+    }
+    
+    .btn.primary-3 {
+      color: #fff;
+      background: #335c82;
+      padding: 12px;
+        &:hover {
+        background: #fff;
+        color: #335c82;
+        border: 2px solid #335c82;
+      }
+    }
+  }
+  .pacientes__ayudados-3 {
+    margin: 80px auto;
+    .testimonio {
+      margin-top: 30px;
+      padding-left: 50px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      margin-bottom: 25px;
-      padding-bottom: 20px;
-
-      h3 {
-        padding-bottom: 25px;
+      column-gap: 300px;
+      .txt {
+        width: 40%;
       }
+      .video-card {
+        width: 100%;
+        height: 686px;
+        svg {
+          left: -40px;
+          width: 80px;
+          top: 90px;
+        }
+      }
+      .video-bullets {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+        padding: 18px;
+      }
+      .video-bullets li {
+        width: 10px;
+        height: 10px;
+        background-color: #ccc;
+        border-radius: 68px;
+        margin: 0 22px;
+        cursor: pointer;
+      }
+      .video-bullets li.active {
+        background-color: #335c82;
+      }      
+    }
+  } 
 
-      p {
-        padding-top: 10px;
-        padding-bottom: 20px;
+  .resultados-div{
+    margin: 88px auto;
+    max-width: unset;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 18px;
+    padding-bottom: 30px;
+    // background-color: #335c82;
+    .splide__arrow {
+      top: 60%;
+      &--prev {
+        left: -1em;
+      }
+      &--next {
+        right: -1em;
       }
     }
+    h3 {
+      padding: 30px;
+      text-align: center;
+    }
+  }
 
-  .faq-container summary{
-    padding: 20px;
+  .resultados__px {
+    text-align: center;
+    margin-top: 60px;
+  }
+  .sentirte-mejor-contigo {
+    b { font-size: 21;
+    }
+  }
+
+  .container__ex {
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 0 20px;
+    position: relative;
+
+    .faq-container summary{
+      padding: 20px;
+    }
   }
 
 .container.bela {

@@ -5,6 +5,9 @@
       left: 40%;
     }
   }
+  .txt-equipo{
+    left: -100px;
+  }
 }
 
 .cita {
@@ -15,9 +18,13 @@
   margin: 0 auto;
   max-width: 900px;
   p{
-    margin-bottom: 15px;
+    margin-bottom: 25px;
     font-size: 21px;
   }
+}
+
+.contactos{
+  margin-bottom: 150px;
 }
 
 .video-info.equipo {
@@ -28,7 +35,7 @@
     p {
       margin: 30px auto 120px;
       max-width: 850px;
-      font-size: 21px;
+      font-size: 19px;
     }
   }
 }

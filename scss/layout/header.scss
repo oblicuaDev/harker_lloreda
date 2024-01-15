@@ -1,5 +1,6 @@
 .top-bar {
   background-color: #335c82;
+
   .container {
     display: flex;
     justify-content: space-between;
@@ -130,7 +131,10 @@ ul {
   }
 }
 header {
-  .container {
+  position: absolute;
+  z-index: 2;
+  width: 100%;
+  & > .container {
     display: flex;
     align-items: center;
     padding: 17px 20px;
