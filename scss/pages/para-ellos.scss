@@ -25,7 +25,7 @@
 
 
 .procedimiento {
-  margin: 50px auto;
+  margin: 50px auto 0 auto;
   .bold {
     color: #32495e;
     margin-bottom: 30px;
@@ -34,23 +34,13 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 20px 50px;
-    &__opc {
+    &__opce {
       max-width: 617px;
       max-height: 206px;
-      background-color: #32495e;
+      background-color: #32495E;
       border-radius: 15px;
+      transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
 
-      &:hover {
-        border: 3px solid #335C82;
-      }
-    
-    // &:hover {
-    //   background: #213445;
-    //   color: #fff;
-    //   border: 2px solid #213445;
-    //   transform: scale(1.08);
-    //   transition: transform 0.5s;
-    // }
       h4 {
         color: #fff;
         margin-top: 45px;
@@ -60,7 +50,11 @@
         color: #fff;
         margin-bottom: 45px;
         padding-left: 30px;
-      }
+      }                  
+    }
+    &__opce:hover {
+      border: 3px solid #32495E;
+      background: #213445;
     }
   }
 }
