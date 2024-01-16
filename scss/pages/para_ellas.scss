@@ -1,6 +1,13 @@
 .para_ellas {
   .btn.primary {
     background-color: #5ebbc0;
+    border: 2px solid #5ebbc0;
+    color: #fff;
+    &:hover {
+      background-color: #209ba1;
+      color: #fff;
+      border: 2px solid #209ba1;
+    }
   }
   .favoritos {
     &__1 {
@@ -13,7 +20,6 @@
       }
       .btn.primary {
         margin-bottom: 20px;
-        background-color: #5ebbc0;
       }
     }
   }
@@ -112,7 +118,7 @@
         }
       }
       &__opc:hover {
-        background-color: #0e666b75;
+        background-color: #209ba1;
       }
     }
   }
@@ -178,6 +184,10 @@
       background: transparent;
       border-color: #209ba1;
       color: #209ba1;
+      &:hover {
+        color: #fff;
+        background-color: #209ba1;
+      }
     }
   }
 
@@ -267,7 +277,6 @@
           }
         }
         .btn.primary {
-          background-color: #5ebbc0;
           margin-top: 20px;
         }
       }
