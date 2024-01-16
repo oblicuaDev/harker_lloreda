@@ -19,9 +19,11 @@
   }
 
   .favoritos__2 {
-    background-image: url(/img/fondoParaEllas1.jpg);
+    background-image: url(/img/fondoParaEllas1.png);
     background-position: top;
     overflow: visible;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
     rect {
       stroke: #fff;
     }
@@ -53,9 +55,37 @@
       border: 3px solid #209ba1;
     }
   }
-
+  article.procedimiento {
+    position: relative;
+    & > svg {
+      position: absolute;
+      z-index: -1;
+      &#br {
+        right: 0;
+        bottom: -270px;
+      }
+      &#bl {
+        left: 0;
+        bottom: -270px;
+      }
+      &#center {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      &#tr {
+        right: 0;
+        top: -270px;
+      }
+      &#tl {
+        left: 0;
+        top: -270px;
+      }
+    }
+  }
   .procedimiento {
     margin: 50px auto 0 auto;
+
     .bold {
       color: #209ba1;
       margin-bottom: 30px;
@@ -88,13 +118,15 @@
   }
 
   .agendate {
-    background-image: url(/img/fondoParaEllas2.jpg);
+    background-image: url(/img/fondoParaEllas2.png);
     text-align: center;
     background-position: center;
     min-height: 800px;
     display: flex;
     align-items: center;
     max-width: 100%;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
     h4 {
       color: #209ba1;
       margin: 40px 0 30px 0;
@@ -198,7 +230,7 @@
           color: #738592;
           font-weight: bold;
         }
-        p{
+        p {
           font-size: 21px;
           color: #738592;
         }
@@ -206,7 +238,7 @@
     }
     &__ayudados {
       margin: 80px auto;
-      h3{
+      h3 {
         padding: 20px 0;
       }
       .testimonio {
@@ -221,7 +253,7 @@
           width: 430px;
           height: 620px;
           filter: none;
-          img{
+          img {
             filter: drop-shadow(10px 10px 8px rgba(43, 60, 76, 0.5));
           }
           svg {
