@@ -1,4 +1,7 @@
 .para_ellas {
+  .btn.primary {
+    background-color: #5ebbc0;
+  }
   .favoritos {
     &__1 {
       text-align: center;
@@ -14,11 +17,17 @@
       }
     }
   }
-  
+
   .favoritos__2 {
     background-image: url(/img/fondoParaEllas1.jpg);
-    background-position: center;
+    background-position: top;
     overflow: visible;
+    rect {
+      stroke: #fff;
+    }
+    path {
+      fill: #fff;
+    }
     .splide__arrow {
       top: 60%;
       &--prev {
@@ -40,10 +49,13 @@
         margin-bottom: 30px;
       }
     }
+    .procedimiento-card:hover {
+      border: 3px solid #209ba1;
+    }
   }
 
   .procedimiento {
-    margin: 50px auto;
+    margin: 50px auto 0 auto;
     .bold {
       color: #209ba1;
       margin-bottom: 30px;
@@ -57,6 +69,7 @@
         max-height: 206px;
         background-color: #5ebbc0;
         border-radius: 15px;
+        transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
         h4 {
           color: #fff;
           margin-top: 45px;
@@ -67,6 +80,9 @@
           margin-bottom: 45px;
           padding-left: 30px;
         }
+      }
+      &__opc:hover {
+        background-color: #0e666b75;
       }
     }
   }
@@ -87,6 +103,8 @@
       display: flex;
       justify-content: space-around;
       color: #209ba1;
+      max-width: 855px;
+      margin: auto;
       .icono {
         display: flex;
         flex-direction: column;
@@ -173,14 +191,24 @@
       .cifras {
         display: flex;
         gap: 50px;
+        align-items: center;
+        max-width: 432px;
         text-align: center;
         h3 {
+          color: #738592;
+          font-weight: bold;
+        }
+        p{
+          font-size: 21px;
           color: #738592;
         }
       }
     }
     &__ayudados {
       margin: 80px auto;
+      h3{
+        padding: 20px 0;
+      }
       .testimonio {
         margin-top: 30px;
         display: flex;
@@ -192,12 +220,17 @@
         .video-card {
           width: 430px;
           height: 620px;
+          filter: none;
+          img{
+            filter: drop-shadow(10px 10px 8px rgba(43, 60, 76, 0.5));
+          }
           svg {
             left: -40px;
             width: 80px;
             top: 90px;
+            z-index: 10;
           }
-          rect{
+          rect {
             fill: #5ebbc0;
           }
         }

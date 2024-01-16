@@ -39,6 +39,10 @@
       max-height: 206px;
       background-color: #32495e;
       border-radius: 15px;
+
+      &:hover {
+        border: 3px solid #335C82;
+      }
     
     // &:hover {
     //   background: #213445;
