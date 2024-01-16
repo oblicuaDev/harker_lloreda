@@ -1,136 +1,145 @@
-.banner-convenio{
-    margin: 50px auto;
+.convenios {
+  main {
+    padding-top: 180px;
+  }
+  .container.banner-simple {
+    margin: 0 auto 50px;
+  }
+}
+
+.banner-convenio {
+  margin: 50px auto;
 }
 
 .container__left__conv {
-    display: flex;
-    align-items: center;
-    padding: 60px 0;
-    img{
-        max-width: 890px;
-        max-height: 559px;
-    }
-    .txt{
-        text-align: right;
-        max-width: 700px;
-        margin-left: 50px;
+  display: flex;
+  align-items: center;
+  padding: 60px 0;
+  img {
+    max-width: 890px;
+    max-height: 559px;
+  }
+  .txt {
+    text-align: right;
+    max-width: 700px;
+    margin-left: 50px;
 
-        h2 {
-            max-width: 900px;
-        }
-        h3{
-            padding-left: 30px;
-            text-align: right;
-        }
-        p{
-            margin-bottom: 20px;
-            padding-left: 40px;
-            text-align: right;
-        }
+    h2 {
+      max-width: 900px;
     }
+    h3 {
+      padding-left: 30px;
+      text-align: right;
+    }
+    p {
+      margin-bottom: 20px;
+      padding-left: 40px;
+      text-align: right;
+    }
+  }
 }
 
 .container__right__conv {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    padding: 60px 0;
-    margin-left: 350px;
-    img{
-        max-width: 890px;
-        max-height: 559px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 60px 0;
+  margin-left: 350px;
+  img {
+    max-width: 890px;
+    max-height: 559px;
+  }
+  .txt {
+    text-align: left;
+    max-width: 700px;
+    margin-right: 50px;
+    h3 {
+      padding-right: 30px;
     }
-    .txt{
-        text-align: left;
-        max-width: 700px;
-        margin-right: 50px;
-        h3{
-            padding-right: 30px;
-        }
-        p{
-            margin-bottom: 20px;
-            padding-right: 40px;
-        }
+    p {
+      margin-bottom: 20px;
+      padding-right: 40px;
     }
+  }
 }
 
 .container__conv {
-    display: flex;
-    align-items: center;
-    padding: 60px 0;
-    margin-left: 350px;
-    .txt{
-        text-align: left;
-        max-width: 700px;
-        margin-left: 50px;
+  display: flex;
+  align-items: center;
+  padding: 60px 0;
+  margin-left: 350px;
+  .txt {
+    text-align: left;
+    max-width: 700px;
+    margin-left: 50px;
 
-        h3{
-            padding-left: 30px;
-        }
-        p{
-            margin-bottom: 20px;
-            padding-left: 40px;
-            text-align: right;
-        }
+    h3 {
+      padding-left: 30px;
     }
+    p {
+      margin-bottom: 20px;
+      padding-left: 40px;
+      text-align: right;
+    }
+  }
 }
 
 .odeea__iconos,
 .fesancho__iconos {
-    display: flex;
-    justify-content: space-around;
-    padding: 0 0 0 74px;
+  display: flex;
+  justify-content: space-around;
+  padding: 0 0 0 74px;
 
-    .odeea__icono,
-    .fesancho__icono {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        &__img {
-            background-color: #fff;
-            border-radius: 50%;
-            height: 85px;
-            width: 85px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 4px 4px 4px 0px rgba(51, 92, 130, 0.25);
-            img {
-                position: relative;
-            }
-        }
-        h5 {
-            margin: 15px 0 25px 0;
-        }
+  .odeea__icono,
+  .fesancho__icono {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    &__img {
+      background-color: #fff;
+      border-radius: 50%;
+      height: 85px;
+      width: 85px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 4px 4px 4px 0px rgba(51, 92, 130, 0.25);
+      img {
+        position: relative;
+      }
     }
+    h5 {
+      margin: 15px 0 25px 0;
+    }
+  }
 }
 
 .proced-extr__quirurgico,
 .proced-extr__no-quirurgico {
-    text-align: center;
+  text-align: center;
 }
 .proced-extr__quirurgico h3,
 .proced-extr__no-quirurgico h3 {
-    font-size: 30px;
-    cursor: pointer;
-    transition: background-color 0.5s ease;
-    padding: 25px 0;
-    text-decoration: underline;
-    color: #335c82;
+  font-size: 30px;
+  cursor: pointer;
+  transition: background-color 0.5s ease;
+  padding: 25px 0;
+  text-decoration: underline;
+  color: #335c82;
 }
 .proced-extr__quirurgico h4 {
-    padding: 50px 0;
-    margin: 0;
+  padding: 50px 0;
+  margin: 0;
 }
 .proced-extr__no-quirurgico h4 {
-    transition: background-color 0.5s ease;
-    padding: 50px 0;
-    margin: 0;
-    cursor: pointer;
+  transition: background-color 0.5s ease;
+  padding: 50px 0;
+  margin: 0;
+  cursor: pointer;
 }
 .proced-extr__quirurgico h4:hover,
 .proced-extr__no-quirurgico h4:hover {
-    background-color: #335c82;
-    color: #fff;
+  background-color: #335c82;
+  color: #fff;
 }
