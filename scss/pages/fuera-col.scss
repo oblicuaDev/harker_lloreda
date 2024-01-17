@@ -8,6 +8,7 @@
     margin-bottom: 50px;
   }
   .doctor {
+    object-fit: contain;
     margin-bottom: 50px;
   }
 }
@@ -22,6 +23,7 @@
   .btn {
     font-size: 17px;
     padding: 10px 25px;
+    border: 2px solid #fff;
   }
   .redes {
     display: flex;

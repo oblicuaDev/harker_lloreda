@@ -57,11 +57,13 @@
           max-height: 206px;
           background-color: #335c82;
           border-radius: 15px;
-        &:hover {
-          transform: scale(1.08);
-          transition: transform 0.5s;
-          cursor: pointer;
-        }
+
+          &:hover {
+            transform: scale(1.03);
+            transition: transform 0.5s;
+            cursor: pointer;
+            background-color: #32495E;
+          }
           h4 {
             color: #fff;
             margin-top: 45px;

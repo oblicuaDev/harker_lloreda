@@ -15,6 +15,10 @@ footer {
         font-size: 13px;
         color: #fff;
         display: block;
+
+        &:hover {
+          opacity: 0.5;
+        }
       }
       small {
         font-size: 13px;
