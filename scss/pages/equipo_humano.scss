@@ -49,6 +49,15 @@
 .left-doc{
     justify-content: flex-start;
     gap: 180px;
+
+    .txt-content {
+      margin-left: 10px;
+
+      h4, p {
+        margin: 0;
+        padding: 0;
+      }
+    }
     .video-card svg {
         left: unset;
         right: -40px;
