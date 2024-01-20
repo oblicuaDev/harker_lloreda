@@ -213,4 +213,30 @@ header {
       }
     }
   }
+
+  // Estilo para móviles
+  @media (screen <= width <= 768px) {
+    .top-bar .container,
+    .container {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .top-bar .links,
+    .top-bar .right {
+      margin-top: 10px;
+    }
+  
+    .lang-selector,
+    nav ul li {
+      margin-top: 10px;
+    }
+  
+    .lang-selector ul,
+    nav ul li ul {
+      position: static;
+      background-color: transparent;
+      display: block;
+    }
+  }
 }
