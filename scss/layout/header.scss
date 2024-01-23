@@ -6,12 +6,18 @@
     margin: 0 0 0 auto;
     max-width: 1550px;
     padding: 0;
+    @media only screen and (max-width: 768px) {
+      justify-content: center;
+    }
 
     .links {
       align-items: center;
       justify-content: space-between;
       display: flex;
       gap: 80px;
+      @media only screen and (max-width: 768px) {
+        display: none;
+      }
       a {
         color: #fff;
         text-align: center;
@@ -29,6 +35,9 @@
       justify-content: flex-end;
       ul {
         width: 320px;
+        @media only screen and (max-width: 768px) {
+          width: 100%;
+        }
         li {
           color: #fff;
           text-align: center;
@@ -114,7 +123,10 @@ ul {
   & > li {
     position: relative;
     height: 100%;
-
+    @media only screen and (max-width: 768px) {
+      display: flex;
+      flex-direction: column;
+    }
     ul {
       position: absolute;
       top: 100%;
@@ -146,11 +158,44 @@ header {
       display: block;
     }
     nav {
+      position: relative;
+      @media only screen and (max-width: 768px) {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background-color: #fff;
+        height: 100vh;
+        z-index: 10;
+        padding: 50px 20px;
+        left: -100vw;
+        &.active {
+          left: 0;
+        }
+      }
       & > ul {
         display: flex;
         gap: 100px;
+        @media only screen and (max-width: 768px) {
+          gap: 25px;
+          flex-direction: column;
+          justify-content: center;
+        }
         & > li {
           padding: 10px 0;
+          &.mobile {
+            display: none;
+          }
+          @media only screen and (max-width: 768px) {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin: 0;
+            padding: 0;
+            &.mobile {
+              display: flex;
+            }
+          }
 
           a {
             color: #263e48;
@@ -159,6 +204,9 @@ header {
             font-style: normal;
             font-weight: 500;
             line-height: normal;
+            @media only screen and (max-width: 768px) {
+              margin: 0;
+            }
           }
           ul {
             z-index: 2;
@@ -166,8 +214,21 @@ header {
             border-radius: 0 0 8px 8px;
             overflow: hidden;
             width: max-content;
+            @media only screen and (max-width: 768px) {
+              box-shadow: none;
+              width: 100%;
+              display: flex;
+              flex-direction: column;
+              gap: 25px;
+              transform: none;
+              display: block;
+              position: static;
+            }
             li {
               margin: 0;
+              @media only screen and (max-width: 768px) {
+                padding: 0;
+              }
               a,
               button {
                 width: 100%;
@@ -177,6 +238,10 @@ header {
                 margin: 0;
                 position: relative;
                 transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+                @media only screen and (max-width: 768px) {
+                  margin: 0;
+                  padding: 0;
+                }
                 &::after {
                   content: "";
                   width: 90%;
@@ -211,6 +276,31 @@ header {
           }
         }
       }
+      #closeMenu {
+        display: none;
+        @media only screen and (max-width: 768px) {
+          display: block;
+          width: 20px;
+          height: 20px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          position: absolute;
+          top: 20px;
+          right: 20px;
+        }
+      }
+    }
+    #openMenu {
+      display: none;
+      @media only screen and (max-width: 768px) {
+        display: block;
+        width: 20px;
+        height: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
     }
   }
 
@@ -221,17 +311,17 @@ header {
       flex-direction: column;
       text-align: center;
     }
-  
+
     .top-bar .links,
     .top-bar .right {
       margin-top: 10px;
     }
-  
+
     .lang-selector,
     nav ul li {
       margin-top: 10px;
     }
-  
+
     .lang-selector ul,
     nav ul li ul {
       position: static;

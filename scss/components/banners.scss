@@ -29,14 +29,30 @@
       position: relative;
       max-width: 750px;
       z-index: 2;
+      h2 {
+        @media only screen and (max-width: 768px) {
+          font-size: 50px;
+        }
+      }
+      h3 {
+        @media only screen and (max-width: 768px) {
+          font-size: 20px;
+        }
+      }
       p {
         margin-bottom: 30px;
+        @media only screen and (max-width: 768px) {
+          font-size: 12px;
+        }
       }
     }
     .container {
       height: 100%;
       display: flex;
       align-items: center;
+      @media only screen and (max-width: 768px) {
+        padding: 0 50px;
+      }
     }
     &.text-right {
       .txt {
@@ -64,7 +80,7 @@
     .container {
       padding: 0 10px;
     }
-  
+
     .txt {
       max-width: none;
     }

@@ -11,6 +11,9 @@
   gap: 10px;
   transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
   border: 2px solid transparent;
+  @media only screen and (max-width: 768px) {
+    font-size: 14px;
+  }
   &.primary {
     color: #fff;
     background: #335c82;

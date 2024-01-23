@@ -15,7 +15,7 @@
   align-items: center;
   margin: 0 auto;
   max-width: 900px;
-  p{
+  p {
     margin-bottom: 15px;
     font-size: 21px;
   }
@@ -34,32 +34,45 @@
   }
 }
 
-.doctor{
+.doctor {
   .video-card {
-    width: 430px;
+    max-width: 430px;
+    width: 100%;
     height: 620px;
-    svg{
-        left: -40px;
-        width: 80px;
-        top: 90px;
+    @media only screen and (max-width: 768px) {
+      height: auto;
+      aspect-ratio: 9 / 16;
+      height: 100vw;
+    }
+    svg {
+      left: -40px;
+      width: 80px;
+      top: 90px;
+      @media only screen and (max-width: 768px) {
+        left: -20px;
+      }
     }
   }
 }
 
-.left-doc{
-    justify-content: flex-start;
-    gap: 180px;
+.left-doc {
+  justify-content: flex-start;
+  gap: 180px;
 
-    .txt-content {
-      margin-left: 10px;
+  .txt-content {
+    margin-left: 10px;
 
-      h4, p {
-        margin: 0;
-        padding: 0;
-      }
+    h4,
+    p {
+      margin: 0;
+      padding: 0;
     }
-    .video-card svg {
-        left: unset;
-        right: -40px;
-      }
+  }
+  .video-card svg {
+    left: unset;
+    right: -40px;
+    @media only screen and (max-width: 768px) {
+      right: -20px;
+    }
+  }
 }

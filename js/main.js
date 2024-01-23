@@ -2,21 +2,25 @@ document.addEventListener("DOMContentLoaded", () => {
   console.log("READY!");
   Fancybox.bind("[data-fancybox]", {});
   AOS.init();
-  new Splide(".splide", {
-    pagination: false,
-    classes: {
-      prev: "splide__arrow splide__arrow--prev",
-      next: "splide__arrow splide__arrow--next",
-    },
-  }).mount();
-  new Splide(".splide-comparison", {
-    pagination: false,
-    drag: false,
-    classes: {
-      prev: "splide__arrow splide__arrow--prev",
-      next: "splide__arrow splide__arrow--next",
-    },
-  }).mount();
+  if (document.querySelector(".splide")) {
+    new Splide(".splide", {
+      pagination: false,
+      classes: {
+        prev: "splide__arrow splide__arrow--prev",
+        next: "splide__arrow splide__arrow--next",
+      },
+    }).mount();
+  }
+  if (document.querySelector(".splide-comparison")) {
+    new Splide(".splide-comparison", {
+      pagination: false,
+      drag: false,
+      classes: {
+        prev: "splide__arrow splide__arrow--prev",
+        next: "splide__arrow splide__arrow--next",
+      },
+    }).mount();
+  }
 });
 
 function toggleIcon(expandIconPlus, expandIconMinus, isOpen) {
@@ -211,59 +215,68 @@ function init(element) {
   sliderRange.addEventListener("change", (e) => moveSliderRange(e, element));
 }
 
+preloader;
 
-
-preloader
-
-$(document).ready(function() {
-  setTimeout(function() {
-    $('#container').addClass('loaded');
+$(document).ready(function () {
+  setTimeout(function () {
+    $("#container").addClass("loaded");
     // Once the container has finished, the scroll appears
-    if ($('#container').hasClass('loaded')) {
+    if ($("#container").hasClass("loaded")) {
       // It is so that once the container is gone, the entire preloader section is deleted
-      $('#preloader').delay(1500).queue(function() {
-        $(this).remove();
-      });}
-  }, 1500);});
-
+      $("#preloader")
+        .delay(1500)
+        .queue(function () {
+          $(this).remove();
+        });
+    }
+  }, 1500);
+});
 
 // tabs
 var tablinks = document.getElementsByClassName("tab-links");
-    var tabcontents = document.getElementsByClassName("tab-contents");
+var tabcontents = document.getElementsByClassName("tab-contents");
 
-    function opentab(tabname) {
-      for (tablink of tablinks) {
-        tablink.classList.remove("active-link");
-      }
-      for (tabcontent of tabcontents) {
-        tabcontent.classList.remove("active-tab");
-      }
-      event.currentTarget.classList.add("active-link");
-      document.getElementById(tabname).classList.add("active-tab");
-    }
-
-  // form restriction for numbers only
-  function validarInputNumerico(input) {
-    input.value = input.value.replace(/[^0-9]/g, '');
+function opentab(tabname) {
+  for (tablink of tablinks) {
+    tablink.classList.remove("active-link");
   }
-
-  // transition on click
-  function opentab(tabId) {
-    // Oculta todos los contenidos y desactiva todas las pestañas
-    const tabContents = document.querySelectorAll('.tab-contents');
-    const tabLinks = document.querySelectorAll('.tab-links');
-  
-    tabContents.forEach((tabContent) => {
-      tabContent.classList.remove('active-tab');
-    });
-  
-    tabLinks.forEach((tabLink) => {
-      tabLink.classList.remove('active-link');
-    });
-  
-    // Muestra el contenido del tab seleccionado y activa la pestaña
-    document.getElementById(tabId).classList.add('active-tab');
-    event.currentTarget.classList.add('active-link');
+  for (tabcontent of tabcontents) {
+    tabcontent.classList.remove("active-tab");
   }
+  event.currentTarget.classList.add("active-link");
+  document.getElementById(tabname).classList.add("active-tab");
+}
 
-init(imageComparisonSlider);
+// form restriction for numbers only
+function validarInputNumerico(input) {
+  input.value = input.value.replace(/[^0-9]/g, "");
+}
+
+// transition on click
+function opentab(tabId) {
+  // Oculta todos los contenidos y desactiva todas las pestañas
+  const tabContents = document.querySelectorAll(".tab-contents");
+  const tabLinks = document.querySelectorAll(".tab-links");
+
+  tabContents.forEach((tabContent) => {
+    tabContent.classList.remove("active-tab");
+  });
+
+  tabLinks.forEach((tabLink) => {
+    tabLink.classList.remove("active-link");
+  });
+
+  // Muestra el contenido del tab seleccionado y activa la pestaña
+  document.getElementById(tabId).classList.add("active-tab");
+  event.currentTarget.classList.add("active-link");
+}
+if (imageComparisonSlider) {
+  init(imageComparisonSlider);
+}
+
+document.querySelector("#openMenu").addEventListener("click", () => {
+  document.querySelector("nav").classList.add("active");
+});
+document.querySelector("#closeMenu").addEventListener("click", () => {
+  document.querySelector("nav").classList.remove("active");
+});

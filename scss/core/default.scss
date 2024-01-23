@@ -21,3 +21,26 @@ body {
   padding: 0 20px;
   position: relative;
 }
+
+.home {
+  .splide__arrow {
+    svg {
+      @media only screen and (max-width: 768px) {
+        width: 30px;
+        height: 30px;
+      }
+    }
+  }
+  &--prev {
+    left: 12em;
+    @media only screen and (max-width: 768px) {
+      left: 0 !important;
+    }
+  }
+  &--next {
+    right: 12em;
+    @media only screen and (max-width: 768px) {
+      right: 0 !important;
+    }
+  }
+}
