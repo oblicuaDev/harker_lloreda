@@ -119,29 +119,32 @@
     }
   }
 }
-ul {
-  & > li {
-    position: relative;
-    height: 100%;
-    @media only screen and (max-width: 768px) {
-      display: flex;
-      flex-direction: column;
-    }
-    ul {
-      position: absolute;
-      top: 100%;
-      display: none;
-      left: 50%;
-      transform: translateX(-50%);
-    }
-    &:hover {
+header, .top-bar{
+  ul {
+    & > li {
+      position: relative;
+      height: 100%;
+      @media only screen and (max-width: 768px) {
+        display: flex;
+        flex-direction: column;
+      }
       ul {
-        display: block;
-        background-color: #fff;
+        position: absolute;
+        top: 100%;
+        display: none;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      &:hover {
+        ul {
+          display: block;
+          background-color: #fff;
+        }
       }
     }
   }
 }
+
 header {
   position: absolute;
   top: 0;

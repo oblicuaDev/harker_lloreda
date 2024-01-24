@@ -31,7 +31,7 @@
       z-index: 2;
       h2 {
         @media only screen and (max-width: 768px) {
-          font-size: 50px;
+          font-size: 40px;
         }
       }
       h3 {
@@ -73,6 +73,10 @@
   &.half {
     .banner {
       height: 80vh;
+
+      @media only screen and (max-width: 768px) {
+        height: 100vh;
+      }
     }
   }
 

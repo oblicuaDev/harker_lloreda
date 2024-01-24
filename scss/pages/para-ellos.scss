@@ -26,6 +26,10 @@
 
 .procedimiento {
   margin: 50px auto 0 auto;
+
+  @media only screen and (max-width: 768px) {
+    padding: 0;
+  }
   .bold {
     color: #32495e;
     margin-bottom: 30px;
@@ -34,6 +38,11 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 20px 50px;
+
+    @media only screen and (max-width: 768px) {
+      grid-template-columns: repeat(1, 1fr);
+      gap: 20px;
+    }
     &__opce {
       max-width: 617px;
       max-height: 206px;

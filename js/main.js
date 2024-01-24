@@ -2,15 +2,25 @@ document.addEventListener("DOMContentLoaded", () => {
   console.log("READY!");
   Fancybox.bind("[data-fancybox]", {});
   AOS.init();
-  if (document.querySelector(".splide")) {
-    new Splide(".splide", {
+  if (document.querySelector(".splideHome")) {
+    new Splide(".splideHome", {
       pagination: false,
-      classes: {
-        prev: "splide__arrow splide__arrow--prev",
-        next: "splide__arrow splide__arrow--next",
-      },
     }).mount();
   }
+
+  if (document.querySelector(".category-splide")) {
+    new Splide(".category-splide", {
+      pagination: false,
+      perPage: 3,
+      gap: 10,
+      breakpoints: {
+		    768: {
+			perPage: 1,
+		  },
+    }
+    }).mount();
+  }
+
   if (document.querySelector(".splide-comparison")) {
     new Splide(".splide-comparison", {
       pagination: false,
