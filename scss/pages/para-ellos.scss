@@ -5,8 +5,17 @@
   background-position-y: 76%;
   overflow: visible;
 
+  @media only screen and (max-width: 768px) {
+    background-size: 100%;
+    background-position-y: 100%;
+  }
+
     h3 {
       color: #32495E;
+
+      @media only screen and (max-width: 768px) {
+        font-size: 30px;
+      }
     }
 
     h4 {
