@@ -26,13 +26,30 @@
   padding: 50px;
   text-align: center;
   font-size: 40px;
-}
-.container__pro.cards {
-  margin: 0 300px;
 
-  h3 {
-    margin-top: 50px;
-    margin-bottom: 50px;
+  @media only screen and (max-width: 768px) {
+    font-size: 30px;
+    padding: 20px;
+  }
+
+  .cards {
+    margin: 0 300px;
+
+    @media only screen and (max-width: 768px) {
+      margin: 0;
+    }
+
+    h3 {
+      margin-top: 50px;
+      margin-bottom: 50px;
+
+      @media only screen and (max-width: 768px) {
+        font-size: 20px;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        text-align: center;
+      }
+    }
   }
 }
 
@@ -56,6 +73,10 @@
   img {
     width: 100%;
     object-fit: cover;
+
+    @media only screen and (max-width: 768px) {
+      width: 100%;
+    }
   }
 
   p {
@@ -77,6 +98,9 @@
   &__2 {
     overflow: hidden;
     .splide__arrow {
+      cursor: pointer;
+      background: transparent;
+      border: none;
       top: 60%;
       &--prev {
         left: -10em;
@@ -106,12 +130,6 @@
   @media only screen and (max-width: 768px) {
     grid-template-columns: repeat(1, 1fr);
   }
-}
-
-.splide__arrow {
-  cursor: pointer;
-  background: transparent;
-  border: none;
 }
 
 .procedimiento-card {
@@ -154,12 +172,20 @@
   padding-bottom: 30px;
   background-color: #335c82;
 
+  @media only screen and (max-width: 768px) {
+    font-size: 14px;
+  }
+
   h4 {
     position: relative;
     font-size: 40px;
     color: #fff;
     padding-bottom: 15px;
     text-align: center;
+
+    @media only screen and (max-width: 768px) {
+      font-size: 25px;
+    }
   }
 
   .btn.secondary {

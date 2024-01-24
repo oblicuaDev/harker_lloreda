@@ -21,6 +21,45 @@ document.addEventListener("DOMContentLoaded", () => {
     }).mount();
   }
 
+  if (document.querySelector(".teens-splide")) {
+    new Splide(".teens-splide", {
+      pagination: false,
+      perPage: 3,
+      gap: 10,
+      breakpoints: {
+		    768: {
+			perPage: 1,
+		  },
+    }
+    }).mount();
+  }
+
+  if (document.querySelector(".body-splide")) {
+    new Splide(".body-splide", {
+      pagination: false,
+      perPage: 3,
+      gap: 10,
+      breakpoints: {
+		    768: {
+			perPage: 1,
+		  },
+    }
+    }).mount();
+  }
+
+  if (document.querySelector(".ellos-splide")) {
+    new Splide(".ellos-splide", {
+      pagination: false,
+      perPage: 3,
+      gap: 10,
+      breakpoints: {
+		    768: {
+			perPage: 1,
+		  },
+    }
+    }).mount();
+  }
+
   if (document.querySelector(".splide-comparison")) {
     new Splide(".splide-comparison", {
       pagination: false,

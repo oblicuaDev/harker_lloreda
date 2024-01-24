@@ -33,6 +33,11 @@
   .bold {
     color: #32495e;
     margin-bottom: 30px;
+
+    @media only screen and (max-width: 768px) {
+      font-size: 25px;
+      height: auto;
+    }
   }
   .procedimientos {
     display: grid;
@@ -81,6 +86,10 @@
     color: #213445;
     margin: 40px 0 30px 0;
     font-size: 40px;
+
+    @media only screen and (max-width: 768px) {
+      font-size: 30px;
+    }
   }
   .iconos {
     display: flex;
@@ -100,16 +109,34 @@
         align-items: center;
         justify-content: center;
         box-shadow: 4px 4px 4px 0px rgba(51, 92, 130, 0.25);
+
+        @media only screen and (max-width: 768px) {
+          height: 100px;
+          width: 100px;
+        }
         img {
           position: relative;
+
+          @media only screen and (max-width: 768px) {
+            height: 50px;
+            width: 50px;
+          }
         }
       }
       h5 {
         margin: 15px 0 25px 0;
+
+        @media only screen and (max-width: 768px) {
+          font-size: 15px;
+        }
       }
     }
     .bold {
       font-size: 17px;
+
+      @media only screen and (max-width: 768px) {
+        font-size: 15px;
+      }
     }
     span {
       display: flex;

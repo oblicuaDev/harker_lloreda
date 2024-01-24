@@ -76,9 +76,18 @@
       color: #1e1e1e;
       padding-bottom: 15px;
       text-align: center;
+
+      @media only screen and (max-width: 768px) {
+        font-size: 30px;
+        text-align: center;
+      }
     }
     p {
       font-size: 21px;
+
+      @media only screen and (max-width: 768px) {
+        text-align: center;
+      }
     }
     
     .btn.primary-3 {
@@ -114,6 +123,10 @@
 
         h4{
           color: #1e1e1e;
+
+          @media only screen and (max-width: 768px) {
+            text-align: center;
+          }
         }
       }
       .video-card {
@@ -155,6 +168,10 @@
     font-size: 18px;
     padding-bottom: 30px;
     // background-color: #335c82;
+
+    @media only screen and (max-width: 768px) {
+      margin: 0 auto 60px;
+    }
     .splide__arrow {
       top: 60%;
 
@@ -174,6 +191,10 @@
     h3 {
       padding: 30px;
       text-align: center;
+
+      @media only screen and (max-width: 768px) {
+        font-size: 30px;
+      }
     }
   }
 
@@ -183,6 +204,10 @@
   }
   .sentirte-mejor-contigo {
     b { font-size: 21;
+
+      @media only screen and (max-width: 768px) {
+        font-size: 18px;
+      }
     }
   }
 
