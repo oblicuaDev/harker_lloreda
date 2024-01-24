@@ -1,3 +1,21 @@
+// .container-fc {
+//   max-width: 650px;
+//   margin: 0 250px;
+//   padding: 0 20px;
+//   @media only screen and (max-width: 768px) {
+//     margin: 0;
+//   }
+
+//   h2 {
+//     margin-bottom: 50px;
+
+//     @media only screen and (max-width: 768px) {
+//     font-size: 35px;
+//     text-align: center;
+//     }
+//   }
+// }
+
 .fueracol {
   main {
     padding-top: 180px;
@@ -10,6 +28,14 @@
   .doctor {
     object-fit: contain;
     margin-bottom: 50px;
+
+    @media only screen and (max-width: 768px) {
+      flex-direction: column;
+      gap: 30px;
+      &:first-of-type {
+        flex-direction: column-reverse;
+      }
+    }
   }
 }
 
@@ -19,6 +45,10 @@
     max-width: 1000px;
     margin: 50px auto 30px;
     font-size: 21px;
+
+    @media only screen and (max-width: 768px) {
+      font-size: 18px;
+    }
   }
   .btn {
     font-size: 17px;
@@ -74,6 +104,10 @@
       padding: 50px 0;
       margin: 0;
       color: #1e1e1e;
+
+      @media only screen and (max-width: 768px) {
+        font-size: 18px;
+      }
       &:hover {
         background-color: #335c82;
         color: #fff;
@@ -97,6 +131,10 @@
       padding: 50px 0;
       margin: 0;
       color: #1e1e1e;
+
+      @media only screen and (max-width: 768px) {
+        font-size: 18px;
+      }
       &:hover {
         background-color: #335c82;
         color: #fff;

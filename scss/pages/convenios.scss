@@ -4,6 +4,27 @@
   }
   .container.banner-simple {
     margin: 0 auto 50px;
+
+    @media only screen and (max-width: 768px) {
+      margin: 0 auto;
+    }
+  }
+  .container.banner-convenio {
+    margin: 0 auto 50px;
+    padding: 0 20px;
+    @media only screen and (max-width: 768px) {
+      margin: 0 auto;
+    }
+
+    h2 {
+      margin-bottom: 50px;
+
+      @media only screen and (max-width: 768px) {
+        font-size: 38px;
+        text-align: center;
+        font-weight: 500;
+      }
+    }
   }
 }
 
@@ -11,26 +32,66 @@
   display: flex;
   align-items: center;
   padding: 60px 0;
+
+  @media only screen and (max-width: 768px) {
+    flex-direction: column;
+    gap: 30px;
+  }
+
   img {
     max-width: 890px;
     max-height: 559px;
+
+    @media only screen and (max-width: 768px) {
+      max-width: 100%;
+    }
   }
   .txt {
     text-align: right;
     max-width: 700px;
     margin-left: 50px;
 
+    @media only screen and (max-width: 768px) {
+      display: grid;
+      grid-template-columns: 1fr;
+      max-width: 100%;
+      margin-left: 0;
+    }
+
     h2 {
       max-width: 900px;
+
+      @media only screen and (max-width: 768px) {
+        max-width: 100%;
+        text-align: center;
+      }
     }
     h3 {
       padding-left: 30px;
       text-align: right;
+
+      @media only screen and (max-width: 768px) {
+        padding-left: 0;
+        text-align: center;
+      }
     }
+
+    a {
+      @media only screen and (max-width: 768px) {
+        margin: 0 auto;
+        text-align: center;
+      }
+    }
+
     p {
       margin-bottom: 20px;
       padding-left: 40px;
       text-align: right;
+
+      @media only screen and (max-width: 768px) {
+        padding: 10px;
+        text-align: center;
+      }
     }
   }
 }
@@ -41,42 +102,62 @@
   justify-content: flex-end;
   padding: 60px 0;
   margin-left: 350px;
+
+  @media only screen and (max-width: 768px) {
+    flex-direction: column;
+    gap: 30px;
+    margin-left: 0;
+  }
   img {
     max-width: 890px;
     max-height: 559px;
+
+    @media only screen and (max-width: 768px) {
+      max-width: 100%;
+    }
   }
   .txt {
     text-align: left;
     max-width: 700px;
     margin-right: 50px;
+
+    @media only screen and (max-width: 768px) {
+      max-width: 100%;
+      margin-right: 0;
+      display: grid;
+      grid-template-columns: 1fr;
+    }
     h3 {
       padding-right: 30px;
+
+      @media only screen and (max-width: 768px) {
+        padding-right: 0;
+        text-align: center;
+      }
     }
     p {
       margin-bottom: 20px;
       padding-right: 40px;
+
+      @media only screen and (max-width: 768px) {
+        padding-right: 0;
+        text-align: center;
+      }
     }
   }
 }
 
 .container__conv {
+  max-width: 1200px;
   display: flex;
   align-items: center;
   padding: 60px 0;
-  margin-left: 350px;
-  .txt {
-    text-align: left;
-    max-width: 700px;
-    margin-left: 50px;
+  margin: 0 auto;
 
-    h3 {
-      padding-left: 30px;
-    }
-    p {
-      margin-bottom: 20px;
-      padding-left: 40px;
-      text-align: right;
-    }
+  @media only screen and (max-width: 768px) {
+    flex-direction: column;
+    gap: 30px;
+    text-align: center;
   }
 }
 
@@ -114,6 +195,11 @@
 .proced-extr__quirurgico,
 .proced-extr__no-quirurgico {
   text-align: center;
+
+  @media only screen and (max-width: 768px) {
+    flex-direction: column;
+    margin: 0 auto;
+  }
 }
 .proced-extr__quirurgico h3,
 .proced-extr__no-quirurgico h3 {
@@ -123,16 +209,30 @@
   padding: 25px 0;
   text-decoration: underline;
   color: #335c82;
+
+  @media only screen and (max-width: 768px) {
+    font-size: 18px;
+  }
 }
 .proced-extr__quirurgico h4 {
   padding: 50px 0;
   margin: 0;
+
+  @media only screen and (max-width: 768px) {
+    flex-direction: column;
+    font-size: 15px;
+  }
 }
 .proced-extr__no-quirurgico h4 {
   transition: background-color 0.5s ease;
   padding: 50px 0;
   margin: 0;
   cursor: pointer;
+
+  @media only screen and (max-width: 768px) {
+    flex-direction: column;
+    font-size: 15px;
+  }
 }
 .proced-extr__quirurgico h4:hover,
 .proced-extr__no-quirurgico h4:hover {

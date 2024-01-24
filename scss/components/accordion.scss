@@ -26,6 +26,10 @@ summary::-webkit-details-marker {
   line-height: normal;
   flex-grow: 1;
   transition: opacity 250ms ease-in-out;
+
+  @media only screen and (max-width: 768px) {
+    font-size: 20px;
+  }
 }
 
 summary:hover .faq-title {
@@ -40,6 +44,11 @@ summary:hover .faq-title {
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.3s ease-out;
+
+  @media only screen and (max-width: 768px) {
+    font-size: 15px;
+    flex-direction: column;
+  }
 }
 
 details[open] .faq-content {

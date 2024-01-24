@@ -1,25 +1,52 @@
 .banner-simple {
   margin: 50px auto;
+
+  @media only screen and (max-width: 768px) {
+    margin: 0 auto 50px;
+  }
 }
 
 .container__left {
   display: flex;
   align-items: center;
   padding: 60px 0;
+  @media only screen and (max-width: 768px) {
+    flex-direction: column;
+    gap: 30px;
+  } 
   img {
     max-width: 890px;
     max-height: 559px;
+
+    @media only screen and (max-width: 768px) {
+      max-width: 100%;
+    }
   }
   .txt {
     text-align: right;
     max-width: 644px;
     margin-left: 125px;
+
+    @media only screen and (max-width: 768px) {
+      max-width: 644px;
+      margin-left: 0;
+    }
     h3 {
       padding-left: 30px;
+
+      @media only screen and (max-width: 768px) {
+        padding-left: 0;
+        text-align: center;
+      }
     }
     p {
       margin-bottom: 20px;
       padding-left: 40px;
+
+      @media only screen and (max-width: 768px) {
+        padding: 10px;
+        text-align: center;
+      }
     }
   }
 }
@@ -29,20 +56,46 @@
   align-items: center;
   justify-content: flex-end;
   padding: 60px 0;
+
+  @media only screen and (max-width: 768px) {
+    flex-direction: column;
+    gap: 30px;
+  }
   img {
     max-width: 890px;
     max-height: 559px;
+
+    @media only screen and (max-width: 768px) {
+      max-width: 100%;
+    }
   }
   .txt {
     text-align: left;
     max-width: 644px;
     margin-right: 50px;
+
+    @media only screen and (max-width: 768px) {
+      max-width: 644px;
+      margin-right: 0;
+      display: grid;
+      grid-template-columns: 1fr;
+    }
     h3 {
       padding-right: 30px;
+
+      @media only screen and (max-width: 768px) {
+        padding-right: 0;
+        text-align: center;
+      }
     }
     p {
       margin-bottom: 20px;
       padding-right: 40px;
+
+      @media only screen and (max-width: 768px) {
+        padding: 10px;
+        text-align: center;
+      }
     }
   }
 }
@@ -50,8 +103,16 @@
 .fidelizacion {
   main {
     padding-top: 180px;
+
+    @media only screen and (max-width: 768px) {
+      padding-top: 100px;
+    }
   }
   .container.banner-simple {
     margin: 0 auto 50px;
+
+    @media only screen and (max-width: 768px) {
+      margin: 0 auto;
+    }
   }
 }
