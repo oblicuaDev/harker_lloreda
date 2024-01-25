@@ -91,15 +91,15 @@
 }
 .agendate-e {
   background-image: url(/img/Vector\ 46.svg);
-  background-size: 100%;
+  background-size: contain;
   background-repeat: no-repeat;
   text-align: center;
-  background-position: center;
+  background-position: center right;
   margin: 120px auto;
   display: flex;
   align-items: center;
   max-width: 100%;
-  min-height: 450px;
+  min-height: 560px;
   @media only screen and (max-width: 768px) {
     min-height: none;
     margin: 30px auto;
@@ -179,13 +179,17 @@
 .btn.primary-1 {
     color: #fff;
     background: #32495E;
-    display: flex;
-    margin: 0 auto;
     width: fit-content;
+    padding: 15px 30px 15px 30px;
     &:hover {
       background: #213445;
       color: #fff;
       border: 2px solid #213445;
+    }
+    @media only screen and (max-width: 768px){
+      display: flex;
+      margin: 0 auto;
+        
     }
 }
 .btn.primary-bann {
@@ -214,6 +218,9 @@
 
 
 .paraellos{
+  .pacientes{
+    padding-bottom: 80px;
+  }
   .procedimiento-card {
     margin: 50px 0;
     position: relative;
