@@ -18,6 +18,12 @@
     color: #fff;
     background: #335c82;
     padding: 12px;
+
+    @media only screen and (max-width: 768px) {
+      margin: 0 auto;
+      align-items: center;
+    }    
+
     &:hover {
       background: #fff;
       color: #335c82;
@@ -28,6 +34,11 @@
     color: #335c82;
     background: #fff;
     border: 2px solid #335c82;
+
+    @media only screen and (max-width: 768px) {
+      margin: 0 auto;
+      align-items: center;
+    }
     &:hover {
       background: #335c82;
       color: #fff;

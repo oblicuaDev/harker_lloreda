@@ -1,3 +1,18 @@
+.doctor {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 25px;
+
+  @media only screen and (max-width: 768px) {
+    flex-direction: column-reverse;
+    gap: 30px;
+    &:first-of-type {
+    flex-direction: column;
+    }
+  }
+}
+
 .banner {
   .txt {
     .btn.primary {
@@ -34,15 +49,13 @@
   }
 }
 
-.doctor {
   .video-card {
     max-width: 430px;
     width: 100%;
-    height: 620px;
+    height: 100%;
     @media only screen and (max-width: 768px) {
-      height: auto;
-      aspect-ratio: 9 / 16;
-      height: 100vw;
+      flex-direction: column;
+      gap: 30px;
     }
     svg {
       left: -40px;
@@ -53,14 +66,29 @@
       }
     }
   }
-}
 
 .left-doc {
-  justify-content: flex-start;
-  gap: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 25px;
 
-  .txt-content {
+  @media only screen and (max-width: 768px) {
+    flex-direction: column-reverse;
+    gap: 30px;
+    &:first-of-type {
+    flex-direction: column;
+    }
+  }
+
+  .txt {
     margin-left: 10px;
+    max-width: 500px;
+
+    @media only screen and (max-width: 768px) {
+      margin-left: 0;
+      max-width: 100%;
+    }
 
     h4,
     p {

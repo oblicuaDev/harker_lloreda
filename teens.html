@@ -15,63 +15,65 @@
 <body>
     <header>
         <div class="top-bar">
-            <div class="container">
-                <div class="links">
-                    <a href="doc-inter.html">Equipo humano</a>
-                    <a href="">Tienda en línea</a>
-                    <a href="pago.html">Pago en línea</a>
-                </div>
-                <div class="right">
-                    <ul class="lang-selector">
-                        <li>
-                            <span>ES<svg xmlns="http://www.w3.org/2000/svg" width="7" height="4" viewBox="0 0 7 4"
-                                    fill="none">
-                                    <path d="M1 1L3.5 3.5L6 1" stroke="white" stroke-width="0.5"
-                                        stroke-linecap="round" />
-                                </svg></span>
-                            <ul>
-                                <li><button type="button">ES</button></li>
-                                <li><button type="button">EN</button></li>
-                            </ul>
-                        </li>
-                    </ul>
-                    <ul>
-                        <li>
-                            Agenda tu cita
-                            <ul>
-                                <li><a href="">Ya soy paciente</a></li>
-                                <li><a href="">Soy paciente nuevo</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
+          <div class="container">
+            <div class="links">
+              <a href="doc-inter.html">Equipo humano</a>
+              <a href="">Tienda en línea</a>
+              <a href="pago.html">Pago en línea</a>
             </div>
+            <div class="right">
+              <ul class="lang-selector">
+                <li>
+                  <span>ES<svg xmlns="http://www.w3.org/2000/svg" width="7" height="4" viewBox="0 0 7 4" fill="none">
+                      <path d="M1 1L3.5 3.5L6 1" stroke="white" stroke-width="0.5" stroke-linecap="round" />
+                    </svg></span>
+                  <ul>
+                    <li><button type="button">ES</button></li>
+                    <li><button type="button">EN</button></li>
+                  </ul>
+                </li>
+              </ul>
+              <ul>
+                <li>
+                  Agenda tu cita
+                  <ul>
+                    <li><a href="agenda.html">Ya soy paciente</a></li>
+                    <li><a href="agenda.html">Soy paciente nuevo</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
         <div class="container">
+          <a href="index.html">
             <img src="img/logo_gray.svg" alt="logo" />
-            <nav>
+          </a>
+          <nav>
+            <button id="closeMenu"><img src="img/close.png" alt="icono"></button>
+            <ul>
+              <li>
+                <a href="procedimientos.html">Procedimientos</a>
                 <ul>
-                    <li>
-                        <a href="procedimientos.html">Procedimientos</a>
-                        <ul>
-                            <li>
-                                <a href="cuerpo.html">Cara / Cuello</a>
-                            </li>
-                            <li>
-                                <a href="">Cuerpo</a>
-                            </li>
-                            <li>
-                                <a href="">Cuidado capilar</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li><a href="">Línea de prevención</a></li>
-                    <li><a href="para-ellos.html">Para ellos</a></li>
-                    <li><a href="">Pacientes fuera de Colombia</a></li>
+                  <li>
+                    <a href="cara-cuello.html">Cara / Cuello</a>
+                  </li>
+                  <li>
+                    <a href="cuerpo.html">Cuerpo</a>
+                  </li>
+                  <li>
+                    <a href="">Cuidado capilar</a>
+                  </li>
                 </ul>
-            </nav>
+              </li>
+              <li><a href="teens.html">Línea de prevención</a></li>
+              <li><a href="para-ellos.html">Para ellos</a></li>
+              <li><a href="fuera-col.html">Pacientes fuera de Colombia</a></li>
+            </ul>
+          </nav>
+          <button id="openMenu"><img src="img/menu.png" alt="icono"></button>
         </div>
-    </header>
+      </header>
     <main>
         <!-- Preloader -->
         <div id="preloader">
@@ -199,46 +201,72 @@
                     <div class="favoritos__2">
                         <div class="container">
                             <h3 class="bold">Favoritos <img src="img/Capa_1.png" alt=""></h3>
-                            <div class="category-grid">
+                            <section class="splide teens-splide" aria-label="category-proc">
                                 <div class="splide__arrows">
-                                    <button class="splide__arrow splide__arrow--prev">
-                                        <svg width="84" height="84" viewBox="0 0 84 84" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <rect x="1" y="1" width="82" height="82" rx="41" stroke="#fff"
-                                                stroke-width="5" />
-                                            <path
-                                                d="M21 42C20.4477 42 20 42.4477 20 43C20 43.5523 20.4477 44 21 44V42ZM63.2071 43.7071C63.5976 43.3166 63.5976 42.6834 63.2071 42.2929L56.8431 35.9289C56.4526 35.5384 55.8195 35.5384 55.4289 35.9289C55.0384 36.3195 55.0384 36.9526 55.4289 37.3431L61.0858 43L55.4289 48.6569C55.0384 49.0474 55.0384 49.6805 55.4289 50.0711C55.8195 50.4616 56.4526 50.4616 56.8431 50.0711L63.2071 43.7071ZM21 44H62.5V42H21V44Z"
-                                                fill="#fff" stroke-width="10" />
-                                        </svg>
-
-                                    </button>
-                                    <button class="splide__arrow splide__arrow--next">
-                                        <svg width="84" height="84" viewBox="0 0 84 84" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <rect x="1" y="1" width="82" height="82" rx="41" stroke="#fff"
-                                                stroke-width="5" />
-                                            <path
-                                                d="M21 42C20.4477 42 20 42.4477 20 43C20 43.5523 20.4477 44 21 44V42ZM63.2071 43.7071C63.5976 43.3166 63.5976 42.6834 63.2071 42.2929L56.8431 35.9289C56.4526 35.5384 55.8195 35.5384 55.4289 35.9289C55.0384 36.3195 55.0384 36.9526 55.4289 37.3431L61.0858 43L55.4289 48.6569C55.0384 49.0474 55.0384 49.6805 55.4289 50.0711C55.8195 50.4616 56.4526 50.4616 56.8431 50.0711L63.2071 43.7071ZM21 44H62.5V42H21V44Z"
-                                                fill="#fff" stroke-width="10" />
-                                        </svg>
-                                    </button>
+                                  <button class="splide__arrow splide__arrow--prev">
+                                    <svg width="84" height="84" viewBox="0 0 84 84" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                      <rect x="1" y="1" width="82" height="82" rx="41" stroke="#335C82" stroke-width="2" />
+                                      <path
+                                        d="M21 42C20.4477 42 20 42.4477 20 43C20 43.5523 20.4477 44 21 44V42ZM63.2071 43.7071C63.5976 43.3166 63.5976 42.6834 63.2071 42.2929L56.8431 35.9289C56.4526 35.5384 55.8195 35.5384 55.4289 35.9289C55.0384 36.3195 55.0384 36.9526 55.4289 37.3431L61.0858 43L55.4289 48.6569C55.0384 49.0474 55.0384 49.6805 55.4289 50.0711C55.8195 50.4616 56.4526 50.4616 56.8431 50.0711L63.2071 43.7071ZM21 44H62.5V42H21V44Z"
+                                        fill="#335C82" />
+                                    </svg>
+                                  </button>
+                                  <button class="splide__arrow splide__arrow--next">
+                                    <svg width="84" height="84" viewBox="0 0 84 84" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                      <rect x="1" y="1" width="82" height="82" rx="41" stroke="#335C82" stroke-width="2" />
+                                      <path
+                                        d="M21 42C20.4477 42 20 42.4477 20 43C20 43.5523 20.4477 44 21 44V42ZM63.2071 43.7071C63.5976 43.3166 63.5976 42.6834 63.2071 42.2929L56.8431 35.9289C56.4526 35.5384 55.8195 35.5384 55.4289 35.9289C55.0384 36.3195 55.0384 36.9526 55.4289 37.3431L61.0858 43L55.4289 48.6569C55.0384 49.0474 55.0384 49.6805 55.4289 50.0711C55.8195 50.4616 56.4526 50.4616 56.8431 50.0711L63.2071 43.7071ZM21 44H62.5V42H21V44Z"
+                                        fill="#335C82" />
+                                    </svg>
+                                  </button>
+                                </div>      
+                                <div class="splide__track">
+                                  <ul class="splide__list">
+                                    <li class="splide__slide">
+                                      <a class="procedimiento-card">
+                                      <img src="img/image 35.png" alt="pro" />
+                                      <span>Nombre del procedimiento</span>
+                                      <small>Nombre científico</small>
+                                      </a>
+                                    </li>
+                                    <li class="splide__slide">
+                                      <a class="procedimiento-card">
+                                      <img src="img/image 36.png" alt="pro" />
+                                      <span>Nombre del procedimiento</span>
+                                      <small>Nombre científico</small>
+                                      </a>
+                                    </li>
+                                    <li class="splide__slide">
+                                      <a class="procedimiento-card">
+                                      <img src="img/image 37.png" alt="pro" />
+                                      <span>Nombre del procedimiento</span>
+                                      <small>Nombre científico</small>
+                                      </a>
+                                    </li>
+                                  <li class="splide__slide">
+                                    <a class="procedimiento-card">
+                                    <img src="img/image 35.png" alt="pro" />
+                                    <span>Nombre del procedimiento</span>
+                                    <small>Nombre científico</small>
+                                    </a>
+                                  </li>
+                                  <li class="splide__slide">
+                                    <a class="procedimiento-card">
+                                    <img src="img/image 36.png" alt="pro" />
+                                    <span>Nombre del procedimiento</span>
+                                    <small>Nombre científico</small>
+                                    </a>
+                                  </li>
+                                  <li class="splide__slide">
+                                    <a class="procedimiento-card">
+                                    <img src="img/image 37.png" alt="pro" />
+                                    <span>Nombre del procedimiento</span>
+                                    <small>Nombre científico</small>
+                                    </a>
+                                  </li>
+                                  </ul>
                                 </div>
-                                <a class="procedimiento-card">
-                                    <img src="img/image 35.png" alt="pro">
-                                    <span>Nombre del procedimiento</span>
-                                    <small>Nombre científico</small>
-                                </a>
-                                <a class="procedimiento-card">
-                                    <img src="img/procedimiento-gluteos.jpg" alt="pro">
-                                    <span>Nombre del procedimiento</span>
-                                    <small>Nombre científico</small>
-                                </a>
-                                <a class="procedimiento-card">
-                                    <img src="img/revision-mama.jpg" alt="pro">
-                                    <span>Nombre del procedimiento</span>
-                                    <small>Nombre científico</small>
-                                </a>
-                            </div>
+                            </section>
                         </div>
                     </div>
                 </section>

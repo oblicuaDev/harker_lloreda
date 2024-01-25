@@ -10,7 +10,11 @@
     h1 {
         margin: 0;
         padding-top: 15%;
-        font-size: 45px;
+        font-size: 35px;
+        @media only screen and (max-width: 768px) {
+            font-size: 30px;
+            padding-top: 40%;
+        }
     }
 
     p {
@@ -20,10 +24,14 @@
     }
     label {
         text-align: left;
-        max-width: 1089px;
+        max-width: 700px;
         margin: 0 auto;
         padding: 0 40px;
         align-items: flex-end;
+
+        @media only screen and (max-width: 768px) {
+            align-items: flex-start;
+        }
 
     small {
         text-align: left;

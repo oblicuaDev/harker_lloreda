@@ -4,6 +4,7 @@
     border: 2px solid #5ebbc0;
     color: #fff;
     padding: 15px 30px 15px 30px;
+    
     &:hover {
       background-color: #209ba1;
       color: #fff;
@@ -17,9 +18,17 @@
       margin: 0 auto;
       margin-bottom: 20px;
       padding-top: 50px;
+
+      @media only screen and (max-width: 768px) {
+        padding-top: 0;
+      }
       p {
         margin-bottom: 20px;
         font-size: 21px;
+
+        @media only screen and (max-width: 768px) {
+          font-size: 14px;
+        }
       }
       .btn.primary {
         margin-bottom: 20px;
@@ -33,6 +42,13 @@
     overflow: visible;
     background-repeat: no-repeat;
     background-size: 100% 100%;
+
+    @media only screen and (max-width: 768px) {
+      background-size: 100% 100%;
+      .container {
+        padding: 0;
+      }
+    }
     rect {
       stroke: #fff;
     }
@@ -47,25 +63,75 @@
       &--next {
         right: -10em;
       }
+
+      @media only screen and (max-width: 768px) {
+        flex-direction: row;
+        justify-content: space-between;
+  
+        .splide__arrow {
+          width: 40px / 2;
+          height: 40px / 2;
+          margin-bottom: 0;
+          margin-right: 10px;
+        }
+      }
     }
     h3 {
       color: #209ba1;
+
+      @media only screen and (max-width: 768px) {
+        font-size: 40px;
+        text-align: center;
+      }
     }
     .procedimiento-card {
+      margin: 50px 0;
+      position: relative;
+      overflow: hidden;
+      height: 100%;
+      display: block;
+
+      @media only screen and (max-width: 768px) {
+        width: 90%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+      }
       img {
         width: 380px;
         height: 450px;
+
+        @media only screen and (max-width: 768px) {
+          width: 100%;
+          height: auto;
+        }
       }
       small {
         margin-bottom: 67px;
+
+        @media only screen and (max-width: 768px) {
+          margin-bottom: 0;
+          font-size: 12px;
+        }
       }
     }
-    .procedimiento-card:hover {
-      border: 3px solid #209ba1;
+    &:hover {
+      transform: scaleY(1.008);
+      transform-origin: center bottom;
+  
+      @media only screen and (max-width: 768px) {
+        transform: none;
+      }
     }
   }
   article.procedimiento {
     position: relative;
+
+    @media only screen and (max-width: 768px) {
+      .container {
+        padding: 0;
+      }
+    }
     & > svg {
       position: absolute;
       z-index: -1;
@@ -95,33 +161,75 @@
   .procedimiento {
     margin: 50px auto 0 auto;
 
+    @media only screen and (max-width: 768px) {
+      margin: 0 auto;
+
+      .container {
+        padding: 0;
+      }
+    }
+
     .bold {
       color: #209ba1;
       margin-bottom: 30px;
+
+      @media only screen and (max-width: 768px) {
+        font-size: 30px;
+        text-align: center;
+      }
     }
     .procedimientos {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 20px 50px;
+
+      @media only screen and (max-width: 768px) {
+        grid-template-columns: repeat(1, 1fr);
+        .container {
+          padding: 0;
+        }
+      }
       &__opc {
         max-width: 617px;
         max-height: 206px;
         background-color: #5ebbc0;
         border-radius: 15px;
         transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+
+        @media only screen and (max-width: 768px) {
+          width: 80%;
+          height: 80%;
+          margin: 0 auto;
+
+          .container {
+            padding: 0;
+          }
+        }
         h4 {
           color: #fff;
           margin-top: 45px;
           padding-left: 30px;
+
+          @media only screen and (max-width: 768px) {
+            font-size: 20px;
+          }
         }
         p {
           color: #fff;
           margin-bottom: 45px;
           padding-left: 30px;
+
+          @media only screen and (max-width: 768px) {
+            font-size: 14px;
+          }
         }
       }
       &__opc:hover {
         background-color: #209ba1;
+
+        @media only screen and (max-width: 768px) {
+          transform: none;
+        }
       }
     }
   }
@@ -136,9 +244,21 @@
     max-width: 100%;
     background-repeat: no-repeat;
     background-size: 100% 100%;
+
+    @media only screen and (max-width: 768px) {
+      background-size: 100% 100%;
+      min-height: 500px;
+      .container {
+        padding: 0;
+      }
+    }
     h4 {
       color: #209ba1;
       margin: 40px 0 30px 0;
+
+      @media only screen and (max-width: 768px) {
+        font-size: 25px;
+      }
     }
     .iconos {
       display: flex;
@@ -159,17 +279,36 @@
           align-items: center;
           justify-content: center;
           box-shadow: 4px 4px 4px 0px rgba(51, 92, 130, 0.25);
+
+          @media only screen and (max-width: 768px) {
+            height: 60px;
+            width: 60px;
+          }
           img {
             position: relative;
             top: -15px;
+
+            @media only screen and (max-width: 768px) {
+              top: 0;
+              height: 45px;
+              width: 45px;
+            }
           }
         }
         h5 {
           margin: 15px 0 25px 0;
+
+          @media only screen and (max-width: 768px) {
+            font-size: 14px;
+          }
         }
       }
       .bold {
         font-size: 17px;
+
+        @media only screen and (max-width: 768px) {
+          font-size: 14px;
+        }
       }
       span {
         display: flex;
@@ -181,6 +320,10 @@
     }
     p {
       margin-bottom: 20px;
+
+      @media only screen and (max-width: 768px) {
+        font-size: 14px;
+      }
     }
     .btn.secondary {
       margin-bottom: 50px;
@@ -195,6 +338,12 @@
   }
 
   .pacientes {
+
+    @media only screen and (max-width: 768px) {
+      .container {
+        padding: 0;
+      }
+    }
     &__satisfechos {
       display: flex;
       align-items: center;
@@ -204,6 +353,12 @@
         width: 40%;
         display: flex;
         position: relative;
+
+        @media only screen and (max-width: 768px) {
+          width: 100%;
+          flex-direction: column;
+          align-items: center;
+        }
         img {
           max-width: 215px;
           max-height: 215px;
@@ -211,6 +366,11 @@
           position: absolute;
           bottom: 0;
           transform: translateY(50%);
+
+          @media only screen and (max-width: 768px) {
+            max-width: 100px;
+            max-height: 100px;
+          }
 
           &:nth-child(1) {
             left: 0%;
@@ -239,26 +399,56 @@
         align-items: center;
         max-width: 432px;
         text-align: center;
+
+        @media only screen and (max-width: 768px) {
+          flex-direction: column;
+          gap: 20px;
+          max-width: 100%;
+        }
         h3 {
           color: #738592;
           font-weight: bold;
+
+          @media only screen and (max-width: 768px) {
+            font-size: 25px;
+          }
         }
         p {
           font-size: 21px;
           color: #738592;
+
+          @media only screen and (max-width: 768px) {
+            font-size: 14px;
+          }
         }
       }
     }
     &__ayudados {
       margin: 80px auto;
+
+      @media only screen and (max-width: 768px) {
+        margin: 0 auto;
+        .container {
+          padding: 0;
+        }
+      }
       h3 {
         padding: 20px 0;
+
+        @media only screen and (max-width: 768px) {
+          font-size: 25px;
+        }
       }
       .testimonio {
         margin-top: 30px;
         display: flex;
         align-items: center;
         justify-content: space-between;
+
+        @media only screen and (max-width: 768px) {
+          flex-direction: column;
+          align-items: center;
+        }
         .txt {
           width: 40%;
         }
@@ -266,6 +456,11 @@
           width: 430px;
           height: 620px;
           filter: none;
+
+          @media only screen and (max-width: 768px) {
+            width: 100%;
+            height: auto;
+          }
           img {
             filter: drop-shadow(10px 10px 8px rgba(43, 60, 76, 0.5));
           }

@@ -6,25 +6,36 @@
 }
 
     .container__dr {
+      max-width: 1570px;
+      height: 100%;
       display: flex;
       align-items: center;
-      padding: 360px 290px;
+      padding: 10px;
       img{
         max-width: 890px;
         max-height: 559px;
-    }
-    .txt{
-      text-align: right;
-      max-width: 644px;
-      margin-left: 50px;
-      h3{
-          padding-left: 30px;
       }
-      p{
-          margin-bottom: 20px;
-          padding-left: 40px;
-          font-size: 21px;
-      }
+      .txt{
+        text-align: right;
+        max-width: 644px;
+        margin-left: 50px;
+        h2{
+            padding-left: 30px;
+
+            @media only screen and (max-width: 768px) {
+              text-align: center;
+            }
+        }
+        p{
+            margin-bottom: 20px;
+            padding-left: 40px;
+            font-size: 21px;
+
+            @media only screen and (max-width: 768px) {
+              padding: 10px;
+              text-align: center;
+            }
+        }
   }
 }
 .container__left p {
@@ -51,15 +62,32 @@
   .pacientes {
     font-size: 18px;
 
+    @media only screen and (max-width: 768px) {
+      flex-direction: column;
+      gap: 30px;
+      &:first-of-type {
+        flex-direction: column-reverse;
+      }
+    }
+
     h4 {
       position: relative;
       font-size: 40px;
       color: #1e1e1e;
       padding-bottom: 15px;
       text-align: center;
+
+      @media only screen and (max-width: 768px) {
+        font-size: 30px;
+        text-align: center;
+      }
     }
     p {
       font-size: 21px;
+
+      @media only screen and (max-width: 768px) {
+        text-align: center;
+      }
     }
     
     .btn.primary-3 {
@@ -82,11 +110,23 @@
       align-items: center;
       justify-content: space-between;
       column-gap: 300px;
+
+      @media only screen and (max-width: 768px) {
+        flex-direction: column;
+        gap: 30px;
+        &:first-of-type {
+          flex-direction: column-reverse;
+        }
+      }
       .txt {
         width: 40%;
 
         h4{
           color: #1e1e1e;
+
+          @media only screen and (max-width: 768px) {
+            text-align: center;
+          }
         }
       }
       .video-card {
@@ -128,8 +168,19 @@
     font-size: 18px;
     padding-bottom: 30px;
     // background-color: #335c82;
+
+    @media only screen and (max-width: 768px) {
+      margin: 0 auto 60px;
+    }
     .splide__arrow {
       top: 60%;
+
+      @media only screen and (max-width: 768px) {
+         svg {
+          width: 30px;
+          height: 30px;
+          }
+      }
       &--prev {
         left: -1em;
       }
@@ -140,15 +191,23 @@
     h3 {
       padding: 30px;
       text-align: center;
+
+      @media only screen and (max-width: 768px) {
+        font-size: 30px;
+      }
     }
   }
 
   .resultados__px {
     text-align: center;
-    margin-top: 60px;
+    // margin-top: 60px;
   }
   .sentirte-mejor-contigo {
     b { font-size: 21;
+
+      @media only screen and (max-width: 768px) {
+        font-size: 18px;
+      }
     }
   }
 

@@ -11,6 +11,10 @@
     padding: 20px;
     text-align: center;
     font-size: 21px;
+
+    @media only screen and (max-width: 768px) {
+      font-size: 14px;
+    }
   }
   .btn.primary {
     margin-top: 20px;
@@ -22,13 +26,30 @@
   padding: 50px;
   text-align: center;
   font-size: 40px;
-}
-.container__pro.cards {
-  margin: 0 300px;
 
-  h3 {
-    margin-top: 50px;
-    margin-bottom: 50px;
+  @media only screen and (max-width: 768px) {
+    font-size: 30px;
+    padding: 20px;
+  }
+
+  .cards {
+    margin: 0 300px;
+
+    @media only screen and (max-width: 768px) {
+      margin: 0;
+    }
+
+    h3 {
+      margin-top: 50px;
+      margin-bottom: 50px;
+
+      @media only screen and (max-width: 768px) {
+        font-size: 20px;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        text-align: center;
+      }
+    }
   }
 }
 
@@ -36,6 +57,10 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
+
+  @media only screen and (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
 }
 
 .grid-item__pro {
@@ -44,17 +69,24 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-
+  width: 100%;
   img {
     width: 100%;
     object-fit: cover;
+
+    @media only screen and (max-width: 768px) {
+      width: 100%;
+    }
   }
 
   p {
     margin: 5px 0;
-    padding: 0 53px;
-    font-size: 30px;
+    font-size: 25px;
     text-align: center;
+    @media only screen and (max-width: 768px){
+      padding: 0 ;
+        
+    }
   }
   .btn.secondary {
     margin-top: 20px;
@@ -66,6 +98,9 @@
   &__2 {
     overflow: hidden;
     .splide__arrow {
+      cursor: pointer;
+      background: transparent;
+      border: none;
       top: 60%;
       &--prev {
         left: -10em;
@@ -73,19 +108,28 @@
       &--next {
         right: -10em;
       }
+
+      @media only screen and (max-width: 768px) {
+        flex-direction: row;
+        justify-content: space-between;
+  
+        .splide__arrow {
+          width: 40px / 2;
+          height: 40px / 2;
+          margin-bottom: 0;
+          margin-right: 10px;
+        }
+      }
     }
   }
 }
 
 .category-grid {
-  display: flex;
-  justify-content: space-between;
-}
+  // justify-content: space-between;
 
-.splide__arrow {
-  cursor: pointer;
-  background: transparent;
-  border: none;
+  @media only screen and (max-width: 768px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
 
 .procedimiento-card {
@@ -93,10 +137,20 @@
   position: relative;
   overflow: hidden;
   height: 100%;
+  display: block;
+
+  @media only screen and (max-width: 768px) {
+    width: 100%;
+    height: auto;
+  }
 
   &:hover {
     transform: scaleY(1.008);
     transform-origin: center bottom;
+
+    @media only screen and (max-width: 768px) {
+      transform: none;
+    }
   }
 
   img {
@@ -118,12 +172,20 @@
   padding-bottom: 30px;
   background-color: #335c82;
 
+  @media only screen and (max-width: 768px) {
+    font-size: 14px;
+  }
+
   h4 {
     position: relative;
     font-size: 40px;
     color: #fff;
     padding-bottom: 15px;
     text-align: center;
+
+    @media only screen and (max-width: 768px) {
+      font-size: 25px;
+    }
   }
 
   .btn.secondary {

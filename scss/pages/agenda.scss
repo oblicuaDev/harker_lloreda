@@ -1,6 +1,9 @@
 .agenda {
   main {
-    padding: 180px 0 10px;
+    padding: 180px 0;
+    @media only screen and (max-width: 768px) {
+      padding-top: 70px;
+    }
     h1 {
       color: #1e1e1e;
 
@@ -8,6 +11,11 @@
       font-style: normal;
       font-weight: 400;
       line-height: normal;
+
+      @media only screen and (max-width: 768px) {
+        font-size: 45px;
+        text-align: center;
+      }
     }
     h2 {
       color: #1e1e1e;
@@ -15,12 +23,21 @@
       font-style: normal;
       font-weight: 400;
       line-height: normal;
+
+      @media only screen and (max-width: 768px) {
+        font-size: 35px;
+        text-align: center;
+      }
     }
   }
   .selections {
     gap: 26px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+
+    @media only screen and (max-width: 768px) {
+      grid-template-columns: repeat(1, 1fr);
+    }
     a {
       width: 100%;
       overflow: hidden;
@@ -61,6 +78,11 @@
         width: 100%;
         position: absolute;
         bottom: 32px;
+
+        @media only screen and (max-width: 768px) {
+          font-size: 23px;
+          text-align: center;
+        }
       }
     }
   }

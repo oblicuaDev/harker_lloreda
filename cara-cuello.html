@@ -15,61 +15,67 @@
 <body>
   <header>
     <div class="top-bar">
-      <div class="container">
-        <div class="links">
-          <a href="doc-inter.html">Equipo humano</a>
-          <a href="">Tienda en línea</a>
-          <a href="pago.html">Pago en línea</a>
+        <div class="container">
+            <div class="links">
+                <a href="equipo-humano.html">Equipo humano</a>
+                <a href="">Tienda en línea</a>
+                <a href="pago.html">Pago en línea</a>
+            </div>
+            <div class="right">
+                <ul class="lang-selector">
+                    <li>
+                        <span>ES<svg xmlns="http://www.w3.org/2000/svg" width="7" height="4" viewBox="0 0 7 4"
+                                fill="none">
+                                <path d="M1 1L3.5 3.5L6 1" stroke="white" stroke-width="0.5"
+                                    stroke-linecap="round" />
+                            </svg></span>
+                        <ul>
+                            <li><button type="button">ES</button></li>
+                            <li><button type="button">EN</button></li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        Agenda tu cita
+                        <ul>
+                            <li><a href="agenda.html">Ya soy paciente</a></li>
+                            <li><a href="agenda.html">Soy paciente nuevo</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
         </div>
-        <div class="right">
-          <ul class="lang-selector">
-            <li>
-              <span>ES<svg xmlns="http://www.w3.org/2000/svg" width="7" height="4" viewBox="0 0 7 4" fill="none">
-                  <path d="M1 1L3.5 3.5L6 1" stroke="white" stroke-width="0.5" stroke-linecap="round" />
-                </svg></span>
-              <ul>
-                <li><button type="button">ES</button></li>
-                <li><button type="button">EN</button></li>
-              </ul>
-            </li>
-          </ul>
-          <ul>
-            <li>
-              Agenda tu cita
-              <ul>
-                <li><a href="">Ya soy paciente</a></li>
-                <li><a href="">Soy paciente nuevo</a></li>
-              </ul>
-            </li>
-          </ul>
-        </div>
-      </div>
     </div>
     <div class="container">
-      <img src="img/logo_gray.svg" alt="logo" />
-      <nav>
-        <ul>
-          <li>
-            <a href="procedimientos.html">Procedimientos</a>
+      <a href="index.html">
+        <img src="img/logo_gray.svg" alt="logo" />
+      </a>
+        <nav>
+            <button id="closeMenu"><img src="img/close.png" alt="icono"></button>
             <ul>
-              <li>
-                <a href="cara-cuello.html">Cara / Cuello</a>
-              </li>
-              <li>
-                <a href="cuerpo.html">Cuerpo</a>
-              </li>
-              <li>
-                <a href="">Cuidado capilar</a>
-              </li>
+                <li>
+                    <a href="procedimientos.html">Procedimientos</a>
+                    <ul>
+                        <li>
+                            <a href="cara-cuello.html">Cara / Cuello</a>
+                        </li>
+                        <li>
+                            <a href="cuerpo.html">Cuerpo</a>
+                        </li>
+                        <li>
+                            <a href="">Cuidado capilar</a>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="teens.html">Línea de prevención</a></li>
+                <li><a href="para-ellos.html">Para ellos</a></li>
+                <li><a href="fuera-col.html">Pacientes fuera de Colombia</a></li>
             </ul>
-          </li>
-          <li><a href="">Línea de prevención</a></li>
-          <li><a href="para-ellos.html">Para ellos</a></li>
-          <li><a href="">Pacientes fuera de Colombia</a></li>
-        </ul>
-      </nav>
+        </nav>
+        <button id="openMenu"><img src="img/menu.png" alt="icono"></button>
     </div>
-  </header>
+</header>
   <main>
     <!-- Preloader -->
     <div id="preloader">
@@ -191,7 +197,7 @@
       <div class="favoritos__2">
         <div class="container">
           <h3 class="bold">Favoritos</h3>
-          <div class="category-grid">
+          <section class="splide category-splide" aria-label="category-proc">
             <div class="splide__arrows">
               <button class="splide__arrow splide__arrow--prev">
                 <svg width="84" height="84" viewBox="0 0 84 84" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -209,23 +215,54 @@
                     fill="#335C82" />
                 </svg>
               </button>
+            </div>      
+            <div class="splide__track">
+              <ul class="splide__list">
+                <li class="splide__slide">
+                  <a class="procedimiento-card">
+                  <img src="img/image 35.png" alt="pro" />
+                  <span>Nombre del procedimiento</span>
+                  <small>Nombre científico</small>
+                  </a>
+                </li>
+                <li class="splide__slide">
+                  <a class="procedimiento-card">
+                  <img src="img/image 36.png" alt="pro" />
+                  <span>Nombre del procedimiento</span>
+                  <small>Nombre científico</small>
+                  </a>
+                </li>
+                <li class="splide__slide">
+                  <a class="procedimiento-card">
+                  <img src="img/image 37.png" alt="pro" />
+                  <span>Nombre del procedimiento</span>
+                  <small>Nombre científico</small>
+                  </a>
+                </li>
+              <li class="splide__slide">
+                <a class="procedimiento-card">
+                <img src="img/image 35.png" alt="pro" />
+                <span>Nombre del procedimiento</span>
+                <small>Nombre científico</small>
+                </a>
+              </li>
+              <li class="splide__slide">
+                <a class="procedimiento-card">
+                <img src="img/image 36.png" alt="pro" />
+                <span>Nombre del procedimiento</span>
+                <small>Nombre científico</small>
+                </a>
+              </li>
+              <li class="splide__slide">
+                <a class="procedimiento-card">
+                <img src="img/image 37.png" alt="pro" />
+                <span>Nombre del procedimiento</span>
+                <small>Nombre científico</small>
+                </a>
+              </li>
+              </ul>
             </div>
-            <a class="procedimiento-card">
-              <img src="img/image 35.png" alt="pro" />
-              <span>Nombre del procedimiento</span>
-              <small>Nombre científico</small>
-            </a>
-            <a class="procedimiento-card">
-              <img src="img/image 36.png" alt="pro" />
-              <span>Nombre del procedimiento</span>
-              <small>Nombre científico</small>
-            </a>
-            <a class="procedimiento-card">
-              <img src="img/image 37.png" alt="pro" />
-              <span>Nombre del procedimiento</span>
-              <small>Nombre científico</small>
-            </a>
-          </div>
+          </section> 
         </div>
       </div>
     </section>
