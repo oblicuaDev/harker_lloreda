@@ -21,6 +21,10 @@
         margin: 40px;
         font-size: 18px;
         text-align: center;
+
+        @media only screen and (max-width: 768px) {
+            font-size: 14px;
+        }
     }
     label {
         text-align: left;
@@ -34,6 +38,10 @@
 
     small {
         text-align: left;
+
+        @media only screen and (max-width: 768px) {
+            font-size: 14px;
+        }
             a {
         text-decoration: underline;
         color: #335c82;
