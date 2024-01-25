@@ -25,9 +25,17 @@
       top: 60%;
       &--prev {
         left: -10em;
+        @media only screen and (max-width: 768px){
+          left: 0;
+            
+        }
       }
       &--next {
         right: -10em;
+        @media only screen and (max-width: 768px){
+          right: 0;
+            
+        }
       }
     }
   }
@@ -87,10 +95,16 @@
   background-repeat: no-repeat;
   text-align: center;
   background-position: center;
-  min-height: 800px;
+  margin: 120px auto;
   display: flex;
   align-items: center;
   max-width: 100%;
+  min-height: 450px;
+  @media only screen and (max-width: 768px) {
+    min-height: none;
+    margin: 30px auto;
+
+  }
   h4 {
     color: #213445;
     margin: 40px 0 30px 0;
@@ -125,6 +139,7 @@
         }
         img {
           position: relative;
+          object-fit: contain;
 
           @media only screen and (max-width: 768px) {
             height: 50px;
@@ -136,7 +151,7 @@
         margin: 15px 0 25px 0;
 
         @media only screen and (max-width: 768px) {
-          font-size: 15px;
+          font-size: 12px;
         }
       }
     }
@@ -164,7 +179,9 @@
 .btn.primary-1 {
     color: #fff;
     background: #32495E;
-    padding: 15px 30px 15px 30px;
+    display: flex;
+    margin: 0 auto;
+    width: fit-content;
     &:hover {
       background: #213445;
       color: #fff;
@@ -192,4 +209,52 @@
       color: #fff;
       border: 2px solid #213445;
   }
+}
+
+
+
+.paraellos{
+  .procedimiento-card {
+    margin: 50px 0;
+    position: relative;
+    overflow: hidden;
+    display: block;
+
+    @media only screen and (max-width: 768px) {
+      width: 100%;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+      padding-bottom: 30px;
+    }
+    img {
+      width: 380px;
+      height: 450px;
+
+      @media only screen and (max-width: 768px) {
+        width: 100%;
+        height: auto;
+      }
+    }
+    small {
+      margin-bottom: 67px;
+
+      @media only screen and (max-width: 768px) {
+        margin-bottom: 0;
+        font-size: 12px;
+      }
+    }
+  }
+    .procedimientos {
+      &__opc{
+        background-color: #32495E;
+        &:hover {
+          background-color: #213445;
+      
+          @media only screen and (max-width: 768px) {
+            transform: none;
+          }
+        }
+      }
+    }
 }

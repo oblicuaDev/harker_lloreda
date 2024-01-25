@@ -1,11 +1,11 @@
 .banner-container {
   position: relative;
-  & > svg {
-    position: absolute;
-    top: 10px;
-    left: 0;
-    z-index: -1;
-  }
+  // & > svg {
+  //   position: absolute;
+  //   top: 10px;
+  //   left: 0;
+  //   z-index: -1;
+  // }
   svg#line {
     position: absolute;
     bottom: 0;
@@ -50,9 +50,7 @@
       height: 100%;
       display: flex;
       align-items: center;
-      @media only screen and (max-width: 768px) {
-        padding: 0 50px;
-      }
+     
     }
     &.text-right {
       .txt {
@@ -87,6 +85,52 @@
 
     .txt {
       max-width: none;
+    }
+  }
+}
+
+.splide__pagination{
+    left: 200px;
+    right: initial;
+    @media only screen and (max-width: 768px){
+      left: 0;
+      right: 0;
+        
+    }
+}
+#primary-slider{
+  .splide__pagination{
+    right: 200px;
+    bottom: -27px;
+    left: initial;
+    @media only screen and (max-width: 768px){
+      left: 0;
+      right: 0;
+        
+    }
+}
+}
+.splide__pagination__page{
+  width: 15px;height: 15px;
+  border: 1px solid transparent;
+  position: relative;
+  background: transparent;
+  &::after{
+    content: "";
+    background:  rgba($color: #335C82, $alpha: .5);
+    width: 8px;height: 8px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+  }
+  &.is-active{
+    background: transparent;
+    transform: scale(1);
+    border: 1px solid #335C82;
+    &::after{
+      opacity: 1;
     }
   }
 }

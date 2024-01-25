@@ -166,6 +166,10 @@
   display: flex;
   justify-content: space-around;
   padding: 0 0 0 74px;
+  @media only screen and (max-width: 768px){
+    padding: 0;
+      
+  }
 
   .odeea__icono,
   .fesancho__icono {
@@ -195,11 +199,21 @@
 .proced-extr__quirurgico,
 .proced-extr__no-quirurgico {
   text-align: center;
-
-  @media only screen and (max-width: 768px) {
-    flex-direction: column;
-    margin: 0 auto;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  a{
+    margin: 0;
+    h4{
+      padding: 20px 0;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
   }
+
+ 
 }
 .proced-extr__quirurgico h3,
 .proced-extr__no-quirurgico h3 {
@@ -238,4 +252,22 @@
 .proced-extr__no-quirurgico h4:hover {
   background-color: #335c82;
   color: #fff;
+}
+.proced-extr{
+  gap: 43px;
+  @media only screen and (max-width: 768px){
+    gap: 10px;
+      
+  }
+}
+.container__ex{
+  margin: 30px auto;
+}
+.convenios{
+  .faq-container{
+  summary{
+    padding: 1em;
+  }
+  }
+
 }

@@ -8,15 +8,39 @@ document.addEventListener("DOMContentLoaded", () => {
     }).mount();
   }
 
+  if (document.querySelector(".splideEquipo")) {
+    new Splide(".splideEquipo", {
+      pagination: true,
+      perPage: 1
+    }).mount();
+
+  }
+  if (document.querySelector("#primary-slider")) {
+    new Splide("#primary-slider", {
+      pagination: true,
+      gap:30,
+      perPage: 1
+    }).mount();
+
+  }
+  if (document.querySelector("#personas-slider")) {
+    new Splide("#personas-slider", {
+      pagination: true,
+      gap:30,
+      perPage: 1
+    }).mount();
+
+  }
   if (document.querySelector(".category-splide")) {
     new Splide(".category-splide", {
       pagination: false,
       perPage: 3,
       gap: 10,
       breakpoints: {
-		    768: {
-			perPage: 1,
-		  },
+        768: {
+      perPage: 1,
+      padding: { left: 0, right: "15%" }
+      },
     }
     }).mount();
   }
@@ -53,8 +77,10 @@ document.addEventListener("DOMContentLoaded", () => {
       perPage: 3,
       gap: 10,
       breakpoints: {
-		    768: {
+        768: {
+          arrows: false,
 			perPage: 1,
+      padding: { left: 0, right: "15%" }
 		  },
     }
     }).mount();
@@ -69,6 +95,28 @@ document.addEventListener("DOMContentLoaded", () => {
         next: "splide__arrow splide__arrow--next",
       },
     }).mount();
+  }
+  if(document.querySelectorAll(".proced-extr__quirurgico")){
+    // Obtén todos los elementos que coinciden con los selectores
+    var elementos = document.querySelectorAll(".proced-extr__quirurgico a, .proced-extr__no-quirurgico a");
+    
+    // Inicializa una variable para almacenar la altura máxima
+    var alturaMaxima = 0;
+    
+    // Itera sobre cada elemento para encontrar la altura máxima
+    elementos.forEach(function(elemento) {
+        var alturaElemento = elemento.clientHeight; // Obtén la altura del elemento
+    
+        // Compara y actualiza la altura máxima si es necesario
+        if (alturaElemento > alturaMaxima) {
+            alturaMaxima = alturaElemento;
+        }
+    });
+    
+    // Itera nuevamente para establecer la altura máxima en todos los elementos
+    elementos.forEach(function(elemento) {
+        elemento.style.height = alturaMaxima + "px";
+    });
   }
 });
 

@@ -4,6 +4,7 @@
     border: 2px solid #5ebbc0;
     color: #fff;
     padding: 15px 30px 15px 30px;
+
     
     &:hover {
       background-color: #209ba1;
@@ -12,6 +13,9 @@
     }
   }
   .favoritos {
+    & > .container{
+      padding: 0;
+    }
     &__1 {
       text-align: center;
       max-width: 1080px;
@@ -27,6 +31,7 @@
         font-size: 21px;
 
         @media only screen and (max-width: 768px) {
+          padding: 10px;
           font-size: 14px;
         }
       }
@@ -39,7 +44,7 @@
   .favoritos__2 {
     background-image: url(/img/fondoParaEllas1.png);
     background-position: top;
-    overflow: visible;
+    
     background-repeat: no-repeat;
     background-size: 100% 100%;
 
@@ -47,6 +52,11 @@
       background-size: 100% 100%;
       .container {
         padding: 0;
+      }
+    }
+    @media only screen and (max-width: 768px){
+      .splide__slide{
+        padding: 10px 0;
       }
     }
     rect {
@@ -80,7 +90,7 @@
       color: #209ba1;
 
       @media only screen and (max-width: 768px) {
-        font-size: 40px;
+        font-size: 30px;
         text-align: center;
       }
     }
@@ -88,14 +98,14 @@
       margin: 50px 0;
       position: relative;
       overflow: hidden;
-      height: 100%;
       display: block;
 
       @media only screen and (max-width: 768px) {
-        width: 90%;
+        width: 100%;
         height: auto;
         display: block;
         margin: 0 auto;
+        padding-bottom: 30px;
       }
       img {
         width: 380px;
@@ -126,15 +136,12 @@
   }
   article.procedimiento {
     position: relative;
-
-    @media only screen and (max-width: 768px) {
-      .container {
-        padding: 0;
-      }
-    }
     & > svg {
       position: absolute;
       z-index: -1;
+      @media only screen and (max-width: 768px){
+          display: none;
+      }
       &#br {
         right: 0;
         bottom: -270px;
@@ -163,10 +170,6 @@
 
     @media only screen and (max-width: 768px) {
       margin: 0 auto;
-
-      .container {
-        padding: 0;
-      }
     }
 
     .bold {
@@ -178,60 +181,7 @@
         text-align: center;
       }
     }
-    .procedimientos {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px 50px;
-
-      @media only screen and (max-width: 768px) {
-        grid-template-columns: repeat(1, 1fr);
-        .container {
-          padding: 0;
-        }
-      }
-      &__opc {
-        max-width: 617px;
-        max-height: 206px;
-        background-color: #5ebbc0;
-        border-radius: 15px;
-        transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
-
-        @media only screen and (max-width: 768px) {
-          width: 80%;
-          height: 80%;
-          margin: 0 auto;
-
-          .container {
-            padding: 0;
-          }
-        }
-        h4 {
-          color: #fff;
-          margin-top: 45px;
-          padding-left: 30px;
-
-          @media only screen and (max-width: 768px) {
-            font-size: 20px;
-          }
-        }
-        p {
-          color: #fff;
-          margin-bottom: 45px;
-          padding-left: 30px;
-
-          @media only screen and (max-width: 768px) {
-            font-size: 14px;
-          }
-        }
-      }
-      &__opc:hover {
-        background-color: #209ba1;
-
-        @media only screen and (max-width: 768px) {
-          transform: none;
-        }
-      }
-    }
+   
   }
 
   .agendate {
@@ -299,7 +249,7 @@
           margin: 15px 0 25px 0;
 
           @media only screen and (max-width: 768px) {
-            font-size: 14px;
+            font-size: 12px;
           }
         }
       }
@@ -349,6 +299,9 @@
       align-items: center;
       justify-content: space-around;
       margin-bottom: 150px;
+      @media only screen and (max-width: 768px){
+          flex-direction: column;
+      }
       .pics {
         width: 40%;
         display: flex;
@@ -433,8 +386,6 @@
         }
       }
       h3 {
-        padding: 20px 0;
-
         @media only screen and (max-width: 768px) {
           font-size: 25px;
         }
@@ -451,6 +402,9 @@
         }
         .txt {
           width: 40%;
+          @media only screen and (max-width: 768px){
+              width: 100%;
+          }
         }
         .video-card {
           width: 430px;
@@ -484,4 +438,58 @@
       }
     }
   }
+}
+
+.teens{
+  .procedimientos {
+    &__opc{
+      background-color: #5ebbc0;
+      &:hover {
+        background-color: #209ba1;
+    
+        @media only screen and (max-width: 768px) {
+          transform: none;
+        }
+      }
+    }
+  }
+}
+
+.procedimientos {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px 50px;
+
+  @media only screen and (max-width: 768px) {
+    grid-template-columns: repeat(1, 1fr);
+    .container {
+      padding: 0;
+    }
+  }
+  &__opc {
+    border-radius: 15px;
+    transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+    padding: 58px 42px;
+    max-width: 617px;
+    @media only screen and (max-width: 768px){
+      padding: 48px 32px;
+      max-width: 100%;
+        
+    }
+    h4 {
+      color: #FFF;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+      
+    }
+    p {
+      color: #FFF;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      
+    }
+  }
+
 }

@@ -17,6 +17,14 @@
 // }
 
 .fueracol {
+  #primary-slider .splide__pagination{
+    bottom: 0;
+    right: initial;
+    left: 200px;
+  }
+  .proced-extr__quirurgico h3, .proced-extr__no-quirurgico h3{
+    text-decoration: none;
+  }
   main {
     padding-top: 180px;
   }
@@ -88,7 +96,7 @@
 }
 
 .proced-extr-pos {
-  margin-top: 50px;
+  margin: 50px auto;
 }
 
 .proced-extr {

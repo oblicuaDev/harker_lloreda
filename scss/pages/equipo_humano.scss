@@ -7,9 +7,6 @@
   @media only screen and (max-width: 768px) {
     flex-direction: column-reverse;
     gap: 30px;
-    &:first-of-type {
-    flex-direction: column;
-    }
   }
 }
 
@@ -33,6 +30,10 @@
   p {
     margin-bottom: 15px;
     font-size: 21px;
+
+    @media only screen and (max-width: 768px) {
+      font-size: 14px;
+    }
   }
 }
 
@@ -41,10 +42,21 @@
   background-position: unset;
   background-repeat: unset;
   .video-position {
+    h3 {
+      @media only screen and (max-width: 768px) {
+        font-size: 25px;
+        text-align: center;
+        margin: 30px auto 30px;
+      }
+    }
     p {
       margin: 30px auto 120px;
       max-width: 850px;
       font-size: 21px;
+
+      @media only screen and (max-width: 768px) {
+        font-size: 14px;
+      }
     }
   }
 }
@@ -74,11 +86,9 @@
   margin-bottom: 25px;
 
   @media only screen and (max-width: 768px) {
-    flex-direction: column-reverse;
-    gap: 30px;
-    &:first-of-type {
     flex-direction: column;
-    }
+    gap: 30px;
+  
   }
 
   .txt {
