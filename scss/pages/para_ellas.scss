@@ -418,15 +418,26 @@
           }
           img {
             filter: drop-shadow(10px 10px 8px rgba(43, 60, 76, 0.5));
+
+            @media only screen and (max-width: 768px) {
+              width: 90%;
+              margin: 20px;
+              object-fit: cover;
+            }
           }
           svg {
             left: -40px;
             width: 80px;
             top: 90px;
             z-index: 10;
+
+            @media only screen and (max-width: 768px) {
+              left: 1px;
+              width: 50px;
           }
           rect {
             fill: #5ebbc0;
+          }
 
             &:hover {
               fill: #209ba1;
