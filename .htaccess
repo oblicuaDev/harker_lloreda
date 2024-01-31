@@ -1,11 +1,20 @@
 RewriteEngine On
-RewriteBase /
+RewriteBase /lab/harker_lloreda/
 
 # Check if the requested file or directory exists
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
 
 # Spanish URL rewriting
-RewriteRule ^s/([^/]+)/?$ set/$1.php?lang=es [L,QSA]
-RewriteRule ^g/([^/]+)/?$ get/$1.php?lang=es [L,QSA]
-RewriteRule ^b/([^/]+)/?$ boxes/$1.php?lang=es [L,QSA]
+RewriteRule ^([a-zA-Z0-9_-]+)/s/([^/]+)/?$ set/$2.php?lang=$1 [L,QSA]
+RewriteRule ^([a-zA-Z0-9_-]+)/g/([^/]+)/?$ get/$2.php?lang=$1 [L,QSA]
+RewriteRule ^([a-zA-Z0-9_-]+)/b/([^/]+)/?$ boxes/$2.php?lang=$1 [L,QSA]
+
+RewriteRule ^([a-zA-Z0-9_-]+)$ index.php?lang=$1 [L,QSA]
+RewriteRule ^([a-zA-Z0-9_-]+)/agenda-tu-cita$ agenda.php?lang=$1 [L,QSA]
+RewriteRule ^([a-zA-Z0-9_-]+)/procedimientos$ procedimientos.php?lang=$1 [L,QSA]
+RewriteRule ^([a-zA-Z0-9_-]+)/procedimientos/([a-zA-Z0-9_-]+)-([0-9]+)$ categoria_procedimiento.php?lang=$1&idCategoria=$3 [L,QSA]
+RewriteRule ^([a-zA-Z0-9_-]+)/equipo-humano$ equipo-humano.php?lang=$1 [L,QSA]
+RewriteRule ^([a-zA-Z0-9_-]+)/pago-en-linea$ pago.php?lang=$1 [L,QSA]
+RewriteRule ^([a-zA-Z0-9_-]+)/para-ellos$ para-ellos.php?lang=$1 [L,QSA]
+RewriteRule ^([a-zA-Z0-9_-]+)/pacientes-fuera-de-colombia$ fuera-col.php?lang=$1 [L,QSA]

@@ -1,9 +1,10 @@
 <?php
-class SDK {
-    public $domain = '';
-    public $infoGnrl = array();
+class HarkerLloreda {
+	public $domain = "https://harkerlloreda.com/admin_hl_wp/index.php/wp-json/wp/v2/";
+	public $url = "https://harkerlloreda.com/admin_hl_wp/";
+	public $infoGnrl = array();
     public $language = "";
-    public $globalURL = "";
+    public $palabras = "";
     public $production = true;
 
     public function __construct($language = "es", $development = false) {
@@ -11,8 +12,185 @@ class SDK {
             $this->production = false;
         }
         $this->language = $language;
+        $this->infoGnrl = $this->gInfo();
+        $this->palabras = $this->getPalabrasDeInterfaz();
     }
 
+    function query($url, $body = "", $cache = false, $queryParams = null){
+        if ($queryParams === null) {
+            $queryParams = ['field' => 'idioma_de_este_contenido', 'value' => $this->language];
+        }
+		$cacheAbsoluteRoute = "/home/tiendasantuario/public_html/host/bilingual/cache";
+        $query = http_build_query($queryParams);
+		$endpoint ="{$this->domain}$url?$query";
+		$ch = curl_init();
+		curl_setopt($ch, CURLOPT_URL, $endpoint);
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+		$filetitle = $this->get_alias($endpoint . "?" . $query_string) . ".json";
+		if ($cache) {
+			if (!file_exists($cacheAbsoluteRoute)) {
+				mkdir($cacheAbsoluteRoute, 0777, true);
+			}
+			$path = $cacheAbsoluteRoute . "/" . $filetitle;
+
+			if (file_exists($path)) {
+				//echo "exists";
+				$data = file_get_contents($path);
+				$ok =  json_decode($data);
+				return $ok->response;
+			} else {
+				$output = curl_exec($ch);
+				$request = json_decode($output);
+
+				$finalstructure = '{"endpoint":"' . $endpoint . '","lastUpdate":"' . date("Y-m-d") . '","response":' . $output . '}';
+				$bwriting = file_put_contents($path, $finalstructure);
+				curl_close($ch);
+				if ($request === null) {
+					$jsonLastError = json_last_error();
+					$jsonLastErrorMsg = json_last_error_msg();
+					echo "JSON decoding error: $jsonLastError ($jsonLastErrorMsg)";
+				} else {
+					return  $request;
+				}
+			}
+		} else {
+			$output = curl_exec($ch);
+			// Remove U+FEFF character
+			$output = preg_replace('/\x{FEFF}/u', '', $output);
+			// Remove BOM
+			if (strpos($output, "\uFEFF") === 0) {
+				$output = substr($output, 3);
+			}
+			$request = json_decode($output);
+			curl_close($ch);
+
+			if ($request === null) {
+				$jsonLastError = json_last_error();
+				$jsonLastErrorMsg = json_last_error_msg();
+				echo "JSON decoding error: $jsonLastError ($jsonLastErrorMsg)";
+			} else {
+				return  $request;
+			}
+		}
+	}
+    function gInfo(){
+        if(isset($_SESSION[$this->language]['ginfo'])){
+            $gnrl = $_SESSION[$this->language]['ginfo'];
+		} else {
+            if($this->language == "es"){
+                $result = $this->query("pages/109");                
+            }else{
+                $result = $this->query("pages/277");
+            }
+			$gnrl = $result;
+            
+			$_SESSION[$this->language]['ginfo'] = $gnrl;
+		}
+		return $gnrl;
+	}
+    function gBannerHome(){
+        if(isset($_SESSION[$this->language]['hl_sliders'])){
+            $banners = $_SESSION[$this->language]['hl_sliders'];
+        } else {
+            $result = $this->query("hl_sliders");
+            $banners = $result;
+    
+            $_SESSION[$this->language]['hl_sliders'] = $banners;
+        }
+        return $banners;
+   
+    }
+
+    // ID que debe ir primero (puede ser 230 o 284)
+    
+    // Función de comparación personalizada
+    function compararPorID($a, $b) {
+        if($this->language == "es"){
+            $idPrimero = 230;
+        }else{
+            $idPrimero = 284;
+        }
+        // Comprobamos si alguno de los IDs es el ID que debe ir primero
+        $aPrimero = ($a->id === $idPrimero);
+        $bPrimero = ($b->id === $idPrimero);
+    
+        // Si ambos deben ir primero o ninguno debe ir primero, comparamos por ID normalmente
+        if ($aPrimero == $bPrimero) {
+            return 0;
+        }
+    
+        // Si solo uno de ellos debe ir primero, ese va primero
+        return $aPrimero ? -1 : 1;
+    }
+
+    function gEquipoDestacadoHome(){
+        if(isset($_SESSION[$this->language]['hl_miembros_destacados'])){
+            $equipo_destacados = $_SESSION[$this->language]['hl_miembros_destacados'];
+        } else {
+            $queryParams = ['field' => 'destacar_en_el_home,idioma_de_este_contenido', 'value' => 'Si,'.$this->language];
+            $result = $this->query("hl_miembros", "", null, $queryParams);
+            $equipo_destacados = $result;
+            $_SESSION[$this->language]['hl_miembros_destacados'] = $equipo_destacados;
+        }
+        return $equipo_destacados;
+    }
+    function gExtraInfoHome(){
+        if($this->language == "es"){
+            $result1 = $this->query("pages/30");
+            $result2 = $this->query("pages/14");
+        }else{
+            $result1 = $this->query("pages/291");
+            $result2 = $this->query("pages/282");
+        }
+
+        $equipo_destacados = array();
+        $equipo_destacados["fuera"]=$result1;
+        $equipo_destacados["tour"]=$result2;
+        return $equipo_destacados;
+    }
+    function gCategoriasProcedimientos($id= null){
+        if($id == null){
+            $result = $this->query("hl_cat_proced");
+        }else{
+            $result = $this->query("hl_cat_proced/".$id);
+
+        }
+        $categorias = $result;
+        return $categorias;
+    }
+    function getPalabrasDeInterfaz(){
+        if(isset($_SESSION['palabras'])){
+            $palabras = $_SESSION['palabras'];
+		} else {
+            $palabrasES = $this->query("pages/176");
+            $palabrasEN = $this->query("pages/326");
+            $palabras = array();
+            // Obtener el contenido entre las etiquetas <p>
+            preg_match_all('/<p>(.*?)<\/p>/', $palabrasES->content->rendered, $matchesES);
+            preg_match_all('/<p>(.*?)<\/p>/', $palabrasEN->content->rendered, $matchesEN);
+            // Obtener el texto de cada coincidencia
+            $textsES = $matchesES[1];
+            $textsEN = $matchesEN[1];
+            $palabras["es"]=$textsES;
+            $palabras["en"]=$textsEN;
+			$_SESSION['palabras'] = $palabras;
+		}
+        return $palabras;
+    }
+    function getProcedimientosPage(){
+        if(isset($_SESSION['procedimientosPage'])){
+            $procedimientosPage = $_SESSION['procedimientosPage'];
+		} else {
+            $procedimientosPage = array();
+            $procedimientosPageES = $this->query("pages/128");
+            $procedimientosPageEN = $this->query("pages/298");
+            $procedimientosPage["es"] = $procedimientosPageES;
+            $procedimientosPage["en"] = $procedimientosPageEN;
+	        $_SESSION['procedimientosPage'] = $procedimientosPage;
+		}
+		return $procedimientosPage;
+        
+    }
     public function reindexCache(){
         $dirPath = "/home/uiumji3ay04q/public_html/cache";
         if (! is_dir($dirPath)) {
@@ -32,53 +210,9 @@ class SDK {
         rmdir($dirPath);
         echo "Caché reiniciado";
     }
-    public function query($endpoint, $body = "", $extra = [], $cache=true){
-        $query = ['langcode' => $this->language];
-        // Ruta donde se va a guardar todos los archivos de CACHE
-        $cacheAbsoluteRoute = "/home/bo39bipxontb/public_html/dynamo.mottif.tv/cache";
-        // Validación de la variable $extra para colocar queryParams en el ENDPOINT
-        if ($extra) {
-            $extra_params = [];
-            foreach ($extra as $param) {
-                list($key, $value) = explode('=', $param);
-                $extra_params[$key] = $value;
-            }
-            $query = array_merge($query, $extra_params);
-        }
-        $query_string = http_build_query($query);
-        $url = "{$this->domain}{$endpoint}?{$query_string}";
-        $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, $url);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-        $filetitle = $this->get_alias($endpoint).".json";
-
-        if($cache){
-            if (!file_exists($cacheAbsoluteRoute)) {
-                mkdir($cacheAbsoluteRoute, 0777, true);
-            }
-            $path = $cacheAbsoluteRoute."/".$filetitle;
-
-            if(file_exists($path)){
-                $data = file_get_contents($path);
-                $ok =  json_decode($data);
-                return $ok->response;
-            }else{
-                $output = curl_exec($ch);
-                $request = json_decode($output);
-                $finalstructure = '{"endpoint":"'.$endpoint.'","lastUpdate":"'.date("Y-m-d").'","response":'.$output.'}';
-                $bwriting = file_put_contents($path, $finalstructure); 
-                curl_close($ch);
-                return $request;
-            }
-        }else {
-            $output = curl_exec($ch);
-            $request = json_decode($output);
-            curl_close($ch);
-            return $request;
-        }
-    }
     function get_alias($String){
         $String = html_entity_decode($String); // Traduce codificación
+
         $String = str_replace("¡", "", $String); //Signo de exclamación abierta.&iexcl;
         $String = str_replace("'", "", $String); //Signo de exclamación abierta.&iexcl;
         $String = str_replace("!", "", $String); //Signo de exclamación cerrada.&iexcl;
@@ -209,9 +343,63 @@ class SDK {
         $String = str_replace(" ", "-", $String); //Espacios
         $String = str_replace(".", "", $String); //Punto
         $String = str_replace("&", "-", $String);
+        $String = str_replace("“", "", $String);
+        $String = str_replace("”", "", $String);
+        $String = str_replace("+", "", $String);
+
         //Mayusculas
         $String = strtolower($String);
 
         return ($String);
+    }
+    function create_metas($seoId){
+        $canonicalURL = "http://".$_SERVER[HTTP_HOST].$_SERVER[REQUEST_URI];
+        if ($seoId == '') {
+            $seoId = 4;
+        }
+        $seo = $this->query("seo/" . $seoId);
+        $seo = $seo[0];
+        global $metas, $urlMap;
+        
+        $ret = '';
+        $metas['title'] = $seo->field_seo_title;
+        $metas['desc'] = $seo->field_seo_desc;
+        $metas['words'] = $seo->field_seo_keys;
+        $metas['img'] = "https://www.bogotadc.travel" . $seo->field_seo_img;
+
+        // list($width, $height, $type, $attr) = getimagesize("https://www.bogotadc.travel" . $seo->field_seo_img);
+
+        $ret = '<meta charset="utf-8">' . PHP_EOL;
+        $ret .= '<link rel="canonical" href="' . $canonicalURL . '">' . PHP_EOL; 
+        $ret .= '<meta name="keywords" content="' . $metas['words'] . '">' . PHP_EOL;
+        $ret .= '<meta name="description" content="' . $metas['desc'] . '">' . PHP_EOL;
+        $ret .= '<meta name="viewport" content="width=device-width, initial-scale=1">' . PHP_EOL;
+        $ret .= '<title>' . $metas['title'] . '</title>' . PHP_EOL;
+        $ret .= '<meta name="thumbnail" content="' . $metas['img'] . '">' . PHP_EOL;
+        $ret .= '<meta name="language" content="spanish">' . PHP_EOL;
+        $ret .= '<meta name="twitter:card" content="summary_large_image">' . PHP_EOL;
+        $ret .= '<meta name="twitter:site" content="@BogotaDCTravel">' . PHP_EOL;
+        $ret .= '<meta name="twitter:title" content="' . $metas['title'] . '">' . PHP_EOL;
+        $ret .= '<meta name="twitter:description" content="' . $metas['desc'] . '">' . PHP_EOL;
+        $ret .= '<meta name="twitter:image" content="' . $metas['img'] . '">' . PHP_EOL;
+        //$ret .= '<meta property="fb:app_id" content="865245646889167">'.PHP_EOL;
+
+        $ret .= '<meta property="og:type" content="website">' . PHP_EOL;
+        $ret .= '<meta property="og:title" content="' . $metas['title'] . '">' . PHP_EOL;
+        $ret .= '<meta property="og:site_name" content="' . $metas['title'] . '">' . PHP_EOL;
+        $ret .= '<meta property="og:description" content="' . $metas['desc'] . '">' . PHP_EOL;
+        $ret .= '<meta property="og:image" content="' . $metas['img'] . '">' . PHP_EOL;
+        // $ret .= '<meta property="og:image:width" content="' . $width . '">' . PHP_EOL;
+        // $ret .= '<meta property="og:image:height" content="' . $height . '">' . PHP_EOL;
+        $ret .= '<meta property="og:image:alt" content="' . $metas['title'] . '"/>' . PHP_EOL;
+        $ret .= PHP_EOL;
+        $ret .= "<!--[if IE]>\n";
+        $ret .= "<script>\n";
+        $ret .= "\n\tdocument.createElement('header');\n\tdocument.createElement('footer');";
+        $ret .= "\n\tdocument.createElement('section');\n\tdocument.createElement('figure');\n\tdocument.createElement('aside');";
+        $ret .= "\n\tdocument.createElement('nav');\n\tdocument.createElement('article');";
+        $ret .= "\n</script>\n";
+        $ret .= "\n<![endif]-->\n";
+        return $ret;
     }
 }

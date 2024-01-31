@@ -26,6 +26,9 @@
         font-weight: 400;
         line-height: normal;
         margin: 0;
+        &:hover {
+          opacity: 0.5;
+        }
       }
     }
     .right {
@@ -33,21 +36,73 @@
       height: 100%;
       align-items: center;
       justify-content: flex-end;
-      ul {
-        width: 320px;
-        @media only screen and (max-width: 768px) {
-          width: 100%;
+      gap: 65px;
+      ul.agendamenu {
+        & > li {
+          padding: 16px 160px 16px 38px;
+          @media only screen and (max-width: 768px) {
+            padding: 16px;
+          }
+          & > a {
+            color: #fff;
+            text-align: center;
+            font-size: 15px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+          }
         }
-        li {
-          color: #fff;
-          text-align: center;
-          font-size: 12px;
-          font-style: normal;
-          font-weight: 400;
-          margin: 0;
-          line-height: normal;
+      }
+      ul.lang-selector {
+        & > li {
           padding: 16px 0;
+          span {
+            justify-content: center;
+            color: #fff;
+            font-size: 12px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            img {
+              margin-right: 5px;
+              border-radius: 50%;
+              width: 20px;
+              height: 20px;
+              object-fit: cover;
+            }
+          }
           ul {
+            width: 70px;
+            li {
+              button {
+                justify-content: center;
+                align-items: center;
+                display: flex;
+                img {
+                  margin-right: 5px;
+                  border-radius: 50%;
+                  width: 20px;
+                  height: 20px;
+                  object-fit: cover;
+                }
+              }
+              &:hover {
+                button {
+                  color: #fff;
+                }
+              }
+            }
+          }
+        }
+      }
+      ul {
+        li {
+          margin: 0;
+          ul {
+            width: 100%;
             z-index: 2;
             box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
             border-radius: 0 0 8px 8px;
@@ -56,13 +111,20 @@
               padding: 0;
               a,
               button {
-                width: 100%;
-                height: 100%;
+                background-color: #fff;
+                color: #335c82;
                 display: block;
-                padding: 15px 0;
+                font-size: 12px;
+                font-style: normal;
+                font-weight: 400;
+                height: 100%;
+                line-height: normal;
                 margin: 0;
+                padding: 16px;
                 position: relative;
+                text-align: center;
                 transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+                width: 100%;
                 &::after {
                   content: "";
                   width: 90%;
@@ -80,46 +142,22 @@
                 }
                 &:hover {
                   background-color: #335c82;
+                }
+              }
+              &:hover {
+                a {
                   color: #fff;
                 }
               }
-              button {
-                background-color: #fff;
-                color: #335c82;
-                padding: 20px 0;
-                text-align: center;
-                font-size: 12px;
-                font-style: normal;
-                font-weight: 400;
-                line-height: normal;
-              }
             }
-          }
-        }
-      }
-      ul.lang-selector {
-        width: 70px;
-        li {
-          span {
-            justify-content: center;
-            color: #fff;
-            font-size: 12px;
-            font-style: normal;
-            font-weight: 400;
-            line-height: normal;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-          }
-          ul {
-            width: 70px;
           }
         }
       }
     }
   }
 }
-header, .top-bar{
+header,
+.top-bar {
   ul {
     & > li {
       position: relative;

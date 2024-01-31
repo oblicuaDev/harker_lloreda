@@ -1,0 +1,46 @@
+Agenda tu cita <?= $sdk->palabras[$lang][0]?>
+Blog de noticias médicasa <?= $sdk->palabras[$lang][1]?>
+Contáctanos <?= $sdk->palabras[$lang][2]?>
+<?= $sdk->palabras[$lang][3]?> <?= $sdk->palabras[$lang][3]?>
+<?= $sdk->palabras[$lang][4]?> <?= $sdk->palabras[$lang][4]?>
+<?= $sdk->palabras[$lang][5]?> <?= $sdk->palabras[$lang][5]?>
+<?= $sdk->palabras[$lang][6]?> <?= $sdk->palabras[$lang][6]?>
+<?= $sdk->palabras[$lang][7]?> <?= $sdk->palabras[$lang][7]?>
+<?= $sdk->palabras[$lang][8]?> <?= $sdk->palabras[$lang][8]?>
+<?= $sdk->palabras[$lang][9]?> <?= $sdk->palabras[$lang][9]?>
+<?= $sdk->palabras[$lang][10]?> <?= $sdk->palabras[$lang][10]?>
+<?= $sdk->palabras[$lang][11]?> <?= $sdk->palabras[$lang][11]?>
+<?= $sdk->palabras[$lang][12]?> <?= $sdk->palabras[$lang][12]?>
+Procedimientos <?= $sdk->palabras[$lang][13]?>
+Teens <?= $sdk->palabras[$lang][14]?>
+Teléfonos: <?= $sdk->palabras[$lang][15]?>
+Tienda en línea <?= $sdk->palabras[$lang][16]?>
+Tour virtual <?= $sdk->palabras[$lang][17]?>
+años de práctica en cirugía <?= $sdk->palabras[$lang][18]?>
+pacientes que hemos ayudado a sentirse mejor <?= $sdk->palabras[$lang][19]?>
+procedimientos exitosos por año <?= $sdk->palabras[$lang][20]?>
+¿Qué quieres mejorar hoy? <?= $sdk->palabras[$lang][21]?>
+___________________________________
+Schedule your appointment
+Medical News Blog
+Explore the Harker Lloreda experience
+Contact us
+Corporate Agreements
+Human Team
+Financial Statements
+Prevention Line
+About Us
+Patients outside of Colombia
+Online Payments
+For Them
+Loyalty Plan
+Data Treatment Policies
+Procedures
+Teens
+Phones:
+Online Store
+Virtual Tour
+Years of practice in surgery
+Patients we have helped feel better
+Successful procedures per year
+What do you want to improve today?
