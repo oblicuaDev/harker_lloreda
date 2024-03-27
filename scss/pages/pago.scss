@@ -1,101 +1,102 @@
 .container-m {
-    text-align: center;
+  text-align: center;
+  margin: 0 auto;
+  max-width: 1200px;
+  width: 100%;
+  padding: 0 20px;
+  position: relative;
+  padding-bottom: 100px;
+
+  h1 {
     margin: 0 auto;
-    max-width: 1200px;
-    width: 100%;
-    padding: 0 20px;
-    position: relative;
-    padding-bottom: 100px;
+    padding-top: 20%;
+    font-size: 35px;
 
-    h1 {
-        margin: 0 auto;
-        padding-top: 20%;
-        font-size: 35px;
-
-        @media only screen and (max-width: 768px) {
-            font-size: 30px;
-            padding-top: 40%;
-        }
+    @media only screen and (max-width: 768px) {
+      font-size: 30px;
+      padding-top: 40%;
     }
+  }
 
-    p {
-        display: flex;
-        text-align: center;
-        max-width: 600px;
-        margin: 50px auto;
-        font-size: 18px;
+  p {
+    display: flex;
+    text-align: center;
+    max-width: 600px;
+    margin: 50px auto;
+    font-size: 18px;
 
-        @media only screen and (max-width: 768px) {
-            font-size: 14px;
-        }
+    @media only screen and (max-width: 768px) {
+      font-size: 14px;
     }
-    label {
-      text-align: left;
-      max-width: 1089px;
-      margin: 0 auto;
-      padding: 0 40px;
-      @media only screen and (max-width: 768px){
-        padding: 0;
-          
-      }
+  }
+  label {
+    text-align: left;
+    max-width: 1089px;
+    margin: 0 auto;
+    padding: 0 40px;
+    @media only screen and (max-width: 768px) {
+      padding: 0;
+    }
     small {
-        text-align: left;
-        padding: 30px 0;
+      text-align: left;
+      padding: 30px 0;
+
+      @media only screen and (max-width: 768px) {
+        font-size: 12px;
+      }
+      a {
+        text-decoration: underline;
+        color: #335c82;
 
         @media only screen and (max-width: 768px) {
-            font-size: 12px;
+          font-size: 12px;
         }
-        a {
-            text-decoration: underline;
-            color: #335c82;
-
-            @media only screen and (max-width: 768px) {
-                font-size: 12px;
-            }
-        }
+      }
     }
   }
 }
 .form-item-1 {
-    position: relative;
-    margin-bottom: 20px;
+  position: relative;
+  margin-bottom: 20px;
 
-    select {
-        width: 100%;
-        border-width: 0px 0px 1px;
-        border-bottom-style: solid;
-        border-bottom-color: rgb(204, 204, 204);
-        transition: all 0.3s ease 0s;
-        font-size: 15px;
-        color: #1E1E1E;
-        padding: 18px 15px;
-        background: white url('/img/Vector\ 28.png <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 11 7" fill="#1E1E1E" width="11px" height="7px"><path d="M1 1L5.5 6L10 1"/></svg>') no-repeat right 10px center;
-        transform: translateY(-20%);
-        cursor: pointer;
-    
-        &:focus {
-          border-color: none;
-        }
-      }
-    
-      label {
-        position: absolute;
-        cursor: pointer;
-        z-index: 0;
-        top: 8px;
-        left: 10px;
-        font-size: 14px;
-        font-weight: bold;
-        background: #fff;
-        padding: 0 10px;
-        color: #999;
-        transition: all 0.3s ease;
-      }
-    
-      select:focus + label,
-      select:valid + label {
-        top: -12px;
-        font-size: 12px;
-        color: #295f92;
-      }
+  select {
+    width: 100%;
+    border-width: 0px 0px 1px;
+    border-bottom-style: solid;
+    border-bottom-color: rgb(204, 204, 204);
+    transition: all 0.3s ease 0s;
+    font-size: 15px;
+    color: #1e1e1e;
+    padding: 18px 15px;
+    background: white
+      url('/img/Vector\ 28.png <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 11 7" fill="#1E1E1E" width="11px" height="7px"><path d="M1 1L5.5 6L10 1"/></svg>')
+      no-repeat right 10px center;
+    transform: translateY(-20%);
+    cursor: pointer;
+
+    &:focus {
+      border-color: none;
     }
+  }
+
+  label {
+    position: absolute;
+    cursor: pointer;
+    z-index: 0;
+    top: 8px;
+    left: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    background: #fff;
+    padding: 0 10px;
+    color: #999;
+    transition: all 0.3s ease;
+  }
+
+  select:focus + label,
+  select:valid + label {
+    top: -12px;
+    font-size: 12px;
+    color: #295f92;
+  }
+}

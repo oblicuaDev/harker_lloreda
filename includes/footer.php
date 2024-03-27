@@ -1,61 +1,25 @@
 <!-- Preloader -->
 <div id="preloader">
-    <div id="container" class="container-preloader">
-        <div class="animation-preloader">
-        <div class="spinner"></div>
-        <div class="txt-loading">
-            <span preloader-text="H" class="characters">H</span>
-
-            <span preloader-text="A" class="characters">A</span>
-
-            <span preloader-text="R" class="characters">R</span>
-
-            <span preloader-text="K" class="characters">K</span>
-
-            <span preloader-text="E" class="characters">E</span>
-
-            <span preloader-text="R" class="characters">R</span>
-
-            <span preloader-text="&" class="characters">&</span>
-
-            <span preloader-text="L" class="characters">L</span>
-
-            <span preloader-text="L" class="characters">L</span>
-
-            <span preloader-text="O" class="characters">O</span>
-
-            <span preloader-text="R" class="characters">R</span>
-
-            <span preloader-text="E" class="characters">E</span>
-
-            <span preloader-text="D" class="characters">D</span>
-
-            <span preloader-text="A" class="characters">A</span>
-        </div>
-        </div>
-        <div class="loader-section section-left"></div>
-        <div class="loader-section section-right"></div>
-    </div>
+  <img src="img/loader.svg" alt="loader">
 </div>
 <!-- /Preloader -->
 <footer>
       <div class="container">
         <article>
           <img src="img/logo_white.svg" alt="logo" />
-          <a href="doc-inter.html"><?= $sdk->palabras[$lang][7]?></a>
-          <a href="mas-info.html"><?= $sdk->palabras[$lang][2]?></a>
-          <a href="doc-inter2.html"><?= $sdk->palabras[$lang][0]?></a>
-          <a href=""><?=$sdk->palabras[$lang][1]?></a>
-          <a href="pago.html"><?= $sdk->palabras[$lang][9]?></a>
+          <a href="<?=$lang?>/equipo-humano"><?= $sdk->palabras[$lang][4]?></a>
+          <a href="<?=$lang?>/contactanos"><?= $sdk->palabras[$lang][2]?></a>
+          <a href="<?=$lang?>/agenda-tu-cita"><?= $sdk->palabras[$lang][0]?></a>
+          <a href="<?=$lang?>/pago-en-linea"><?= $sdk->palabras[$lang][9]?></a>
         </article>
         <article>
-          <a href=""><?= $sdk->palabras[$lang][8]?></a>
-          <a href="proce-inter.html"><?= $sdk->palabras[$lang][13]?></a>
-          <a href=""><?= $sdk->palabras[$lang][14]?></a>
-          <a href=""><?= $sdk->palabras[$lang][10]?></a>
-          <a href="fidelizacion.html"><?= $sdk->palabras[$lang][11]?></a>
-          <a href="convenios.html"><?= $sdk->palabras[$lang][3]?></a>
-          <a href=""><?= $sdk->palabras[$lang][17]?></a>
+          <a href="<?=$lang?>/pacientes-fuera-de-colombia"><?= $sdk->palabras[$lang][8]?></a>
+          <a href="<?=$lang?>/procedimientos"><?= $sdk->palabras[$lang][13]?></a>
+          <a href="<?=$lang?>/linea-de-prevencion"><?= $sdk->palabras[$lang][14]?></a>
+          <a href="<?=$lang?>/para-ellos"><?= $sdk->palabras[$lang][10]?></a>
+          <a href="<?=$lang?>/plan-de-fidelizacion"><?= $sdk->palabras[$lang][11]?></a>
+          <a href="<?=$lang?>/convenios-empresariales"><?= $sdk->palabras[$lang][3]?></a>
+          <a href="<?=$sdk->infoGnrl->acf->video_180_link?>" data-fancybox><?= $sdk->palabras[$lang][17]?></a>
         </article>
         <article>
           <small
@@ -71,12 +35,19 @@
                   $codigo_pais = $matches[1];
                   $numero = str_replace(" ", "", $matches[2]);
                   $href = "tel:+$codigo_pais$numero";
-                  return "<a href=\"$href\">(+57 $codigo_pais) $matches[2]</a>";
+                  return "<a href=\"$href\">($codigo_pais) $matches[2]</a>";
               }, $sdk->infoGnrl->acf->telefonos);
-
               echo $texto_formateado;?>
           </small>
-          <small>Whatsapp: <a href=""><?=$sdk->infoGnrl->acf->whatsapp?></a></small>
+          <small>Whatsapp: 
+          <a target="_blank" href="<?php
+                $digitos = preg_replace('/[^\d]/', '', $sdk->infoGnrl->acf->whatsapp);
+                $codigoPais = '57';
+                $telefonoFinal = $digitos;
+                echo "https://api.whatsapp.com/send/?phone=".$telefonoFinal . "&text=" . $sdk->infoGnrl->acf->mensaje_whatsapp;?>"
+                class="red"></a>
+
+          </small>
           <small><?=$sdk->infoGnrl->acf->ciudad?></small>
           <!-- <?=$sdk->infoGnrl->acf->link_de_tiktok?> -->
           <!-- <?=$sdk->infoGnrl->acf->link_de_youtube?> -->
@@ -132,12 +103,11 @@
             <a target="_blank" href="<?php
                 // Utilizamos expresiones regulares para extraer los dígitos
                 $digitos = preg_replace('/[^\d]/', '', $sdk->infoGnrl->acf->whatsapp);
-
                 // Añadimos el código del país al principio (57 en este caso)
                 $codigoPais = '57';
                 $telefonoFinal = $digitos;
 
-                echo "https://wa.me/".$telefonoFinal . "&text=" . $sdk->infoGnrl->acf->mensaje_whatsapp;?>"
+                echo "https://api.whatsapp.com/send/?phone=".$telefonoFinal . "&text=" . $sdk->infoGnrl->acf->mensaje_whatsapp;?>"
               ><svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -163,15 +133,22 @@
           <small><?=date("Y")?></small>
         </div>
         <div class="grid-item">
-          <a href="" target="_blank"><small><?= $sdk->palabras[$lang][12]?></small></a>
+          <a href="<?=$lang?>/politicas-de-tratamiento-de-datos" target="_blank"><small><?= $sdk->palabras[$lang][12]?></small></a>
         </div>
       </div>
     </footer>
 
+    <script src="https://oblicua.co/lab/credits/credits.js"></script>
+    <script src="https://unpkg.com/image-compare-viewer/dist/image-compare-viewer.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery.validate.min.js"></script>
+    <script src="js/jquery.form.js"></script>
+    <script src="js/additional-methods.min.js"></script>
+    <script src="js/card.js"></script>
     <script src="js/main.js?v=<?=time()?>"></script>
   </body>
 </html>

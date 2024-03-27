@@ -1,5 +1,5 @@
-.favoritos__3 {
-  background-image: url(/img/Vector\ 45.svg);
+.favoritos__2 {
+  background-image: url(../img/Vector\ 45.svg);
   background-size: 98%;
   background-repeat: no-repeat;
   background-position-y: 76%;
@@ -10,37 +10,33 @@
     background-position-y: 100%;
   }
 
-    h3 {
-      color: #32495E;
+  h3 {
+    color: #32495e;
 
-      @media only screen and (max-width: 768px) {
-        font-size: 30px;
-      }
-    }
-
-    h4 {
-      background: #213445;
-    }
-    .splide__arrow {
-      top: 60%;
-      &--prev {
-        left: -10em;
-        @media only screen and (max-width: 768px){
-          left: 0;
-            
-        }
-      }
-      &--next {
-        right: -10em;
-        @media only screen and (max-width: 768px){
-          right: 0;
-            
-        }
-      }
+    @media only screen and (max-width: 768px) {
+      font-size: 30px;
     }
   }
 
-
+  h4 {
+    background: #213445;
+  }
+  .splide__arrow {
+    top: 60%;
+    &--prev {
+      left: -10em;
+      @media only screen and (max-width: 768px) {
+        left: 0;
+      }
+    }
+    &--next {
+      right: -10em;
+      @media only screen and (max-width: 768px) {
+        right: 0;
+      }
+    }
+  }
+}
 .procedimiento {
   margin: 50px auto 0 auto;
 
@@ -70,7 +66,7 @@
     &__opce {
       max-width: 617px;
       max-height: 206px;
-      background-color: #32495E;
+      background-color: #32495e;
       border-radius: 15px;
       transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
 
@@ -83,16 +79,16 @@
         color: #fff;
         margin-bottom: 45px;
         padding-left: 30px;
-      }                  
+      }
     }
     &__opce:hover {
-      border: 3px solid #32495E;
+      border: 3px solid #32495e;
       background: #213445;
     }
   }
 }
 .agendate-e {
-  background-image: url(/img/Vector\ 46.svg);
+  background-image: url(../img/Vector\ 46.svg);
   background-size: contain;
   background-repeat: no-repeat;
   text-align: center;
@@ -101,20 +97,14 @@
   display: flex;
   align-items: center;
   max-width: 100%;
-  min-height: 560px;
+  min-height: 510px;
   @media only screen and (max-width: 768px) {
     min-height: none;
     margin: 30px auto;
-
   }
   h4 {
     color: #213445;
     margin: 40px 0 30px 0;
-    font-size: 40px;
-
-    @media only screen and (max-width: 768px) {
-      font-size: 30px;
-    }
   }
   .iconos {
     display: flex;
@@ -181,50 +171,83 @@
     margin-bottom: 30px;
   }
 }
-
 .btn.primary-1 {
+  color: #fff;
+  background: #32495e;
+  width: fit-content;
+  padding: 15px 30px 15px 30px;
+  &:hover {
+    background: #213445;
     color: #fff;
-    background: #32495E;
-    width: fit-content;
-    padding: 15px 30px 15px 30px;
-    &:hover {
-      background: #213445;
-      color: #fff;
-      border: 2px solid #213445;
-    }
-    @media only screen and (max-width: 768px){
-      display: flex;
-      margin: 0 auto;
-        
-    }
+    border: 2px solid #213445;
+  }
+  @media only screen and (max-width: 768px) {
+    display: flex;
+    margin: 0 auto;
+  }
 }
 .btn.primary-bann {
-    position: relative;
-    left: 40%;
+  position: relative;
+  left: 40%;
+  color: #fff;
+  background: #32495e;
+  padding: 15px 30px 15px 30px;
+  &:hover {
+    background: #213445;
     color: #fff;
-    background: #32495E;
-    padding: 15px 30px 15px 30px;
-    &:hover {
-      background: #213445;
-      color: #fff;
-      border: 2px solid #213445;
-    }
-  }
-  .btn.secondary-serv {
-    background: transparent;
-    color: #213445;
-    border-color: #32495e;
-    &:hover {
-      background: #213445;
-      color: #fff;
-      border: 2px solid #213445;
+    border: 2px solid #213445;
   }
 }
-
-
-
-.paraellos{
-  .pacientes{
+.btn.secondary-serv {
+  background: transparent;
+  color: #213445;
+  border-color: #32495e;
+  &:hover {
+    background: #213445;
+    color: #fff;
+    border: 2px solid #213445;
+  }
+}
+.paraellos {
+  &::after {
+    content: none;
+  }
+  .procedimientos__opc {
+    transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+    border-radius: 15px;
+    padding: 30px 40px;
+    h4 {
+      color: #fff;
+      font-size: 22px;
+    }
+    p {
+      font-size: 16px;
+      color: #fff;
+    }
+  }
+  .splide__arrow--next {
+    right: -70px;
+  }
+  .splide__arrow--prev {
+    left: -70px;
+  }
+  .container-p {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 768px;
+    margin: 0 auto 50px;
+    padding-top: 50px;
+    p {
+      padding: 20px;
+      text-align: justify;
+    }
+    .btn.primary {
+      margin: 20px auto;
+    }
+  }
+  .pacientes {
     padding-bottom: 80px;
   }
   .procedimiento-card {
@@ -258,16 +281,16 @@
       }
     }
   }
-    .procedimientos {
-      &__opc{
-        background-color: #32495E;
-        &:hover {
-          background-color: #213445;
-      
-          @media only screen and (max-width: 768px) {
-            transform: none;
-          }
+  .procedimientos {
+    &__opc {
+      background-color: #32495e;
+      &:hover {
+        background-color: #213445;
+
+        @media only screen and (max-width: 768px) {
+          transform: none;
         }
       }
     }
+  }
 }

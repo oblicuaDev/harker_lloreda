@@ -34,7 +34,7 @@
       h2 {
         font-size: 50px;
         @media only screen and (max-width: 768px) {
-          font-size: 40px;
+          font-size: 32px;
         }
       }
       h3 {
@@ -108,8 +108,9 @@
 }
 
 .splide__pagination {
-  left: 200px;
+  left: 207px;
   right: initial;
+  bottom: 30px;
   @media only screen and (max-width: 768px) {
     left: 0;
     right: 0;
@@ -127,8 +128,8 @@
   }
 }
 .splide__pagination__page {
-  width: 15px;
-  height: 15px;
+  width: 14px;
+  height: 14px;
   border: 1px solid transparent;
   position: relative;
   background: transparent;

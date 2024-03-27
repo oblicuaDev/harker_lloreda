@@ -6,6 +6,9 @@ class HarkerLloreda {
     public $language = "";
     public $palabras = "";
     public $production = true;
+    public $accessToken = "098f6bcd4621d373cade4e832627b4f6*1.4";
+    public $environment = 0;
+    private $headers = array();
 
     public function __construct($language = "es", $development = false) {
         if ($development) {
@@ -14,8 +17,94 @@ class HarkerLloreda {
         $this->language = $language;
         $this->infoGnrl = $this->gInfo();
         $this->palabras = $this->getPalabrasDeInterfaz();
+        $this->headers = array('Access-token: '.$this->accessToken.'','Environment-set: '.$this->environment,'Content-Type: application/json');
     }
+    
+    function orekaQueryCollection($moduleID,$sort,$orientation,$quantity,$page,$p = false){
+        $curl = curl_init();
+        curl_setopt_array($curl, array(
+        CURLOPT_URL => 'http://oreka.harkerlloreda.com/api/public/v1/collection/'.$moduleID.'/'.$sort.'/'.$orientation.'/'.$quantity.'/'.$page,
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_ENCODING => '',
+        CURLOPT_MAXREDIRS => 10,
+        CURLOPT_TIMEOUT => 0,
+        CURLOPT_FOLLOWLOCATION => true,
+        CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+        CURLOPT_CUSTOMREQUEST => 'GET',
+        CURLOPT_HTTPHEADER => $this->headers
+        ));
 
+        $response = curl_exec($curl);
+
+        curl_close($curl);
+        return json_decode($response);
+
+    }
+    public function orekaPostRow($modules, $rows, $idfies, $types, $values){
+        $service_url="http://oreka.harkerlloreda.com/api/public/v1/create";
+        $iRows=0;
+        if(!is_array($modules)){
+            $modules=[$modules];
+            $rows=[$rows];
+            $idfies=[$idfies];
+            $ntypes=count(explode(",", $types));
+            $types=[$types];
+            $nvalues=count($values);
+            if($ntypes==$nvalues)
+                $values=[[$values]];
+        }
+
+        $data=new stdClass();
+        $body=new stdClass();
+        for ($i=0; $i < count($modules); $i++) { 
+            $currFields=explode(",", $idfies[$i]);
+            $currTypes=explode(",", $types[$i]);
+            for ($j=0; $j < $rows[$i]; $j++) {
+                $newrow=new stdClass();
+                $newrow->module=$modules[$i];
+                $newrow->types="";
+                $newrow->values=new stdClass();
+                $newrow->idfields=new stdClass();
+                $newrow->typefields=new stdClass();
+                for ($k=0; $k < count($currFields); $k++) {
+                    $val="val$k";
+                    $type="type$k";
+                    $idfie="id$k";
+                    $newrow->values->$val=$values[$i][$j][$k];
+                    $newrow->idfields->$idfie=$currFields[$k];
+                    $newrow->typefields->$type=$currTypes[$k];
+                }
+                $newrowS="newrow$iRows";
+                $data->$newrowS=$newrow;
+                $iRows++;
+            }
+        }
+        $body->data=$data;
+        $body=json_encode($body);
+        return $this->orekaMakePostCall($service_url,$body);
+    }
+    public function orekaMakePostCall($url,$body="{}"){
+        //array_push($this->headers,'Content-Length: '.strlen($body));
+        //array_push($this->headers,'Content-Type: application/json');
+        $service_url = $url;
+        $ch = curl_init($service_url);
+        
+        curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'POST'); 
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_HTTPHEADER, $this->headers);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $body);
+        // curl_setopt($ch, CURLOPT_FRESH_CONNECT, true);
+        // curl_setopt($ch, CURLOPT_FORBID_REUSE, true);
+        // curl_setopt($ch, CURLOPT_TIMEOUT, 4);
+        $ch_response = curl_exec($ch);
+        $http_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+        curl_close($ch);
+        $decoded = json_decode($ch_response);
+        if (json_last_error() !== JSON_ERROR_NONE) {
+            error_log("MakePostCall JSON Error[$service_url]: " . json_last_error_msg() . " - ". $http_code . " - " . $ch_response . "\n", 3, __DIR__ . "/json_error.log");
+        }
+        return $decoded; 
+    }
     function query($url, $body = "", $cache = false, $queryParams = null){
         if ($queryParams === null) {
             $queryParams = ['field' => 'idioma_de_este_contenido', 'value' => $this->language];
@@ -74,9 +163,9 @@ class HarkerLloreda {
 		}
 	}
     function gInfo(){
-        if(isset($_SESSION[$this->language]['ginfo'])){
-            $gnrl = $_SESSION[$this->language]['ginfo'];
-		} else {
+        // if(isset($_SESSION[$this->language]['ginfo'])){
+        //     $gnrl = $_SESSION[$this->language]['ginfo'];
+		// } else {
             if($this->language == "es"){
                 $result = $this->query("pages/109");                
             }else{
@@ -84,55 +173,137 @@ class HarkerLloreda {
             }
 			$gnrl = $result;
             
-			$_SESSION[$this->language]['ginfo'] = $gnrl;
-		}
+		// 	$_SESSION[$this->language]['ginfo'] = $gnrl;
+		// }
 		return $gnrl;
 	}
+    function getConceptosDePago(){
+        $conceptos = $this->orekaQueryCollection("42","lord","upward","10","1");
+        return $conceptos;
+    }
     function gBannerHome(){
-        if(isset($_SESSION[$this->language]['hl_sliders'])){
-            $banners = $_SESSION[$this->language]['hl_sliders'];
-        } else {
+        // if(isset($_SESSION[$this->language]['hl_sliders'])){
+        //     $banners = $_SESSION[$this->language]['hl_sliders'];
+        // } else {
             $result = $this->query("hl_sliders");
             $banners = $result;
     
-            $_SESSION[$this->language]['hl_sliders'] = $banners;
-        }
+        //     $_SESSION[$this->language]['hl_sliders'] = $banners;
+        // }
         return $banners;
    
     }
-
-    // ID que debe ir primero (puede ser 230 o 284)
-    
-    // Función de comparación personalizada
-    function compararPorID($a, $b) {
-        if($this->language == "es"){
-            $idPrimero = 230;
-        }else{
-            $idPrimero = 284;
-        }
-        // Comprobamos si alguno de los IDs es el ID que debe ir primero
-        $aPrimero = ($a->id === $idPrimero);
-        $bPrimero = ($b->id === $idPrimero);
-    
-        // Si ambos deben ir primero o ninguno debe ir primero, comparamos por ID normalmente
-        if ($aPrimero == $bPrimero) {
-            return 0;
-        }
-    
-        // Si solo uno de ellos debe ir primero, ese va primero
-        return $aPrimero ? -1 : 1;
+    function gPage($id){
+        $result = $this->query("pages/$id");
+        return $result;
     }
-
     function gEquipoDestacadoHome(){
-        if(isset($_SESSION[$this->language]['hl_miembros_destacados'])){
-            $equipo_destacados = $_SESSION[$this->language]['hl_miembros_destacados'];
-        } else {
+        // if(isset($_SESSION[$this->language]['hl_miembros_destacados'])){
+        //     $equipo_destacados = $_SESSION[$this->language]['hl_miembros_destacados'];
+        // } else {
             $queryParams = ['field' => 'destacar_en_el_home,idioma_de_este_contenido', 'value' => 'Si,'.$this->language];
             $result = $this->query("hl_miembros", "", null, $queryParams);
             $equipo_destacados = $result;
-            $_SESSION[$this->language]['hl_miembros_destacados'] = $equipo_destacados;
-        }
+        //     $_SESSION[$this->language]['hl_miembros_destacados'] = $equipo_destacados;
+        // }
         return $equipo_destacados;
+    }
+    function gTeamMembers(){
+        $queryParams = ['field' => 'destacar_en_el_home,idioma_de_este_contenido', 'value' => 'No,'.$this->language];
+        $result = $this->query("hl_miembros", "", null, $queryParams);
+        $equipo_destacados = $result;
+        return $equipo_destacados;
+    }
+    function getDoctor($id){
+        $queryParams = ['field' => 'idioma_de_este_contenido', 'value' => $this->language];
+        $result = $this->query("hl_miembros/".$id, "", null, $queryParams);
+        $doctor = $result;
+        return $doctor;
+    }
+    function gFidelizacion($page){
+        // if(isset($_SESSION[$this->language]['gFidelizacion'])){
+        //     $result = $_SESSION[$this->language]['gFidelizacion'];
+        // } else {
+            $result = $this->query("pages/$page", "", null, []);
+        //     $_SESSION[$this->language]['gFidelizacion'] = $result;
+        // }
+        return $result;
+    }
+    function gConvenios(){
+        // if(isset($_SESSION[$this->language]['gConvenios'])){
+        //     $result = $_SESSION[$this->language]['gConvenios'];
+        // } else {
+            $result = $this->query("pages/416", "", null, []);
+        //     $_SESSION[$this->language]['gConvenios'] = $result;
+        // }
+        return $result;
+    }
+    function gEmpresasConvenios(){
+        $result = $this->query("hl_empconvenio", "", null, []);
+        return $result;
+    }
+    function gAntesDespues($id){
+        $result = $this->query("hl_antes_despues/".$id, "", null, []);
+        return $result;
+    }
+    function gLinea($id){
+        $result = $this->query("hl_lines/".$id, "", null, []);
+        return $result;
+    }
+    function gTestimoniosDoctor($idDoctor){
+        $queryParams = ['field' => 'miembro_del_equipo_relacionado', 'value' => $idDoctor];
+        $result = $this->query("hl_testimonios", "", null, $queryParams );
+        return $result;
+    }
+    function gTestimoniosLinea($idLinea){
+        $queryParams = ['field' => 'linea_a_la_que_pertenece', 'value' => $idLinea];
+        $result = $this->query("hl_testimonios", "", null, $queryParams );
+        return $result;
+    }
+    function gTestimoniosInternational(){
+        $queryParams = ['field' => 'incluir_testimonio_en_pacientes_internacionales,idioma_de_este_contenido', 'value' => '1,'.$this->language];
+        $result = $this->query("hl_testimonios", "", null, $queryParams );
+        return $result;
+    }
+    function gTestimoniosPro($idPro){
+        $queryParams = ['field' => 'procedimiento_que_se_realizo', 'value' => $idPro];
+        $result = $this->query("hl_testimonios", "", null, $queryParams );
+        return $result;
+    }
+    function gTestimoniosInternacional(){
+        $queryParams = ['field' => 'incluir_testimonio_en_pacientes_internacionales', 'value' => '1'];
+        $result = $this->query("hl_testimonios", "", null, $queryParams );
+        return $result;
+    }
+    function gProcedimientosPorLinea($linea){
+        $queryParams = ['field' => 'linea_a_la_que_pertenece', 'value' => $linea, 'per_page'=>100];
+        $result = $this->query("hl_list_proced", "", null, $queryParams);
+        return $result;
+    }
+    function gProcedimientosPorCategoria($category){
+        if($this->language == 'es'){
+            $line = '401';
+        }else{
+            $line = '979';
+        }
+        $queryParams = ['field' => 'categoria_de_procedimiento_relacionada,linea_a_la_que_pertenece', 'value' => $category. ','. $line , 'per_page'=>100];
+        $result = $this->query("hl_list_proced", "", null, $queryParams);
+        return $result;
+    }
+    function gProcedimientosDestacados(){
+        $queryParams = ['field' => 'destacar_pro,idioma_de_este_contenido', 'value' => '1,'.$this->language, 'per_page'=>100];
+        $result = $this->query("hl_list_proced", "", null, $queryParams);
+        return $result;
+    }
+    function gProcedimientosInternational(){
+        $queryParams = ['field' => 'destacar_para_pacientes_internacionales,idioma_de_este_contenido', 'value' => '1,'.$this->language, 'per_page'=>100];
+        $result = $this->query("hl_list_proced", "", null, $queryParams);
+        return $result;
+    }
+    function gProcedimiento($id){
+        $queryParams = ['field' => 'idioma_de_este_contenido', 'value' => $this->language];
+        $result = $this->query("hl_list_proced/{$id}", "", null, $queryParams);
+        return $result;
     }
     function gExtraInfoHome(){
         if($this->language == "es"){
@@ -148,6 +319,24 @@ class HarkerLloreda {
         $equipo_destacados["tour"]=$result2;
         return $equipo_destacados;
     }
+    function gPacientesFueraDeColombia($id){
+        if(isset($id)){
+            $result1 = $this->query("pages/$id");
+        }else if($this->language == "es"){
+            $result1 = $this->query("pages/30");
+        }else{
+            $result1 = $this->query("pages/291");
+        }
+        return $result1;
+    }
+    function gEquipoHumano(){
+        if($this->language == "es"){
+            $result = $this->query("pages/28");
+        }else{
+            $result = $this->query("pages/815");
+        }
+        return $result;
+    }
     function gCategoriasProcedimientos($id= null){
         if($id == null){
             $result = $this->query("hl_cat_proced");
@@ -159,9 +348,9 @@ class HarkerLloreda {
         return $categorias;
     }
     function getPalabrasDeInterfaz(){
-        if(isset($_SESSION['palabras'])){
-            $palabras = $_SESSION['palabras'];
-		} else {
+        // if(isset($_SESSION['palabras'])){
+        //     $palabras = $_SESSION['palabras'];
+		// } else {
             $palabrasES = $this->query("pages/176");
             $palabrasEN = $this->query("pages/326");
             $palabras = array();
@@ -173,21 +362,21 @@ class HarkerLloreda {
             $textsEN = $matchesEN[1];
             $palabras["es"]=$textsES;
             $palabras["en"]=$textsEN;
-			$_SESSION['palabras'] = $palabras;
-		}
+		// 	$_SESSION['palabras'] = $palabras;
+		// }
         return $palabras;
     }
     function getProcedimientosPage(){
-        if(isset($_SESSION['procedimientosPage'])){
-            $procedimientosPage = $_SESSION['procedimientosPage'];
-		} else {
+        // if(isset($_SESSION['procedimientosPage'])){
+        //     $procedimientosPage = $_SESSION['procedimientosPage'];
+		// } else {
             $procedimientosPage = array();
             $procedimientosPageES = $this->query("pages/128");
             $procedimientosPageEN = $this->query("pages/298");
             $procedimientosPage["es"] = $procedimientosPageES;
             $procedimientosPage["en"] = $procedimientosPageEN;
-	        $_SESSION['procedimientosPage'] = $procedimientosPage;
-		}
+	    //     $_SESSION['procedimientosPage'] = $procedimientosPage;
+		// }
 		return $procedimientosPage;
         
     }
@@ -352,23 +541,24 @@ class HarkerLloreda {
 
         return ($String);
     }
-    function create_metas($seoId){
+    function create_metas($seoId = '', $type = 'pages'){
         $canonicalURL = "http://".$_SERVER[HTTP_HOST].$_SERVER[REQUEST_URI];
         if ($seoId == '') {
-            $seoId = 4;
+            if($this->language == 'es'){
+                $seo = $this->query("$type/109");
+            }else{
+                $seo = $this->query("$type/277");
+            }
+        }else{
+            $seo = $this->query("$type/$seoId");
         }
-        $seo = $this->query("seo/" . $seoId);
-        $seo = $seo[0];
         global $metas, $urlMap;
         
         $ret = '';
-        $metas['title'] = $seo->field_seo_title;
-        $metas['desc'] = $seo->field_seo_desc;
-        $metas['words'] = $seo->field_seo_keys;
-        $metas['img'] = "https://www.bogotadc.travel" . $seo->field_seo_img;
-
-        // list($width, $height, $type, $attr) = getimagesize("https://www.bogotadc.travel" . $seo->field_seo_img);
-
+        $metas['title'] = $seo->acf->titulo . " - " . $this->palabras[$this->language][45];
+        $metas['desc'] = $seo->acf->descripcion;
+        $metas['words'] = $seo->acf->palabras_clave;
+        $metas['img'] =  $seo->acf->imagen;
         $ret = '<meta charset="utf-8">' . PHP_EOL;
         $ret .= '<link rel="canonical" href="' . $canonicalURL . '">' . PHP_EOL; 
         $ret .= '<meta name="keywords" content="' . $metas['words'] . '">' . PHP_EOL;

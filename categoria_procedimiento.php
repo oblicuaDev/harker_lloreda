@@ -1,8 +1,15 @@
 <?php 
+  $bodyClass= 'procat';
   include 'includes/head.php';
   $procedimientoCat = $sdk->gCategoriasProcedimientos($_GET["idCategoria"])
 ?>
-  <main>
+  <main 
+  data-category="<?=$_GET["idCategoria"]?>" 
+  data-tresid="<?=$procedimientoCat->translations->es?>" 
+  data-trenid="<?=$procedimientoCat->translations->en?>"
+  data-tresslug="<?=$procedimientoCat->translations->esslug?>" 
+  data-trenslug="<?=$procedimientoCat->translations->enslug?>"
+  >
     <section>
       <div class="banner-container half">
         <div class="banner">
@@ -43,16 +50,8 @@
     </section>
     <section data-aos="fade-down" data-aos-duration="3000">
       <div class="container-p">
-        <p>
-          Texto introductorio sobre que es teens, los procedimientos
-          preventivos, porqué en Harker Lloreda, etc. Lorem ipsum dolor sit
-          amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-          ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-          nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-          consequat.
-        </p>
-
-        <a href="" class="btn primary">Pide tu cita
+      <?=$procedimientoCat->acf->texto_introduccion_?>
+        <a href="" class="btn primary"><?=$sdk->palabras[$lang][0]?>
           <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path fill-rule="evenodd" clip-rule="evenodd"
               d="M10 3.38379C6.20304 3.38379 3.125 6.46183 3.125 10.2588C3.125 14.0557 6.20304 17.1338 10 17.1338C13.797 17.1338 16.875 14.0557 16.875 10.2588C16.875 6.46183 13.797 3.38379 10 3.38379ZM1.875 10.2588C1.875 5.77148 5.51269 2.13379 10 2.13379C14.4873 2.13379 18.125 5.77148 18.125 10.2588C18.125 14.7461 14.4873 18.3838 10 18.3838C5.51269 18.3838 1.875 14.7461 1.875 10.2588Z"
@@ -69,251 +68,95 @@
     <section data-aos="fade-down" data-aos-duration="3000">
       <div class="favoritos__2">
         <div class="container">
-          <h3 class="bold">Favoritos</h3>
+          <h3 class="bold"><?= $sdk->palabras[$lang][28]?></h3>
           <section class="splide category-splide" aria-label="category-proc">
             <div class="splide__arrows">
               <button class="splide__arrow splide__arrow--prev">
                 <svg width="84" height="84" viewBox="0 0 84 84" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <rect x="1" y="1" width="82" height="82" rx="41" stroke="#335C82" stroke-width="2" />
                   <path
-                    d="M21 42C20.4477 42 20 42.4477 20 43C20 43.5523 20.4477 44 21 44V42ZM63.2071 43.7071C63.5976 43.3166 63.5976 42.6834 63.2071 42.2929L56.8431 35.9289C56.4526 35.5384 55.8195 35.5384 55.4289 35.9289C55.0384 36.3195 55.0384 36.9526 55.4289 37.3431L61.0858 43L55.4289 48.6569C55.0384 49.0474 55.0384 49.6805 55.4289 50.0711C55.8195 50.4616 56.4526 50.4616 56.8431 50.0711L63.2071 43.7071ZM21 44H62.5V42H21V44Z"
-                    fill="#335C82" />
+                  d="M21 42C20.4477 42 20 42.4477 20 43C20 43.5523 20.4477 44 21 44V42ZM63.2071 43.7071C63.5976 43.3166 63.5976 42.6834 63.2071 42.2929L56.8431 35.9289C56.4526 35.5384 55.8195 35.5384 55.4289 35.9289C55.0384 36.3195 55.0384 36.9526 55.4289 37.3431L61.0858 43L55.4289 48.6569C55.0384 49.0474 55.0384 49.6805 55.4289 50.0711C55.8195 50.4616 56.4526 50.4616 56.8431 50.0711L63.2071 43.7071ZM21 44H62.5V42H21V44Z"
+                  fill="#335C82" />
                 </svg>
               </button>
               <button class="splide__arrow splide__arrow--next">
                 <svg width="84" height="84" viewBox="0 0 84 84" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <rect x="1" y="1" width="82" height="82" rx="41" stroke="#335C82" stroke-width="2" />
                   <path
-                    d="M21 42C20.4477 42 20 42.4477 20 43C20 43.5523 20.4477 44 21 44V42ZM63.2071 43.7071C63.5976 43.3166 63.5976 42.6834 63.2071 42.2929L56.8431 35.9289C56.4526 35.5384 55.8195 35.5384 55.4289 35.9289C55.0384 36.3195 55.0384 36.9526 55.4289 37.3431L61.0858 43L55.4289 48.6569C55.0384 49.0474 55.0384 49.6805 55.4289 50.0711C55.8195 50.4616 56.4526 50.4616 56.8431 50.0711L63.2071 43.7071ZM21 44H62.5V42H21V44Z"
-                    fill="#335C82" />
+                  d="M21 42C20.4477 42 20 42.4477 20 43C20 43.5523 20.4477 44 21 44V42ZM63.2071 43.7071C63.5976 43.3166 63.5976 42.6834 63.2071 42.2929L56.8431 35.9289C56.4526 35.5384 55.8195 35.5384 55.4289 35.9289C55.0384 36.3195 55.0384 36.9526 55.4289 37.3431L61.0858 43L55.4289 48.6569C55.0384 49.0474 55.0384 49.6805 55.4289 50.0711C55.8195 50.4616 56.4526 50.4616 56.8431 50.0711L63.2071 43.7071ZM21 44H62.5V42H21V44Z"
+                  fill="#335C82" />
                 </svg>
               </button>
             </div>      
             <div class="splide__track">
               <ul class="splide__list">
-                <li class="splide__slide">
-                  <a class="procedimiento-card">
-                  <img src="img/image 35.png" alt="pro" />
-                  <span>Nombre del procedimiento</span>
-                  <small>Nombre científico</small>
-                  </a>
-                </li>
-                <li class="splide__slide">
-                  <a class="procedimiento-card">
-                  <img src="img/image 36.png" alt="pro" />
-                  <span>Nombre del procedimiento</span>
-                  <small>Nombre científico</small>
-                  </a>
-                </li>
-                <li class="splide__slide">
-                  <a class="procedimiento-card">
-                  <img src="img/image 37.png" alt="pro" />
-                  <span>Nombre del procedimiento</span>
-                  <small>Nombre científico</small>
-                  </a>
-                </li>
-              <li class="splide__slide">
-                <a class="procedimiento-card">
-                <img src="img/image 35.png" alt="pro" />
-                <span>Nombre del procedimiento</span>
-                <small>Nombre científico</small>
-                </a>
-              </li>
-              <li class="splide__slide">
-                <a class="procedimiento-card">
-                <img src="img/image 36.png" alt="pro" />
-                <span>Nombre del procedimiento</span>
-                <small>Nombre científico</small>
-                </a>
-              </li>
-              <li class="splide__slide">
-                <a class="procedimiento-card">
-                <img src="img/image 37.png" alt="pro" />
-                <span>Nombre del procedimiento</span>
-                <small>Nombre científico</small>
-                </a>
-              </li>
-              </ul>
-            </div>
-          </section> 
-        </div>
-      </div>
-    </section>
-    <section data-aos="fade-down" data-aos-duration="3000">
-      <div class="container">
-        <div class="tab-titles">
-          <p class="tab-links active-link" onclick="opentab('fav_quirurgico')">
-            Quirúrgico
-          </p>
-          <p class="tab-links" onclick="opentab('fav_no_quirurgico')">
-            No quirúrgico
-          </p>
-        </div>
-
-        <div class="procedimiento container">
-          <div class="tab-contents active-tab" id="fav_quirurgico">
-            <div class="container procedimientos">
-              <div class="procedimientos__opcc">
-                <a href="">
-                  <h4>PB Serum</h4>
-                  <p>Enzimas recombinantes</p>
-                </a>
+                </ul>
               </div>
-              <div class="procedimientos__opcc">
-                <a href="">
-                  <h4>Aumento de senos</h4>
-                  <p>Mamoplastia de aumento</p>
-                </a>
-              </div>
-              <div class="procedimientos__opcc">
-                <a href="">
-                  <h4>Bodytite</h4>
-                  <p>Remodelación corporal subcutánea</p>
-                </a>
-              </div>
-              <div class="procedimientos__opcc">
-                <a href="">
-                  <h4>Elevación de senos</h4>
-                  <p>Mamopexia</p>
-                </a>
-              </div>
-              <div class="procedimientos__opcc">
-                <a href="">
-                  <h4>Morpheus 8</h4>
-                  <p>Radiofrecuencia fraccionada para<br>renovación de la piel corporal</p>
-                </a>
-              </div>
-              <div class="procedimientos__opcc">
-                <a href="">
-                  <h4>Reducción de senos</h4>
-                  <p>Mamoplastia de reducción</p>
-                </a>
-              </div>
-              <div class="procedimientos__opcc">
-                <a href="">
-                  <h4>Abdominoplastia</h4>
-                  <p>Dermolipectomía o lipectomía<br>abdominal</p>
-                </a>
-              </div>
-              <div class="procedimientos__opcc">
-                <a href="">
-                  <h4>Liposucción con láser</h4>
-                  <p>Lipólisis láser</p>
-                </a>
-              </div>
-              <div class="procedimientos__opcc">
-                <a href="">
-                  <h4>Aumento de cola</h4>
-                  <p>Gluteoplastia</p>
-                </a>
-              </div>
-              <div class="procedimientos__opcc">
-                <a href="">
-                  <h4>Lipoinyección abdominal</h4>
-                  <p>Lipoescultura</p>
-                </a>
-              </div>
-            </div>
+            </section> 
           </div>
         </div>
-
-        <div class="procedimiento container">
-          <div class="tab-contents" id="fav_no_quirurgico">
-            <div class="container">
+      </section>
+      <section data-aos="fade-down" data-aos-duration="3000" class="conoce">
+        <div class="container">
+          <h3 class="bold">
+          <?php 
+            $texto  = $sdk->palabras[$lang][29];
+            $nuevoTexto = str_replace("|CAT|", $procedimientoCat->title->rendered, $texto);
+            echo $nuevoTexto;
+          ?>
+          </h3>
+          <div class="tab-titles">
+            <p id="tabq" class="tab-links" onclick="opentab('fav_quirurgico')">
+              Quirúrgico
+            </p>
+            <p id="tabnoq" class="tab-links" onclick="opentab('fav_no_quirurgico')">
+              No quirúrgico
+            </p>
+          </div>
+          
+          <div class="procedimiento container">
+            <div class="tab-contents " id="fav_quirurgico">
               <div class="container procedimientos">
-                <div class="procedimientos__opcc">
-                  <a href="">
-                    <h4>PB Serum</h4>
-                    <p>Enzimas recombinantes</p>
-                  </a>
-                </div>
-                <div class="procedimientos__opcc">
-                  <a href="">
-                    <h4>Aumento de senos</h4>
-                    <p>Mamoplastia de aumento</p>
-                  </a>
-                </div>
-                <div class="procedimientos__opcc">
-                  <a href="">
-                    <h4>Bodytite</h4>
-                    <p>Remodelación corporal subcutánea</p>
-                  </a>
-                </div>
-                <div class="procedimientos__opcc">
-                  <a href="">
-                    <h4>Elevación de senos</h4>
-                    <p>Mamopexia</p>
-                  </a>
-                </div>
-                <div class="procedimientos__opcc">
-                  <a href="">
-                    <h4>Morpheus 8</h4>
-                    <p>Radiofrecuencia fraccionada para<br>renovación de la piel corporal</p>
-                  </a>
-                </div>
-                <div class="procedimientos__opcc">
-                  <a href="">
-                    <h4>Reducción de senos</h4>
-                    <p>Mamoplastia de reducción</p>
-                  </a>
-                </div>
-                <div class="procedimientos__opcc">
-                  <a href="">
-                    <h4>Abdominoplastia</h4>
-                    <p>Dermolipectomía o lipectomía<br>abdominal</p>
-                  </a>
-                </div>
-                <div class="procedimientos__opcc">
-                  <a href="">
-                    <h4>Liposucción con láser</h4>
-                    <p>Lipólisis láser</p>
-                  </a>
-                </div>
-                <div class="procedimientos__opcc">
-                  <a href="">
-                    <h4>Aumento de cola</h4>
-                    <p>Gluteoplastia</p>
-                  </a>
-                </div>
-                <div class="procedimientos__opcc">
-                  <a href="">
-                    <h4>Lipoinyección abdominal</h4>
-                    <p>Lipoescultura</p>
-                  </a>
                 </div>
               </div>
             </div>
-          </div>
-    </section>
-    <div class="agendate__cara container">
-      <h4 class="bold">Sentirte mejor contigo es posible</h4>
-      <div class="iconos">
-        <div class="icono">
-          <div class="icono__img">
-            <img src="img/manos.png" alt="" />
-          </div>
-          <h5 class="bold">El mejor equipo</h5>
-        </div>
-        <span>+</span>
-        <div class="icono">
-          <div class="icono__img">
-            <img src="img/estrella.png" alt="" />
-          </div>
-          <h5 class="bold">Un servicio especializado</h5>
-        </div>
-        <span>=</span>
-        <div class="icono">
-          <div class="icono__img">
-            <img src="img/corazon.png" alt="" />
-          </div>
-          <h5 class="bold">Sentirte mejor contigo</h5>
-        </div>
-      </div>
-      <p>
-        Con Harker Lloreda lograrás los mejores resultados, para sentirte
-        mejor contigo misma
-      </p>
-      <a href="" class="btn secondary">Agenda tu cita</a>
-    </div>
-  </main>
-<?php include 'includes/footer.php'; ?>
+            
+            <div class="procedimiento container">
+              <div class="tab-contents" id="fav_no_quirurgico">
+                <div class="container">
+                  <div class="container procedimientos">
+                    </div>
+                  </div>
+                </div>
+              </section>
+              <div class="agendate__cara container">
+                <h4 class="bold"><?= $sdk->palabras[$lang][39]?></h4>
+                <div class="iconos">
+                  <div class="icono">
+                    <div class="icono__img">
+                      <img src="img/manos.png" alt="" />
+                    </div>
+                    <h5 class="bold"><?= $sdk->palabras[$lang][40]?></h5>
+                  </div>
+                  <span>+</span>
+                  <div class="icono">
+                    <div class="icono__img">
+                      <img src="img/estrella.png" alt="" />
+                    </div>
+                    <h5 class="bold"><?= $sdk->palabras[$lang][41]?></h5>
+                  </div>
+                  <span>=</span>
+                  <div class="icono">
+                    <div class="icono__img">
+                      <img src="img/corazon.png" alt="" />
+                    </div>
+                    <h5 class="bold"><?= $sdk->palabras[$lang][42]?></h5>
+                  </div>
+                </div>
+                <p>
+                 <?= $sdk->palabras[$lang][43]?>
+                </p>
+                <a href="" class="btn secondary"><?= $sdk->palabras[$lang][0]?></a>
+              </div>
+            </main>
+            <?php include 'includes/footer.php'; ?>

@@ -1,0 +1,456 @@
+.fueracol {
+  main {
+    #splideGallery {
+      img {
+        height: 300px;
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+    .bg-c {
+      padding: 20px;
+      h3 {
+        margin: 0;
+      }
+      .btn.secondary {
+        margin: 0;
+      }
+    }
+    .redes {
+      display: flex;
+      gap: 50px;
+      margin: 10px auto;
+      @media only screen and (max-width: 768px) {
+        flex-direction: column;
+      }
+      svg {
+        width: 30px;
+      }
+      a {
+        color: #fff;
+        gap: 10px;
+        font-size: 14px;
+      }
+    }
+    #fureacolSplide .info_fueracol > video {
+      object-fit: cover;
+      height: 390px;
+      margin: 0 auto;
+      display: block;
+      margin-bottom: 30px;
+      aspect-ratio: 9/16;
+    }
+    #procedimientosDestacados {
+      margin-bottom: 50px;
+      .splide__slide {
+        margin-bottom: 30px;
+      }
+    }
+    .procedimiento-card {
+      position: relative;
+      display: block;
+      height: 100%;
+      .badge {
+        position: absolute;
+        top: 15px;
+        left: 0;
+        font-weight: bold;
+        padding: 5px 10px;
+        background-color: #335c82;
+        color: #fff;
+      }
+      img {
+        width: 100%;
+        height: 450px;
+        object-fit: cover;
+        object-position: center;
+      }
+    }
+  }
+}
+
+.banner-container .banner img {
+  object-position: bottom right;
+}
+
+.top-bar .container {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 0 0 auto;
+  max-width: 1320px;
+  padding: 0 20px;
+}
+
+.pregunta h3 {
+  display: flex;
+  align-items: center;
+  margin: 30px;
+}
+.pregunta h3 img {
+  width: 80px;
+}
+.pregunta .preguntas {
+  margin: 0 auto 70px;
+  max-width: 900px;
+  width: 100%;
+  position: relative;
+}
+.pregunta .preguntas button {
+  padding: 30px 70px;
+  font-size: 16px;
+}
+
+.docinter {
+  .container__left img {
+    max-width: 50%;
+    max-height: 559px;
+    width: 100%;
+  }
+  .container__left {
+    gap: 50px;
+    margin: 50px 0;
+    padding: 0;
+    .txt {
+      padding: 60px 20px;
+      margin: 0;
+    }
+    img {
+      max-width: 50%;
+      max-height: 559px;
+      width: 100%;
+    }
+  }
+  .banner-container {
+    .banner {
+      img {
+        object-position: bottom left;
+      }
+      .txt h2 {
+        font-size: 48px;
+      }
+      .txt p {
+        font-size: 15px;
+      }
+    }
+  }
+  .procedimiento-card {
+    display: block;
+    img {
+      width: 100%;
+      border-radius: 15px;
+      height: 440px;
+      aspect-ratio: 9 / 16;
+    }
+  }
+  .splide__arrow--next {
+    right: -60px;
+  }
+  .splide__arrow--prev {
+    left: -60px;
+  }
+}
+
+.convenios,
+.fidelizacion {
+  main {
+    h2 {
+      max-width: 1200px;
+      width: 100%;
+      margin: 0 auto 50px;
+      padding: 0 20px;
+    }
+    .container__left {
+      padding: 30px 0;
+      display: flex;
+      gap: 50px;
+      img {
+        width: 50%;
+        flex: 1;
+      }
+      .txt {
+        padding: 0 130px 0 0;
+        flex: 1;
+        margin: 0;
+      }
+    }
+    .container__right {
+      padding: 30px 0;
+      display: flex;
+      gap: 50px;
+      img {
+        width: 50%;
+        flex: 1;
+      }
+      .txt {
+        padding: 0 0 0 130px;
+        flex: 1;
+        margin: 0;
+      }
+    }
+    .container__conv {
+      padding: 30px 0;
+      h3 {
+        margin: 0;
+      }
+    }
+    .container__ex {
+      margin: 50px auto 90px;
+      #empresas_convenio {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        gap: 30px;
+        .company {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          gap: 10px;
+          .image {
+            align-items: center;
+            justify-content: center;
+            display: flex;
+            img {
+              width: 120px;
+              object-fit: contain;
+            }
+          }
+          small {
+            color: #335c82;
+            font-size: 14px;
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+.paymethod {
+  header {
+    position: static;
+  }
+  main {
+    form {
+      min-height: 480px;
+      display: flex;
+      flex-direction: column;
+      h2 {
+        max-width: 1200px;
+        padding: 0 20px;
+        margin: 0 auto 30px;
+      }
+      .methods {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 1200px;
+        a,
+        button {
+          display: flex;
+          align-items: center;
+          border: 1px solid #ccc;
+          background-color: #fff;
+          justify-content: center;
+          border-radius: 15px;
+          padding: 15px;
+          transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+          flex-direction: column;
+          gap: 15px;
+          small {
+            font-size: 12px;
+            font-weight: bold;
+            color: #295f92;
+          }
+          svg,
+          img {
+            width: 100px;
+            height: auto;
+          }
+          &:hover {
+            transform: scale(1.1);
+          }
+        }
+      }
+    }
+    form {
+      width: 100%;
+      .card-wrapper {
+        margin-bottom: 30px;
+      }
+      button {
+        display: flex;
+        margin: 30px auto;
+      }
+    }
+  }
+}
+
+form .form-item input {
+  font-size: 14px;
+}
+
+.video-card {
+  padding: 10px 0;
+  video,
+  img {
+    border-radius: 15px;
+  }
+}
+form .form-item label.active,
+form .form-item input + label.active {
+  font-size: 11px;
+  top: -8px;
+}
+
+label div.error,
+span div.error {
+  position: absolute;
+  font-size: 10px;
+  color: #f00;
+  bottom: -15px;
+  background: transparent;
+}
+.cyberpunk-checkbox-label {
+  position: relative;
+}
+
+.form-item-1 select {
+  padding: 8px 15px;
+  background: transparent;
+}
+
+.agenda {
+  header {
+    position: static;
+  }
+  main {
+    min-height: 650px;
+    padding: 0;
+    h2 {
+      color: #1e1e1e;
+      margin: 30px 0;
+    }
+    h3 {
+      color: #1e1e1e;
+      margin-bottom: 15px;
+    }
+  }
+}
+header {
+  .top-bar {
+    .container {
+      display: flex;
+      justify-content: space-between;
+      margin: 0 auto;
+      max-width: 1200px;
+      padding: 0 20px;
+    }
+  }
+}
+@media only screen and (max-width: 768px) {
+  .fueracol {
+    .container__left {
+      flex-direction: column;
+      .txt {
+        text-align: center;
+        margin-left: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+  }
+}
+.video-card {
+  button {
+    z-index: 10;
+    .pause {
+      display: none;
+      position: absolute;
+    }
+    .play {
+      display: block;
+      position: absolute;
+    }
+  }
+}
+
+.doctor.left-doc .video-card button {
+  right: 20px;
+}
+
+.top-bar .container .right ul.agendamenu > li {
+  padding: 16px;
+}
+
+.kr-embedded {
+  margin: 30px auto;
+}
+
+.fueracol {
+  section {
+    margin: 50px auto;
+  }
+  .container__right {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 60px 0;
+    flex-direction: row-reverse;
+    .txt {
+      text-align: right;
+      max-width: 644px;
+      margin-left: 50px;
+    }
+  }
+
+  .phrase {
+    background-color: #335c82;
+    padding: 50px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 30px auto;
+    p {
+      max-width: 768px;
+      margin: 0 auto 30px;
+      color: #fff;
+      text-align: center;
+    }
+    a.btn.primary {
+      background-color: #fff;
+      color: #335c82;
+      border: 1px solid #335c82;
+      &:hover {
+        background-color: #335c82;
+        border: 1px solid #fff;
+        color: #fff;
+      }
+    }
+  }
+}
+
+.video-card {
+  img {
+    object-position: top;
+  }
+}
+
+.image-compare {
+  width: 480px;
+  margin: 0 auto;
+}
+.responsePay {
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    .thanks {
+      max-width: 480px;
+      width: 100%;
+      margin: 0 auto;
+      text-align: center;
+    }
+  }
+}

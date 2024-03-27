@@ -1,0 +1,5 @@
+[27-Mar-2024 06:43:44 UTC] PHP Notice:  Undefined variable: query_string in /home/tiendasantuario/public_html/host/oblicua.co/lab/harker_lloreda/includes/sdk.php on line 118
+[27-Mar-2024 06:43:44 UTC] PHP Notice:  Undefined variable: query_string in /home/tiendasantuario/public_html/host/oblicua.co/lab/harker_lloreda/includes/sdk.php on line 118
+[27-Mar-2024 06:43:44 UTC] PHP Notice:  Undefined variable: query_string in /home/tiendasantuario/public_html/host/oblicua.co/lab/harker_lloreda/includes/sdk.php on line 118
+[27-Mar-2024 06:43:45 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/tiendasantuario/public_html/host/oblicua.co/lab/harker_lloreda/includes/config.php on line 2
+[27-Mar-2024 06:43:45 UTC] PHP Fatal error:  Cannot declare class HarkerLloreda, because the name is already in use in /home/tiendasantuario/public_html/host/oblicua.co/lab/harker_lloreda/includes/sdk.php on line 2

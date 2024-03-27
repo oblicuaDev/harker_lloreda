@@ -4,19 +4,12 @@
 ?>
   <main>
     <div class="container">
-        <h1>Agenda tu cita</h1>
-        <h2>Fácil y rápido</h2>
+        <h2><?=$sdk->palabras[$lang][0]?></h2>
+        <h3><?=$sdk->palabras[$lang][58]?></h3>
         <div class="selections">
-            <a href="pago.html"><img src="img/perfil_1.jpeg" alt="perfil"><span>Ya soy paciente</span></a>
-            <a href="mas-info.html"><img src="img/perfil_2.jpeg" alt="perfil"><span>Soy paciente nuevo</span></a>
+            <a href="https://dermocitas.sicme.co/H4RLl0882" target="_blank"><img src="img/perfil_1.jpeg" alt="perfil"><span><?=$sdk->palabras[$lang][22]?></span></a>
+            <a href="<?=$sdk->infoGnrl->acf->link_soy_paciente_nuevo?>" target="_blank"><img src="img/perfil_2.jpeg" alt="perfil"><span><?=$sdk->palabras[$lang][23]?></span></a>
         </div>
     </div>
   </main>
-  <!-- Inicio sección agenda cita-->
-  <section>
-    <div class="rectangle-div container">
-      <h4 class="bold">Tu cambio está más cerca que nunca</h4>    
-      <a href="" class="btn secondary">Agenda tu cita</a>
-    </div>
-  </section>
 <?php include 'includes/footer.php'; ?>

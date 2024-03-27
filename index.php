@@ -94,8 +94,7 @@
                         <h2><?=$banner->title->rendered?></h2>
                         <h3><?=$banner->acf->subtitulo?></h3>
                         <?=$banner->content->rendered?>
-                        <a href="agenda.html" class="btn primary"
-                          ><?=$banner->acf->texto_boton != "" ? $banner->acf->texto_boton : "<?= $sdk->palabras[$lang][0]?>"?></a
+                        <a href="<?=isset($banner->acf->link_de_boton) ? $banner->acf->link_de_boton: "/$lang/agenda-tu-cita"?>" class="btn primary"><?=$banner->acf->texto_boton != "" ? $banner->acf->texto_boton : "<?= $sdk->palabras[$lang][0]?>"?></a
                         >
                       </div>
                     </div>
@@ -110,36 +109,7 @@
         <section class="container">
         </section>
       </article>
-      <div class="cifras-container">
-        <div class="cifras-grid">
-          <div class="cifras-grid__item">
-            <h6><?=$sdk->infoGnrl->acf->procedimientos_por_ano?></h6>
-            <p><?= $sdk->palabras[$lang][20]?></p>
-          </div>
-          <div class="cifras-grid__item">
-            <h6><?=$sdk->infoGnrl->acf->anos_de_experiencia?></h6>
-            <p><?= $sdk->palabras[$lang][18]?></p>
-          </div>
-          <div class="cifras-grid__item">
-            <h6><?=number_format($sdk->infoGnrl->acf->pacientes_atendidos_historicamente, 0, ".", ".")?></h6>
-            <p><?= $sdk->palabras[$lang][19]?></p>
-          </div>
-        </div>
-        <div class="bg">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="1920"
-            height="293"
-            viewBox="0 0 1920 293"
-            fill="none"
-          >
-            <path
-              d="M920.855 37.311C1362.26 -12.9171 1766.92 -6.0587 1920 37.3109L1920 293L0 293L-2.56149e-05 0.000381475C274.49 75.0999 487.877 86.58 920.855 37.311Z"
-              fill="#335C82"
-            />
-          </svg>
-        </div>
-      </div>
+      <?php include 'templates/cifras.php';?>
       <article data-aos="fade-down" data-aos-duration="3000">
         <section class="video-info">
           <div class="container video-position">
@@ -164,9 +134,9 @@
               </button>
               <video
                 autobuffer
-                muted
                 poster=""
                 preload="auto"
+                onloadstart="this.volume=0.5"
                 src="<?=$sdk->infoGnrl->acf->video_para_el_home?>"
               >
                 <source src="<?=$sdk->infoGnrl->acf->video_para_el_home?>" />
@@ -185,9 +155,16 @@
           <div class="info-extra" id="fuera"></div>
           <div class="info-extra" id="tour"></div>
           <div class="logos">
-            <a href="<?=$sdk->infoGnrl->acf->logos_y_convenciones_link?>">
-              <img src="<?=$sdk->infoGnrl->acf->logos_y_credenciales?>" alt="" />
-          </a>
+              <?php 
+                for ($i=0; $i < count($sdk->infoGnrl->acf->logos_y_credenciales); $i++) {
+                  $logo = $sdk->infoGnrl->acf->logos_y_credenciales[$i]->logo;
+                  $link = $sdk->infoGnrl->acf->logos_y_credenciales[$i]->link;
+                  if($logo){
+              ?>
+              <a href="<?=$link?$link:'#'?>">
+                <img src="<?=$logo?>" alt="logos_y_credenciales" />
+              </a>
+            <?php }} ?>
           </div>
         </section>
       </article>

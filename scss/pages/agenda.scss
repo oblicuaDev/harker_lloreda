@@ -6,26 +6,13 @@
     }
     h1 {
       color: #1e1e1e;
-
-      font-size: 85px;
-      font-style: normal;
-      font-weight: 400;
-      line-height: normal;
-
       @media only screen and (max-width: 768px) {
-        font-size: 45px;
         text-align: center;
       }
     }
     h2 {
       color: #1e1e1e;
-      font-size: 40px;
-      font-style: normal;
-      font-weight: 400;
-      line-height: normal;
-
       @media only screen and (max-width: 768px) {
-        font-size: 35px;
         text-align: center;
       }
     }

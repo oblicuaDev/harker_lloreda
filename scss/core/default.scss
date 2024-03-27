@@ -14,12 +14,21 @@ body {
     z-index: -1;
   }
 }
+.bhrcredits {
+  padding: 8px 80px !important;
+  a {
+    margin: 0;
+  }
+}
 .container {
   margin: 0 auto;
   max-width: 1200px;
   width: 100%;
   padding: 0 20px;
   position: relative;
+}
+main {
+  min-height: 100vh;
 }
 
 .home {
@@ -43,4 +52,8 @@ body {
       right: 0 !important;
     }
   }
+}
+
+.splide__list {
+  transition: all 0.5s ease-in-out;
 }

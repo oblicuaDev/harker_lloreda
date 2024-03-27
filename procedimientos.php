@@ -1,9 +1,14 @@
 <?php 
-  $bodyClass= 'paraellos';
+  $bodyClass= 'procedimientos-body';
   include 'includes/head.php';
   $proPage = $sdk->getProcedimientosPage();
   ?>
-<main>
+  <main
+  data-tresid="<?=$proPage->translations->es?>" 
+  data-trenid="<?=$proPage->translations->en?>"
+  data-tresslug="<?=$proPage->translations->esslug?>" 
+  data-trenslug="<?=$proPage->translations->enslug?>"
+  >
   <section>
     <div class="banner-container">
       <div class="banner">
@@ -40,18 +45,20 @@
           <div class="txt">
             <h2><?=$proPage[$lang]->title->rendered?></h2>
             <h3><?=$proPage[$lang]->acf->subtitulo?></h3>
-            <a href="<?=$proPage[$lang]->acf->link_boton?>" class="btn primary"
-              ><?= $proPage[$lang]->acf->texto_boton?>
-              <svg width="0" height="0" xmlns="http://www.w3.org/2000/svg">
-                <defs>
-                  <clipPath id="myClip">
-                    <path
-                      d="M1011.81 833.788C563.255 881.23 152.408 871.534 -2.73096 826.871L2.90186 0.662109L1952.48 13.9537L1946.59 877.674C1668.39 800.27 1451.79 787.251 1011.81 833.788Z"
-                    />
-                  </clipPath>
-                </defs>
-              </svg>
-            </a>
+            <?php if($proPage[$lang]->acf->link_boton && $proPage[$lang]->acf->texto_boton){ ?>
+              <a href="<?=$proPage[$lang]->acf->link_boton?>" class="btn primary"
+                ><?= $proPage[$lang]->acf->texto_boton?>
+                <svg width="0" height="0" xmlns="http://www.w3.org/2000/svg">
+                  <defs>
+                    <clipPath id="myClip">
+                      <path
+                        d="M1011.81 833.788C563.255 881.23 152.408 871.534 -2.73096 826.871L2.90186 0.662109L1952.48 13.9537L1946.59 877.674C1668.39 800.27 1451.79 787.251 1011.81 833.788Z"
+                      />
+                    </clipPath>
+                  </defs>
+                </svg>
+              </a>
+            <?php } ?>
           </div>
         </div>
       </div>
@@ -93,19 +100,11 @@
       </div>
     </div>
   </section>
-  <article data-aos="fade-down" data-aos-duration="3000">
-    <section class="video-info">
-      <div class="container cards">
-        <h3><?= $sdk->palabras[$lang][21]?></h3>
-        <div class="card-grid"></div>
-      </div>
-    </section>
-  </article>
   <section data-aos="fade-down" data-aos-duration="3000">
     <div class="favoritos__2">
       <div class="container">
-        <h3 class="bold">Procedimientos destacados</h3>
-        <section class="splide category-splide" aria-label="category-proc">
+        <h3 class="bold"><?= $sdk->palabras[$lang][26]?></h3>
+        <section class="splide category-splide" aria-label="category-proc" id="procedimientosDestacados">
           <div class="splide__arrows">
             <button class="splide__arrow splide__arrow--prev">
               <svg
@@ -156,61 +155,28 @@
           </div>
           <div class="splide__track">
             <ul class="splide__list">
-              <li class="splide__slide">
-                <a class="procedimiento-card">
-                  <img src="img/pro35.png" alt="pro" />
-                  <span>Nombre del procedimiento</span>
-                  <small>Nombre científico</small>
-                </a>
-              </li>
-              <li class="splide__slide">
-                <a class="procedimiento-card">
-                  <img src="img/derrier.png" alt="pro" />
-                  <span>Nombre del procedimiento</span>
-                  <small>Nombre científico</small>
-                </a>
-              </li>
-              <li class="splide__slide">
-                <a class="procedimiento-card">
-                  <img src="img/cuerpo.png" alt="pro" />
-                  <span>Nombre del procedimiento</span>
-                  <small>Nombre científico</small>
-                </a>
-              </li>
-              <li class="splide__slide">
-                <a class="procedimiento-card">
-                  <img src="img/image 35.png" alt="pro" />
-                  <span>Nombre del procedimiento</span>
-                  <small>Nombre científico</small>
-                </a>
-              </li>
-              <li class="splide__slide">
-                <a class="procedimiento-card">
-                  <img src="img/image 36.png" alt="pro" />
-                  <span>Nombre del procedimiento</span>
-                  <small>Nombre científico</small>
-                </a>
-              </li>
-              <li class="splide__slide">
-                <a class="procedimiento-card">
-                  <img src="img/image 37.png" alt="pro" />
-                  <span>Nombre del procedimiento</span>
-                  <small>Nombre científico</small>
-                </a>
-              </li>
             </ul>
           </div>
         </section>
       </div>
     </div>
   </section>
-  <section data-aos="fade-down" data-aos-duration="3000">
+  <article data-aos="fade-down" data-aos-duration="3000">
+    <section class="video-info">
+      <div class="container cards">
+        <h3><?= $sdk->palabras[$lang][21]?></h3>
+        <div class="card-grid"></div>
+      </div>
+    </section>
+  </article>
+
+  <section data-aos="fade-down" data-aos-duration="3000" id="products">
     <div class="container__pro">
-      <h4>Conoce algunos productos para potenciar tus resultados</h4>
+      <h3><?= $sdk->palabras[$lang][27]?></h3>
       <div class="grid-container container">
         <div class="grid-item__pro">
           <img src="img/image 4.png" alt="Product 1" />
-          <p>Isdin fusion water con color (claro)<br />SPF 50+ x50ML</p>
+          <p>Isdin fusion water con color (claro)SPF 50+ x50ML</p>
 
           <a href="" class="btn secondary"
             >Ver en tienda
@@ -243,7 +209,7 @@
         </div>
         <div class="grid-item__pro">
           <img src="img/image 5.png" alt="Product 2" />
-          <p>Sensyses cleanser<br />Ros x200ML</p>
+          <p>Sensyses cleanserRos x200ML</p>
 
           <a href="" class="btn secondary"
             >Ver en tienda
@@ -276,7 +242,7 @@
         </div>
         <div class="grid-item__pro">
           <img src="img/image 6.png" alt="Product 3" />
-          <p>Azelac Ru Serum<br />Despigmentante x30ML</p>
+          <p>Azelac Ru SerumDespigmentante x30ML</p>
 
           <a href="" class="btn secondary"
             >Ver en tienda
